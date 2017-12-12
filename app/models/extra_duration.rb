@@ -1,0 +1,2 @@
+class ExtraDuration < ApplicationRecord
+end

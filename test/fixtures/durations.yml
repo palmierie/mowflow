@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  duration: 1
+  duration_desc: MyText
+
+two:
+  duration: 1
+  duration_desc: MyText

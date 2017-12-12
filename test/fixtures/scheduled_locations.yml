@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: one
+  business: one
+  depot: false
+  location_desc: MyText
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  google_place_id: MyString
+  coordinates: MyString
+  start_season: 2017-12-12
+  end_season: 2017-12-12
+  day_of_week: MyString
+  mow_frequency: 1
+  date_mowed: 2017-12-12
+  next_mow_date: 2017-12-12
+  duration: one
+  duration: one
+  user_notes: MyText
+  special_job_notes: MyText
+
+two:
+  client: two
+  business: two
+  depot: false
+  location_desc: MyText
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  google_place_id: MyString
+  coordinates: MyString
+  start_season: 2017-12-12
+  end_season: 2017-12-12
+  day_of_week: MyString
+  mow_frequency: 1
+  date_mowed: 2017-12-12
+  next_mow_date: 2017-12-12
+  duration: two
+  duration: two
+  user_notes: MyText
+  special_job_notes: MyText
