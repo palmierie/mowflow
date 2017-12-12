@@ -12,8 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, id: :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, id: :last_name %>
+  </div>
+  <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email, id: :user_email %>
+    <%= f.text_field :email, id: :email %>
   </div>
   <div class="field">
    <%= f.label :password %><br />
