@@ -6,6 +6,7 @@ application up and running.
 
 ## Gems added:
 * Bootstrap
+* Sorcery
 Things you may want to cover:
 
 * Ruby version
