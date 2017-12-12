@@ -29,8 +29,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-# Bootstrap
+#Adds Jquery for bootstrap support
+gem 'jquery-rails'
+# Bootstrap - for styling
+gem 'popper_js'
 gem 'bootstrap'
+gem 'simple_form'
 # Sorcery Authentication
 gem 'sorcery'
 # Use Capistrano for deployment
