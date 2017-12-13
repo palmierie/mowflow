@@ -7,7 +7,10 @@
       <ul class="navbar-nav">
         <% if current_user %>
           <li class="nav-item navButtonWidth">
-            Logged in as <%= current_user.first_name %>
+            <a class="nav-link" href="#"> <%= link_to "Dashboard", dashboard_path %> </a>
+          </li>
+          <li class="nav-item navButtonWidth">
+            <p class="nav-link"> Logged in as <%= current_user.first_name %> </p>
           </li>
           <li class="nav-item navButtonWidth">
             <a class="nav-link" href="#"> <%= link_to "Edit Profile", edit_user_path(current_user.id) %> </a>
