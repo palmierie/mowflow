@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212171642) do
+ActiveRecord::Schema.define(version: 20171214165951) do
 
   create_table "businesses", force: :cascade do |t|
     t.string "name"
+    t.integer "user_id"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -83,6 +85,15 @@ ActiveRecord::Schema.define(version: 20171212171642) do
     t.index ["client_id"], name: "index_scheduled_locations_on_client_id"
     t.index ["duration_id"], name: "index_scheduled_locations_on_duration_id"
     t.index ["extra_duration_id"], name: "index_scheduled_locations_on_extra_duration_id"
+  end
+
+  create_table "user_businesses", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "business_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["business_id"], name: "index_user_businesses_on_business_id"
+    t.index ["user_id"], name: "index_user_businesses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
