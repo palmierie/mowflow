@@ -1,0 +1,27 @@
+<%= form_with(model: business, local: true) do |f| %>
+  <% if business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(business.errors.count, "error") %> prohibited this business from being saved:</h2>
+
+      <ul>
+      <% business.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :name %>
+  </div>
+  <%= f.fields_for :user_businesses do |ff| %>
+    <%= ff.hidden_field :user_id, :value => current_user.id  %>
+    <%= ff.hidden_field :business_id, :value => :id  %>
+  <% end %>
+  <%= f.hidden_field :user_id, :value => current_user.id  %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

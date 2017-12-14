@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
   resources :user_sessions
   resources :users
+  resources :businesses, shallow: true do
+    resources :user_businesses
+  end
 
   get 'home', to: 'pages#home', as: 'home'
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
