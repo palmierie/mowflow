@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'calendar/show'
+
   root :to => 'pages#home'
   resources :user_sessions
   resources :users
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
   end
   resources :clients
   resources :scheduled_locations
+  resource :calendar, only: [:show], controller: :calendar
 
   get 'home', to: 'pages#home', as: 'home'
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'

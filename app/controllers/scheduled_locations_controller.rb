@@ -56,6 +56,7 @@ class ScheduledLocationsController < ApplicationController
      mow_freq = get_mow_freq_as_int(@scheduled_location.mow_frequency)
      @scheduled_location.next_mow_date = get_next_mow_date(@scheduled_location.date_mowed, mow_freq)
      @scheduled_location.mow_frequency = mow_freq
+     @scheduled_location
 
     #  if @scheduled_location.update(scheduled_location_params_update( @scheduled_location.extra_duration_id,
     #                                                                  @scheduled_location.next_mow_date,
