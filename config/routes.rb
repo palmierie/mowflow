@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
   get 'my_business', to: 'businesses#show', as: 'my_business'
   get 'client_jobs/:id', to: 'scheduled_locations#client_jobs', as: 'client_jobs'
+  get 'show_week', to: 'calendar#show_week', as: 'show_week'
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
