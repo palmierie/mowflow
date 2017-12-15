@@ -18,6 +18,11 @@ class ScheduledLocationsController < ApplicationController
     @scheduled_location = ScheduledLocation.new(scheduled_location_params)
     @scheduled_location.business_id = @business.id
     @scheduled_location.extra_duration_id = @extra_duration_zero.id
+    # Change Mow Frequency input to integer and get next mow date
+    mow_freq = get_mow_freq_as_int(@scheduled_location.mow_frequency)
+    @scheduled_location.next_mow_date = get_next_mow_date(@scheduled_location.date_mowed, mow_freq)
+    @scheduled_location.mow_frequency = mow_freq
+    
     respond_to do |format|
       if @scheduled_location.save
         format.html { redirect_to scheduled_locations_path, notice: 'Job was successfully created.' }
@@ -54,7 +59,6 @@ class ScheduledLocationsController < ApplicationController
   private
   
     # Use callbacks to share common setup or constraints between actions.
-    
     def get_business
       @user_business = UserBusiness.where('user_id = ?', current_user).first
       @business = Business.where('id = ?', @user_business.business_id).first
@@ -63,6 +67,18 @@ class ScheduledLocationsController < ApplicationController
     def get_client
       @user_business = UserBusiness.where('user_id = ?', current_user).first
       @business = Business.where('id = ?', @user_business.business_id).first
+    end
+
+    # Change Mow Frequency input to integer
+    def get_mow_freq_as_int(mow_freq)
+      mow_frequency_as_string = mow_freq
+      return mow_frequency_as_string.to_i
+    end
+
+    # Create Next Mow Date
+    def get_next_mow_date(date_last_mowed, mow_freq)  
+      date_mowed = @scheduled_location.date_mowed
+      return date_mowed.days_since(mow_freq)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
