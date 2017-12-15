@@ -1,0 +1,23 @@
+<h1>Client List</h1>
+
+<table>
+  <tr>
+    <th>Client ID</th>
+    <th>Full Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Second Name</th>
+  </tr>
+
+  <% @clients.each do |client| %>
+    <tr>
+      <td><%= client.id %></td>
+      <td><%= client.full_name %></td>
+      <td><%= client.phone %></td>
+      <td><%= client.email %></td>
+      <td><%= client.second_full_name %></td>
+      <td><%= link_to 'Details', client_path(client) %></td>
+        <td><%= button_to 'Add Job', new_scheduled_location_path, params: {'client_id' => client.id}  %></td>
+    </tr>
+  <% end %>
+</table>
