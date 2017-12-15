@@ -51,18 +51,17 @@ class ScheduledLocationsController < ApplicationController
   def update
     @scheduled_location = ScheduledLocation.find(params[:id])
     @extra_duration = ExtraDuration.where('id = ?', @scheduled_location.extra_duration_id).first
-    # puts "LOG extra duration #{@extra_duration.id}"
     @scheduled_location.extra_duration_id = @extra_duration.id
-    puts "LOG @sched.Extra dur #{@scheduled_location.extra_duration_id}"
      # Change Mow Frequency input to integer and get next mow date
      mow_freq = get_mow_freq_as_int(@scheduled_location.mow_frequency)
      @scheduled_location.next_mow_date = get_next_mow_date(@scheduled_location.date_mowed, mow_freq)
      @scheduled_location.mow_frequency = mow_freq
 
-    if @scheduled_location.update(scheduled_location_params_update( @scheduled_location.extra_duration_id,
-                                                                    @scheduled_location.next_mow_date,
-                                                                    @scheduled_location.mow_frequency))
-      redirect_to show
+    #  if @scheduled_location.update(scheduled_location_params_update( @scheduled_location.extra_duration_id,
+    #                                                                  @scheduled_location.next_mow_date,
+    #                                                                  @scheduled_location.mow_frequency))
+    if @scheduled_location.update(scheduled_location_params)
+     redirect_to show
     else
       render 'edit'
     end
