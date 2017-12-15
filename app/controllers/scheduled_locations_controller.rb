@@ -7,14 +7,14 @@ class ScheduledLocationsController < ApplicationController
     @scheduled_location = ScheduledLocation.new
     @clients = Client.all
     @durations = Duration.all
-    @extra_duration_zero = ExtraDuration.where('id = ?', 0).first
+    @extra_duration_zero = ExtraDuration.where('id = ?', 6).first
     @business = get_business
   end
 
   def create
     @business = get_business
-    @extra_duration_zero = ExtraDuration.where('id = ?', 0).first
-
+    @extra_duration_zero = ExtraDuration.where('id = ?', 6).first
+    
     @scheduled_location = ScheduledLocation.new(scheduled_location_params)
     @scheduled_location.business_id = @business.id
     @scheduled_location.extra_duration_id = @extra_duration_zero.id
