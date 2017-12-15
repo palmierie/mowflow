@@ -1,0 +1,85 @@
+<%= form_with(model: scheduled_location, local: true) do |f| %>
+  <% if scheduled_location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scheduled_location.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% scheduled_location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Client ID and Name" %><br>
+    <%= f.collection_select(:client_id, Client.all, :id, :full_name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Location Description" %>
+    <%= f.text_field :location_desc, id: :location_desc %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :street_address %>
+    <%= f.text_field :street_address, id: :street_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city, id: :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.text_field :state, id: :state %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip %>
+    <%= f.text_field :zip, id: :zip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_season %>
+    <%= f.date_select :start_season, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year + 1}, {required: true} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_season %>
+    <%= f.date_select :end_season, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year + 1}, {required: true} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_mowed %>
+    <%= f.date_select :date_mowed, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year + 1}, {required: true} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mow_frequency %>
+    <%= number_field(:mow_frequency, in: 0..45, step: 1) %>
+  </div>
+
+   <div class="field">
+    <%= f.label "Day Of the Week (Optional)" %>
+    <%= f.text_field :day_of_week, id: :day_of_week %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Average Duration" %><br>
+    <%= f.collection_select(:duration_id, Duration.all, :duration, :duration_desc) %>
+  </div>
+
+  <div class="field">
+    <%= f.label "User Notes (Optional)" %>
+    <%= f.text_field :user_notes, id: :user_notes %>
+  </div>
+  
+  <%= f.hidden_field :extra_duration_id, :value => 0  %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

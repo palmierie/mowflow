@@ -1,0 +1,30 @@
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
+
+  <div class="col-xs-8 offset-md-1">
+    <h1>Job List</h1>
+
+    <table>
+      <tr>
+        <th>Client ID</th>
+        <th>Location Description</th>
+        <th>Street Address</th>
+        <th>City</th>
+        <th>Date Last Mowed</th>
+        <th>Next Mow Date</th>
+      </tr>
+
+      <% @scheduled_locations.each do |job| %>
+        <tr>
+          <td><%= job.client_id %></td>
+          <td><%= job.location_desc %></td>
+          <td><%= job.street_address %></td>
+          <td><%= job.city %></td>
+          <td><%= job.date_mowed %></td>
+          <td><%= job.next_mow_date %></td>
+          <td><%= link_to 'Details', scheduled_location_path(job) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,8 +1,13 @@
-<p>
-  <strong>Business name:</strong>
-  <%= @business.name %>
-</p>
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
 
+  <div class="col-xs-8 offset-md-1">
+    <p>
+      <strong>Business name:</strong>
+      <%= @business.name %>
+    </p>
 
-<%= link_to 'Edit', edit_business_path(@business) %> |
-<%= link_to 'Back', dashboard_path %>
+    <%= link_to 'Edit', edit_business_path(@business) %> |
+    <%= link_to 'Back', dashboard_path %>
+  </div>
+</div>

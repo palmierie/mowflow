@@ -1,6 +1,12 @@
-<h1>Editing User</h1>
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
 
-<%= render 'form', user: @user %>
+  <div class="col-xs-8 offset-md-1">
+    <h1>Editing User</h1>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', home_path %>
+    <%= render 'form', user: @user %>
+
+    <%= link_to 'Show', @user %> |
+    <%= link_to 'Back', home_path %>
+  </div>
+</div>
