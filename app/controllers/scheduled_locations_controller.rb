@@ -36,18 +36,32 @@ class ScheduledLocationsController < ApplicationController
 
   def show
     @scheduled_location = ScheduledLocation.find(params[:id])
+    @duration_obj = Duration.where('id = ?', @scheduled_location.duration_id).first
+    @duration = @duration_obj.duration_desc
   end
 
   def edit
     @scheduled_location = ScheduledLocation.find(params[:id])
     @clients = Client.all
     @durations = Duration.all
-    @extra_durations = ExtraDuration.all
+    @extra_duration = ExtraDuration.where('id = ?', @scheduled_location.extra_duration_id).first
+    @business = get_business
   end
 
   def update
     @scheduled_location = ScheduledLocation.find(params[:id])
-    if @scheduled_location.update(scheduled_location_params)
+    @extra_duration = ExtraDuration.where('id = ?', @scheduled_location.extra_duration_id).first
+    # puts "LOG extra duration #{@extra_duration.id}"
+    @scheduled_location.extra_duration_id = @extra_duration.id
+    puts "LOG @sched.Extra dur #{@scheduled_location.extra_duration_id}"
+     # Change Mow Frequency input to integer and get next mow date
+     mow_freq = get_mow_freq_as_int(@scheduled_location.mow_frequency)
+     @scheduled_location.next_mow_date = get_next_mow_date(@scheduled_location.date_mowed, mow_freq)
+     @scheduled_location.mow_frequency = mow_freq
+
+    if @scheduled_location.update(scheduled_location_params_update( @scheduled_location.extra_duration_id,
+                                                                    @scheduled_location.next_mow_date,
+                                                                    @scheduled_location.mow_frequency))
       redirect_to show
     else
       render 'edit'
@@ -85,4 +99,11 @@ class ScheduledLocationsController < ApplicationController
     def scheduled_location_params
       params.require(:scheduled_location).permit(:client_id, :business_id, :depot, :location_desc, :street_address, :city, :state, :zip, :google_place_id, :coordinates, :start_season, :end_season, :day_of_week, :mow_frequency, :date_mowed, :next_mow_date, :duration_id, :extra_duration_id, :user_notes, :special_job_notes)
     end
+
+    # def scheduled_location_params_update(extra_dur, next_mow, mow_freq)
+    #   {params.require(:scheduled_location).permit(:client_id, :business_id, :depot, :location_desc, :street_address, :city,  :state, :zip, :google_place_id, :coordinates, :start_season, :end_season, :day_of_week, :mow_frequency, :date_mowed, :next_mow_date, :duration_id, :extra_duration_id, :user_notes, :special_job_notes),
+    #     params[:extra_duration_id] => extra_dur,
+    #     params[:next_mow_date] => next_mow,
+    #     params[:mow_frequency] => mow_freq}
+    # end
 end
