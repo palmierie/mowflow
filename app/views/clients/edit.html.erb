@@ -1,5 +1,11 @@
-<h1>Edit Client</h1>
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
 
-<%= render 'form', client: @client %>
+  <div class="col-xs-8 offset-md-1">
+    <h1>Edit Client</h1>
 
-<%= link_to 'View Client', client_path(@client) %>
+    <%= render 'form', client: @client %>
+
+    <%= link_to 'View Client', client_path(@client) %>
+  </div>
+</div>

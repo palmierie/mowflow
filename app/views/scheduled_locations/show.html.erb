@@ -1,0 +1,66 @@
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
+
+  <div class="col-xs-8 offset-md-1">
+    <p>
+      <strong>Client ID:</strong>
+      <%= @scheduled_location.client_id %>
+    </p>
+    <p>
+      <strong>Location Description:</strong>
+      <%= @scheduled_location.location_desc %>
+    </p>
+    <p>
+      <strong>Street Address:</strong>
+      <%= @scheduled_location.street_address %>
+    </p>
+    <p>
+      <strong>City:</strong>
+      <%= @scheduled_location.city %>
+    </p>
+    <p>
+      <strong>State:</strong>
+      <%= @scheduled_location.state %>
+    </p>
+    <p>
+      <strong>Zip:</strong>
+      <%= @scheduled_location.zip %>
+    </p>
+    <p>
+      <strong>Start Season:</strong>
+      <%= @scheduled_location.start_season %>
+    </p>
+    <p>
+      <strong>End Season:</strong>
+      <%= @scheduled_location.end_season %>
+    </p>
+    <p>
+      <strong>Date Last Mowed:</strong>
+      <%= @scheduled_location.date_mowed %>
+    </p>
+    <p>
+      <strong>Next Mow Date:</strong>
+      <%= @scheduled_location.next_mow_date %>
+    </p>
+    <p>
+      <strong>Mowing Frequency:</strong>
+      <%= @scheduled_location.mow_frequency %>
+    </p>
+    <p>
+      <strong>Day of the week (If Specified):</strong>
+      <%= @scheduled_location.day_of_week %>
+    </p>
+    <p>
+      <strong>Average Duration:</strong>
+      <%= @scheduled_location.duration %>
+    </p>
+    <p>
+      <strong>User Notes:</strong>
+      <%= @scheduled_location.user_notes %>
+    </p>
+
+    <%= link_to 'Edit', edit_scheduled_location_path(@scheduled_location) %> |
+    <%= link_to 'Add Special Job', dashboard_path %> |
+    <%= link_to 'View Job List', scheduled_locations_path %>
+  </div>
+</div>

@@ -1,6 +1,12 @@
-<h1>Editing Business</h1>
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
 
-<%= render 'form', business: @business %>
+  <div class="col-xs-8 offset-md-1">
+    <h1>Editing Business</h1>
 
-<%= link_to 'Show', @business %> |
-<%= link_to 'Back', dashboard_path %>
+    <%= render 'form', business: @business %>
+
+    <%= link_to 'Show', @business %> |
+    <%= link_to 'Back', dashboard_path %>
+  </div>
+</div>

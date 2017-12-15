@@ -1,36 +1,42 @@
-<p>
-  <strong>Client ID:</strong>
-  <%= @client.id %>
-</p>
-<p>
-  <strong>Full Name:</strong>
-  <%= @client.full_name %>
-</p>
-<p>
-  <strong>Phone:</strong>
-  <%= @client.phone %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%= @client.email %>
-</p>
-<p>
-  <strong>Second Name:</strong>
-  <%= @client.second_full_name %>
-</p>
-<p>
-  <strong>Secondary Phone:</strong>
-  <%= @client.second_phone %>
-</p>
-<p>
-  <strong>Secondary Email:</strong>
-  <%= @client.second_email %>
-</p>
-<p>
-  <strong>Additional Notes:</strong>
-  <%= @client.additional_note %>
-</p>
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'View Jobs', client_jobs_path(@client) %> |
-<%= link_to 'Back', dashboard_path %>
+  <div class="col-xs-8 offset-md-1">
+    <p>
+      <strong>Client ID:</strong>
+      <%= @client.id %>
+    </p>
+    <p>
+      <strong>Full Name:</strong>
+      <%= @client.full_name %>
+    </p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @client.phone %>
+    </p>
+    <p>
+      <strong>Email:</strong>
+      <%= @client.email %>
+    </p>
+    <p>
+      <strong>Second Name:</strong>
+      <%= @client.second_full_name %>
+    </p>
+    <p>
+      <strong>Secondary Phone:</strong>
+      <%= @client.second_phone %>
+    </p>
+    <p>
+      <strong>Secondary Email:</strong>
+      <%= @client.second_email %>
+    </p>
+    <p>
+      <strong>Additional Notes:</strong>
+      <%= @client.additional_note %>
+    </p>
+
+    <%= link_to 'Edit', edit_client_path(@client) %> |
+    <%= link_to 'View Jobs', client_jobs_path(@client) %> |
+    <%= link_to 'Back', dashboard_path %>
+  </div>
+</div>

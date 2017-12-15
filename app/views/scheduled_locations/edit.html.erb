@@ -2,8 +2,10 @@
   <%= render :partial => 'partials/dashboard' %>
 
   <div class="col-xs-8 offset-md-1">
-    <h1>Add Job</h1>
+    <h1>Edit Job</h1>
+
     <%= render 'form', scheduled_location: @scheduled_location %>
-    <%= link_to 'Back', dashboard_path %>
+
+    <%= link_to 'View Job List', scheduled_locations_path %>
   </div>
 </div>
