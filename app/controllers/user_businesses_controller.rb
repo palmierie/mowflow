@@ -10,6 +10,16 @@ class UserBusinessesController < ApplicationController
     @user_business = UserBusiness.new(user_business_params)
   end
 
+  # def edit
+  #   @business = Business.find(params[:id])
+  #   puts "log user_biz: #{@business}"
+  # end
+
+  # def update
+  #   @user_business = set_user_business
+  #   @user_business.update
+  # end
+
   private
 
     # Use callbacks to share common setup or constraints between actions.

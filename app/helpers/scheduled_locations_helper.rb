@@ -1,0 +1,2 @@
+module ScheduledLocationsHelper
+end
