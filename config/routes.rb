@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :scheduled_locations
   resource :calendar, only: [:show], controller: :calendar
   resource :calendar_week, only: [:show], controller: :calendar_week
+  resource :mow_flow, only: [:show], controller: :mow_flow
 
   get 'home', to: 'pages#home', as: 'home'
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'

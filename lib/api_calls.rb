@@ -9,9 +9,15 @@ class ApiCalls
     base_uri 'https://maps.googleapis.com'
     default_params :output => 'json'
     get('/maps/api/place/textsearch/json', :query => {:query => location, :key => key})
-    # url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{location}&key=#{key}"
-    # response = HTTParty.get(url)
-    # puts "place ID call: #{response}"
+  end
+
+  # Get Distance Matrix from OSRM API
+  def self.get_matrix(coordinates_string)
+    # 100 coordinate max limit from OSRM
+    base_uri 'http://router.project-osrm.org'
+    default_params :output => 'json'
+    @response = get('/table/v1/driving/', :query => {:query => coordinates_string})
+    puts "response #{@response}"
   end
 
 end
