@@ -1,4 +1,5 @@
 class ScheduledLocationsController < ApplicationController
+  include HTTParty
   def index
     @scheduled_locations = ScheduledLocation.all
   end
@@ -14,8 +15,15 @@ class ScheduledLocationsController < ApplicationController
   def create
     @business = get_business
     @extra_duration_zero = ExtraDuration.where('id = ?', 6).first
-    
     @scheduled_location = ScheduledLocation.new(scheduled_location_params)
+    # build string for api call
+    location = build_location_string(@scheduled_location)
+    # get places ID and coordinates
+    response_hash = get_place_id_and_coordinates(location)
+    longitude = response_hash['geometry']['location']['lng']
+    latitude = response_hash['geometry']['location']['lat']
+    @scheduled_location.coordinates = "#{longitude},#{latitude}"
+    @scheduled_location.google_place_id = response_hash['place_id']
     @scheduled_location.business_id = @business.id
     @scheduled_location.extra_duration_id = @extra_duration_zero.id
     # Change Mow Frequency input to integer and get next mow date
@@ -73,6 +81,13 @@ class ScheduledLocationsController < ApplicationController
   private
   
     # Use callbacks to share common setup or constraints between actions.
+    def get_google_places_api_key
+      # get google places api key from database
+      key_hash = Key.where('id = ?', 1).first
+      key = key_hash.key
+      return key
+    end
+
     def get_business
       @user_business = UserBusiness.where('user_id = ?', current_user).first
       @business = Business.where('id = ?', @user_business.business_id).first
@@ -93,6 +108,19 @@ class ScheduledLocationsController < ApplicationController
     def get_next_mow_date(date_last_mowed, mow_freq)  
       date_mowed = @scheduled_location.date_mowed
       return date_mowed.days_since(mow_freq)
+    end
+
+    def build_location_string(sched_loc)
+      location = "#{sched_loc.street_address}, #{sched_loc.city}, #{sched_loc.state}"
+      return location
+    end
+
+    def get_place_id_and_coordinates(location)
+      #get api key
+      key = get_google_places_api_key
+      # Get Place ID and Coordinates from Google Places API
+      @response = ApiCalls.get_place_id_and_coordinates(key, location)
+      return @response['results'][0]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

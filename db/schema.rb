@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214165951) do
+ActiveRecord::Schema.define(version: 20171218155637) do
 
   create_table "businesses", force: :cascade do |t|
     t.string "name"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 20171214165951) do
   create_table "extra_durations", force: :cascade do |t|
     t.integer "duration"
     t.text "duration_desc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "keys", force: :cascade do |t|
+    t.string "name"
+    t.text "key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
