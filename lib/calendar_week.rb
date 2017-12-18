@@ -1,4 +1,4 @@
-class Calendar < Struct.new(:view, :date, :callback)
+class CalendarWeek < Struct.new(:view, :date, :callback)
   HEADER = %w[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
   START_DAY = :sunday
 
@@ -37,8 +37,8 @@ class Calendar < Struct.new(:view, :date, :callback)
   end
 
   def weeks
-    first = date.beginning_of_month.beginning_of_week(START_DAY)
-    last = date.end_of_month.end_of_week(START_DAY)
+    first = date.beginning_of_week(START_DAY)
+    last = date.end_of_week(START_DAY)
     (first..last).to_a.in_groups_of(7)
   end
 end
