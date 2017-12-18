@@ -34,10 +34,15 @@ class ClientsController < ApplicationController
 
   def update
     @client = Client.find(params[:id])
-    if @client.update(client_params)
-      redirect_to show
-    else
-      render 'edit'
+    
+    respond_to do |format|
+      if @client.update(client_params)
+        format.html { redirect_to @client, notice: 'Client was successfully updated.' }
+        # format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @client.errors, status: :unprocessable_entity }
+      end
     end
   end
 

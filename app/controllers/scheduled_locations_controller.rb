@@ -66,16 +66,16 @@ class ScheduledLocationsController < ApplicationController
      @scheduled_location.mow_frequency = mow_freq
      @scheduled_location
 
-    #  if @scheduled_location.update(scheduled_location_params_update( @scheduled_location.extra_duration_id,
-    #                                                                  @scheduled_location.next_mow_date,
-    #                                                                  @scheduled_location.mow_frequency))
-    if @scheduled_location.update(scheduled_location_params)
-     redirect_to show
-    else
-      render 'edit'
+    respond_to do |format|
+      if @scheduled_location.update(scheduled_location_params)
+        format.html { redirect_to @scheduled_location, notice: 'Job was successfully updated.' }
+        # format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @scheduled_location.errors, status: :unprocessable_entity }
+      end
     end
   end
-
 
 
   private
@@ -128,10 +128,4 @@ class ScheduledLocationsController < ApplicationController
       params.require(:scheduled_location).permit(:client_id, :business_id, :depot, :location_desc, :street_address, :city, :state, :zip, :google_place_id, :coordinates, :start_season, :end_season, :day_of_week, :mow_frequency, :date_mowed, :next_mow_date, :duration_id, :extra_duration_id, :user_notes, :special_job_notes)
     end
 
-    # def scheduled_location_params_update(extra_dur, next_mow, mow_freq)
-    #   {params.require(:scheduled_location).permit(:client_id, :business_id, :depot, :location_desc, :street_address, :city,  :state, :zip, :google_place_id, :coordinates, :start_season, :end_season, :day_of_week, :mow_frequency, :date_mowed, :next_mow_date, :duration_id, :extra_duration_id, :user_notes, :special_job_notes),
-    #     params[:extra_duration_id] => extra_dur,
-    #     params[:next_mow_date] => next_mow,
-    #     params[:mow_frequency] => mow_freq}
-    # end
 end
