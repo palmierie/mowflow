@@ -57,8 +57,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :mow_frequency %>
-    <%= number_field(:mow_frequency, in: 0..45, step: 1) %>
+    <%= f.label "Mow Frequency (Number of days between mows)" %>
+    <%= f.text_field :mow_frequency, id: :mow_frequency %>
   </div>
 
    <div class="field">

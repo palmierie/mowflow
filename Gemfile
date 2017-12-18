@@ -37,6 +37,8 @@ gem 'bootstrap'
 gem 'simple_form'
 # Sorcery Authentication
 gem 'sorcery'
+# Httparty for api calls
+gem 'httparty'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -23,3 +23,7 @@ ExtraDuration.create([
   { duration: 5, duration_desc: "Very Large Job - time-consuming - above average commitment" },
   { duration: 0, duration_desc: "No Special Job - For Extra Time Duration only" }
 ])
+
+Key.create([
+  { name: "Google Places API", key: "AIzaSyDVo1wSditnf5dqWnDXSCbG_DYmLK_uiEY"}
+])
