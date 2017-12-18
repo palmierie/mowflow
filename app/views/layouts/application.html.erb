@@ -11,9 +11,11 @@
   <body>
     <div class="container-fluid">
       <%= render :partial => 'partials/navbar' %>
-      <div>
-        <p id="notice"><%= flash[:notice] %></p>
-        <p id="alert"><%= flash[:alert] %></p>
+      <div class="row">
+        <div class="col-xl-12 text-center">
+          <p id="notice"><%= flash[:notice] %></p>
+          <p id="alert"><%= flash[:alert] %></p>
+        </div>
       </div>
       <%= yield %>
     </div>
