@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 #Adds Jquery for bootstrap support
 gem 'jquery-rails'
+# Sortable DOM Elements
+gem 'jquery-ui-rails'
+gem 'acts_as_list'
 # Bootstrap - for styling
 gem 'popper_js'
 gem 'bootstrap'

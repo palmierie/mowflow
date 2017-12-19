@@ -12,8 +12,12 @@ Rails.application.routes.draw do
   resources :clients
   resources :scheduled_locations
   resource :calendar, only: [:show], controller: :calendar
-  resource :calendar_week, only: [:show], controller: :calendar_week
   resource :mow_flow, only: [:show], controller: :mow_flow
+  resources :calendar_week do
+    collection do
+      patch :sort
+    end
+  end
 
   get 'home', to: 'pages#home', as: 'home'
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'

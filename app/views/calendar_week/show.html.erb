@@ -2,49 +2,10 @@
   <%= render :partial => 'partials/dashboard' %>
 
   <div class="col-sm-8 offset-md-1">
-    <div class="row">
-      <div class="col-xl-12 text-center">
-        <div class="well controls">
-          <%= link_to calendar_path(date: @date - 1.week), class: "btn btn-default" do %>
-            <p><</p>
-          <% end %>
-          <%= "#{@date.strftime("%B")} #{@date.year}" %>
-          <%= link_to calendar_path(date: @date + 1.week), class: "btn btn-default" do %>
-            <p>></p>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xl-12">
-        <%= calendar @date do |date| %>
-          <%= date.day %>
-          <% if @last_mow_by_date[date] %>
-              <div class="dropdown show">
-                <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="lastMowLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Prev Mow
-                </a>
-                <div class="dropdown-menu" aria-labelledby="lastMowLink">
-                  <% @last_mow_by_date[date].each do |job| %>
-                    <a class="dropdown-item"><%= link_to "(P) #{job.location_desc}", scheduled_location_path(job.id) %></a>
-                  <% end %>
-                </div>
-              </div>
-          <% end %>
-          <% if @next_mow_by_date[date] %>
-             <div class="dropdown show">
-                <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="NextMowLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Next Mow
-                </a>
-                <div class="dropdown-menu" aria-labelledby="NextMowLink">
-                  <% @next_mow_by_date[date].each do |job| %>
-                    <a class="dropdown-item"><%= link_to "(N) #{job.location_desc}", scheduled_location_path(job.id) %></a>
-                  <% end %>
-                </div>
-              </div>
-          <% end %>
-        <% end %>
-      </div>
+    <div id="jobs" class="list-group">
+      <% @jobs.each do |job|%>
+        <%= link_to job.fullname, job, class: "list-group-item"%>
+      <%end%>
     </div>
   </div>
 </div>
