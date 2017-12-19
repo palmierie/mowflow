@@ -116,6 +116,12 @@ class ScheduledLocationsController < ApplicationController
     end
   end
 
+  def client_jobs
+    @client = Client.find(params[:id])
+    @scheduled_locations = ScheduledLocation.where("client_id = ?", @client.id)
+    render 'client_jobs'
+  end
+
 
   private
   
