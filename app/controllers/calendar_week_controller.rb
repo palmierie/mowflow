@@ -11,11 +11,8 @@ class CalendarWeekController < ApplicationController
   end
 
   def sort
-    puts "next mow date: #{params[:next_mow_date]}"
-    puts "params ids: #{params[:scheduled_location]}"
-    puts "params: #{params}"
     params[:scheduled_location].each_with_index do |id, index|
-      ScheduledLocation.where(id: id).update_all(position: index + 1, next_mow_date: params[:date])
+      ScheduledLocation.where(id: id).update_all(next_mow_date: params[:date])
     end
     head :ok
   end
