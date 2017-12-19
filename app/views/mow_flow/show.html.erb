@@ -5,5 +5,46 @@
 
     <h2> you made it here</h2>
 
+    <h1>Next Three Days</h1>
+      <div id="jobs" class="row"> 
+          <% @dates.each do |date|%>
+            <div id="date-col" class="list-group col-sm-2" data-date="<%= date %>">
+              <div class="text-center">
+                <%= "#{date.strftime("%b")} #{date.day}"%>
+              </div>
+            <%if @jobs[date]%>
+              <% @jobs[date].each do |job|%>
+                <%= link_to job.location_desc, job, class: "list-group-item", id: dom_id(job), next_mow_date: date %>
+              <%end%>
+            <% end %>
+            </div>
+          <% end %>
+      </div>
+
+    <%= form_with(model: @mow_flow, local: true, url: reschedule_job_update_path) do |f| %>
+      <% if @mow_flow.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@mow_flow.errors.count, "error") %> prohibited this list from being optimized:</h2>
+
+          <ul>
+            <% @mow_flow.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label 'Optimization Range (days)' %>
+        <%= f.select :optimize_days, ['1', '2', '3']%>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+
+    <%= link_to 'Back', dashboard_path %>
+
   </div>
 </div>
