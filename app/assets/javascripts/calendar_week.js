@@ -9,12 +9,9 @@ document.addEventListener("turbolinks:load",function () {
       console.log($(this).sortable('serialize'));
       
       Rails.ajax({
-        url: $(this).data("url"),
+        url: $(this).data("url") + "?date=" + $(this).attr("data-date"),
         type: "PATCH",
-        data: {
-          data_1: $(this).sortable('serialize'),
-          data_2: $(this).attr("data-date")
-        }
+        data: $(this).sortable('serialize')
       })
     }
     
