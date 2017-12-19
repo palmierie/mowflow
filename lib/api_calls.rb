@@ -15,8 +15,7 @@ class ApiCalls
   def self.get_matrix(coordinates_string)
     # 100 coordinate max limit from OSRM
     base_uri 'http://router.project-osrm.org'
-    default_params :output => 'json'
-    @response = get('/table/v1/driving/', :query => {:query => coordinates_string})
+    @response = get("/table/v1/driving/#{coordinates_string}")
     puts "response #{@response}"
   end
 
