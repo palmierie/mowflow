@@ -1,0 +1,24 @@
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
+
+  <div class="col-sm-8 offset-md-1">
+
+      <div id="jobs" class="row"> 
+          <% @dates.each do |date|%>
+            <div id="date-col" class="list-group col-sm-2 connected-list" data-url="<%= sort_calendar_week_index_path %>" data-date="<%= date %>">
+              <div class="text-center">
+                <%= "#{date.strftime("%b")} #{date.day}"%>
+              </div>
+            <%if @jobs[date]%>
+              <% @jobs[date].each do |job|%>
+                <%= link_to job.location_desc, job, class: "list-group-item", id: dom_id(job), next_mow_date: date %>
+              <%end%>
+            <% end %>
+            </div>
+          <% end %>
+      </div>
+
+     
+
+  </div>
+</div>

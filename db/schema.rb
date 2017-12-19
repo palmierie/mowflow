@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218155637) do
+ActiveRecord::Schema.define(version: 20171219160937) do
 
   create_table "businesses", force: :cascade do |t|
     t.string "name"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20171218155637) do
     t.text "special_job_notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position"
     t.index ["business_id"], name: "index_scheduled_locations_on_business_id"
     t.index ["client_id"], name: "index_scheduled_locations_on_client_id"
     t.index ["duration_id"], name: "index_scheduled_locations_on_duration_id"
