@@ -24,6 +24,7 @@ class ScheduledLocationsController < ApplicationController
     latitude = response_hash['geometry']['location']['lat']
     @scheduled_location.coordinates = "#{longitude},#{latitude}"
     @scheduled_location.google_place_id = response_hash['place_id']
+
     @scheduled_location.business_id = @business.id
     @scheduled_location.extra_duration_id = @extra_duration_zero.id
     # Change Mow Frequency input to integer and get next mow date
@@ -55,19 +56,39 @@ class ScheduledLocationsController < ApplicationController
     @extra_duration = ExtraDuration.where('id = ?', @scheduled_location.extra_duration_id).first
     @business = get_business
   end
-
+  
   def update
     @scheduled_location = ScheduledLocation.find(params[:id])
+    #copy params for update
+    updated_scheduled_location_params = scheduled_location_params
+    # create old Location string to check for changes on update
+    @old_location = build_location_string(@scheduled_location)
+    #create new location string
+    @updated_location = scheduled_location_params
+    @new_location = build_location_string_from_hash(@updated_location)
+
+    #update google place ID and coordinates if new location entered
+    unless @old_location == @new_location
+      # get places ID and coordinates
+      response_hash = get_place_id_and_coordinates(@old_location)
+      longitude = response_hash['geometry']['location']['lng']
+      latitude = response_hash['geometry']['location']['lat']
+      puts "sched loc params: #{scheduled_location_params[:coordinates]}"
+      updated_scheduled_location_params[:coordinates] = "#{longitude},#{latitude}"
+      updated_scheduled_location_params[:google_place_id] = response_hash['place_id']
+    end
+
     @extra_duration = ExtraDuration.where('id = ?', @scheduled_location.extra_duration_id).first
     @scheduled_location.extra_duration_id = @extra_duration.id
-     # Change Mow Frequency input to integer and get next mow date
-     mow_freq = get_mow_freq_as_int(@scheduled_location.mow_frequency)
-     @scheduled_location.next_mow_date = get_next_mow_date(@scheduled_location.date_mowed, mow_freq)
-     @scheduled_location.mow_frequency = mow_freq
-     @scheduled_location
+    # Change Mow Frequency input to integer and get next mow date
+    
+    mow_freq = get_mow_freq_as_int(scheduled_location_params["mow_frequency"])
+    updated_scheduled_location_params["next_mow_date"] = get_next_mow_date(scheduled_location_params["date_mowed"], mow_freq)
+    updated_scheduled_location_params["mow_frequency"] = mow_freq
+    puts "updated params: #{updated_scheduled_location_params}"
 
     respond_to do |format|
-      if @scheduled_location.update(scheduled_location_params)
+      if @scheduled_location.update(updated_scheduled_location_params)
         format.html { redirect_to @scheduled_location, notice: 'Job was successfully updated.' }
         # format.json { render :show, status: :created, location: @user }
       else
@@ -115,6 +136,12 @@ class ScheduledLocationsController < ApplicationController
       return location
     end
 
+    # new_location comes in as a hash
+    def build_location_string_from_hash(sched_loc)
+      location = "#{sched_loc['street_address']}, #{sched_loc['city']}, #{sched_loc['state']}"
+      return location
+    end
+    
     def get_place_id_and_coordinates(location)
       #get api key
       key = get_google_places_api_key
@@ -127,5 +154,4 @@ class ScheduledLocationsController < ApplicationController
     def scheduled_location_params
       params.require(:scheduled_location).permit(:client_id, :business_id, :depot, :location_desc, :street_address, :city, :state, :zip, :google_place_id, :coordinates, :start_season, :end_season, :day_of_week, :mow_frequency, :date_mowed, :next_mow_date, :duration_id, :extra_duration_id, :user_notes, :special_job_notes)
     end
-
 end
