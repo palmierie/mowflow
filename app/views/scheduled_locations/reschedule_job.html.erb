@@ -1,0 +1,44 @@
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
+
+  <div class="col-xs-8 offset-md-1">
+    <h1>Reschedule Job</h1>
+    <p>
+      <strong>Client ID:</strong>
+      <%= @scheduled_location.client_id %>
+    </p>
+    <p>
+      <strong>Location Description:</strong>
+      <%= @scheduled_location.location_desc %>
+    </p>
+    <%= form_with(model: @scheduled_location, local: true, url: reschedule_job_update_path) do |f| %>
+      <% if @scheduled_location.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(scheduled_location.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+          <ul>
+            <% @scheduled_location.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+    <div class="field">
+      <%= f.label :next_mow_date %>
+      <%= f.date_select :next_mow_date, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year + 1}, {required: true} %>
+    </div>
+
+    <div class="field">
+      <%= f.label "User Notes (Optional)" %>
+      <%= f.text_field :user_notes, id: :user_notes %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+    <%= link_to 'Back', dashboard_path %>
+  </div>
+</div>

@@ -98,6 +98,24 @@ class ScheduledLocationsController < ApplicationController
     end
   end
 
+  def reschedule_job
+    @scheduled_location = ScheduledLocation.find(params[:id])
+    render 'reschedule_job'
+  end
+  
+  def reschedule_job_update
+    @scheduled_location = ScheduledLocation.find(params[:id])
+    respond_to do |format|
+      if @scheduled_location.update(scheduled_location_params)
+        format.html { redirect_to @scheduled_location, notice: 'Job was successfully rescheduled.' }
+        # format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @scheduled_location.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   private
   
