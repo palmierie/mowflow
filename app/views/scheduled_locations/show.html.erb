@@ -1,7 +1,7 @@
 <div class="row">
   <%= render :partial => 'partials/dashboard' %>
 
-  <div class="col-xs-8 offset-md-1">
+  <div class="col-xs-4 offset-md-1">
     <p>
       <strong>Client ID:</strong>
       <%= @scheduled_location.client_id %>
@@ -62,5 +62,8 @@
     <%= link_to 'Edit', edit_scheduled_location_path(@scheduled_location) %> |
     <%= link_to 'Add Special Job', dashboard_path %> |
     <%= link_to 'View Job List', scheduled_locations_path %>
+  </div>
+  <div class="col-xs-4 offset-md-1">
+    <button type="button" class="btn btn-secondary"><%= link_to 'Reschedule Job', reschedule_job_path(@scheduled_location) %></button>
   </div>
 </div>
