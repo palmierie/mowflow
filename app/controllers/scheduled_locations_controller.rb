@@ -44,12 +44,32 @@ class ScheduledLocationsController < ApplicationController
     @business = Business.where('id = ?', @user_business.business_id).first
     @scheduled_location = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first
   end
+
   def update_depot
     @user_business = UserBusiness.where('user_id = ?', current_user).first
     @business = Business.where('id = ?', @user_business.business_id).first
     @scheduled_location = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first
+    #copy params for update
+    updated_scheduled_location_params = scheduled_location_params
+    # create old Location string to check for changes on update
+    @old_location = build_location_string(@scheduled_location)
+    #create new location string
+    @updated_location = scheduled_location_params
+    @new_location = build_location_string_from_hash(@updated_location)
+    puts "old loc: #{@old_location}, new loc: #{@new_location}"
+    #update google place ID and coordinates if new location entered
+    unless @old_location == @new_location
+      # get places ID and coordinates
+      response_hash = get_place_id_and_coordinates(@new_location)
+      longitude = response_hash['geometry']['location']['lng']
+      latitude = response_hash['geometry']['location']['lat']
+      puts "sched loc geo: #{response_hash['geometry']}"
+      puts "sched loc place id: #{response_hash['place_id']}"
+      updated_scheduled_location_params[:coordinates] = "#{longitude},#{latitude}"
+      updated_scheduled_location_params[:google_place_id] = response_hash['place_id']
+    end
     respond_to do |format|
-      if @scheduled_location.update(scheduled_location_params)
+      if @scheduled_location.update(updated_scheduled_location_params)
         format.html { redirect_to my_business_path, notice: 'Job was successfully rescheduled.' }
       else
         format.html { render :edit }
@@ -124,10 +144,9 @@ class ScheduledLocationsController < ApplicationController
     #update google place ID and coordinates if new location entered
     unless @old_location == @new_location
       # get places ID and coordinates
-      response_hash = get_place_id_and_coordinates(@old_location)
+      response_hash = get_place_id_and_coordinates(@new_location)
       longitude = response_hash['geometry']['location']['lng']
       latitude = response_hash['geometry']['location']['lat']
-      puts "sched loc params: #{scheduled_location_params[:coordinates]}"
       updated_scheduled_location_params[:coordinates] = "#{longitude},#{latitude}"
       updated_scheduled_location_params[:google_place_id] = response_hash['place_id']
     end
@@ -139,7 +158,6 @@ class ScheduledLocationsController < ApplicationController
     mow_freq = get_mow_freq_as_int(scheduled_location_params["mow_frequency"])
     updated_scheduled_location_params["next_mow_date"] = get_next_mow_date(scheduled_location_params["date_mowed"], mow_freq)
     updated_scheduled_location_params["mow_frequency"] = mow_freq
-    puts "updated params: #{updated_scheduled_location_params}"
 
     respond_to do |format|
       if @scheduled_location.update(updated_scheduled_location_params)
