@@ -9,7 +9,7 @@ class BusinessesController < ApplicationController
     @business = Business.new(business_params)
     respond_to do |format|
       if @business.save
-        format.html { redirect_to dashboard_path, notice: 'Business was successfully created.' }
+        format.html { redirect_to new_depot_path, notice: 'Business was successfully created.' }
         # format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -22,6 +22,7 @@ class BusinessesController < ApplicationController
     @user_business = UserBusiness.where('user_id = ?', current_user).first
     # puts "LOG, #{@user_business.inspect}"
     @business = Business.where('id = ?', @user_business.business_id).first
+    @depot = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first
   end
 
   def edit

@@ -6,8 +6,29 @@
       <strong>Business name:</strong>
       <%= @business.name %>
     </p>
+    <p>
+      <strong>Location Description:</strong>
+      <%= @depot.location_desc %>
+    </p>
+    <p>
+      <strong>Street Address:</strong>
+      <%= @depot.street_address %>
+    </p>
+    <p>
+      <strong>City:</strong>
+      <%= @depot.city %>
+    </p>
+    <p>
+      <strong>State:</strong>
+      <%= @depot.state %>
+    </p>
+    <p>
+      <strong>Zip:</strong>
+      <%= @depot.zip %>
+    </p>
 
     <%= link_to 'Edit', edit_business_path(@business) %> |
+    <%= link_to 'Edit Location', edit_depot_path %> |
     <%= link_to 'Back', dashboard_path %>
   </div>
 </div>

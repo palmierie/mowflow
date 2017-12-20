@@ -4,8 +4,8 @@ class PagesController < ApplicationController
     
   end
   def dashboard
-    @user_business = UserBusiness.where('user_id = ?', current_user)
-    if current_user.user_businesses == nil?
+    @user_business = UserBusiness.where('user_id = ?', current_user).first
+    if @user_business == nil
       redirect_to new_business_path
     end
 
