@@ -141,14 +141,6 @@ def main(json_data):
     # cheapest route segment, then extend the route by iterating on the last
     # node added to the route.
 
-    # create matrix - not used if matrix imported
-    # Put callbacks to the distance function and travel time functions here.
-
-    # dist_between_locations = CreateDistanceCallback(locations)
-    # dist_callback = dist_between_locations.Distance
-    # routing.SetArcCostEvaluatorOfAllVehicles(dist_callback)
-    # create matrix ^ not used if matrix imported
-
     # get matrix from rubydata
     dist_between_locations = CreateDistanceMatrixCallback(locations)
     dist_callback = dist_between_locations.Distance
@@ -163,7 +155,6 @@ def main(json_data):
     # Adding capacity dimension constraints. Divides total Work available by the number of route days
     WorkCapacity = math.ceil(sum(duration_per_location)/float(num_route_days))+10;
     pythondata['work_cap_per_day'] = WorkCapacity
-    # print ("Work Capacity Divided Evenly Per Day", WorkCapacity)
     NullCapacitySlack = 0;
     fix_start_cumul_to_zero = True
     capacity = "Capacity"
@@ -175,27 +166,18 @@ def main(json_data):
     # Solve displays a solution if any.
     assignment = routing.SolveWithParameters(search_parameters)
     if assignment:
-      # data = create_data_array()
-      # location_ids = data[0]
-      # locations = data[1]
-      # duration_per_location = data[2]
       #Get the data
       location_ids = json_data["location_ids"]
-      # locations = json_data["locations"]
       locations = json_data["location_matrix"]
       duration_per_location = json_data["duration_per_location"]
-      # size = len(locations)
-      # DELETED ^
+     
       # Solution cost.
       pythondata['total_distance_all_routes'] = str(assignment.ObjectiveValue()) 
-      # print ("Total distance of all routes: " , str(assignment.ObjectiveValue()))
       # Inspect solution.
       capacity_dimension = routing.GetDimensionOrDie(capacity);
 
       for route_day_num in xrange(num_route_days):
         index = routing.Start(route_day_num)
-        # plan_output = 'Route {0}:'.format(route_day_num+1)
-        # pythondata["route_day"] = 'Route {0}:'.format(route_day_num+1)
         route_day = 'route_day_{0}'.format(route_day_num+1)
         pythondata[route_day] = {}
         route_list = []
@@ -211,10 +193,6 @@ def main(json_data):
           route_list.append(route_item)
           work_load_list.append(work_load_item)
           index = assignment.Value(routing.NextVar(index))
-          # plan_output += \
-          #           " {location_id} Work Load({workload}) -> ".format(
-          #               location_id=location_id,
-          #               workload=assignment.Value(work_var))
 
         node_index = routing.IndexToNode(index)
         location_id = location_ids[node_index]
@@ -229,12 +207,9 @@ def main(json_data):
                       "work_load_added": work_load_list
                     }
         pythondata[route_day] = route_obj
-        # print (plan_output)
     else:
-      # print ('No solution found.')
       pythondata["no_solution"] = "No solution found."
   else:
-    # print ('Specify an instance greater than 0.')
     pythondata["no_data"] = "Specify an instance greater than 0."
   return pythondata
 
@@ -243,14 +218,3 @@ raw = sys.stdin.read()
 rubydata = json.loads(raw)
 python_data = main(rubydata)
 print (json.dumps(python_data))
-
-# def create_data_array(jsondata):
-
-#   location_ids = jsondata["location_ids"]
-#   locations = jsondata["locations"]
-#   duration_per_location = jsondata["duration_per_location"]
-#   data = [location_ids, locations, duration_per_location]
-#   return data
-
-# if __name__ == '__main__':
-#   main()
