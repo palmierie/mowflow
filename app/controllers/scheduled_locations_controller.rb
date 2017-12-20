@@ -5,9 +5,59 @@ class ScheduledLocationsController < ApplicationController
   end
 
   def new_depot
+    @scheduled_location = ScheduledLocation.new
+    @business = get_business
+    render 'new_depot'
   end
+
   def create_depot
+    @business = get_business
+    @scheduled_location = ScheduledLocation.new(scheduled_location_params)
+    # build string for api call
+    location = build_location_string(@scheduled_location)
+    # get places ID and coordinates
+    response_hash = get_place_id_and_coordinates(location)
+    longitude = response_hash['geometry']['location']['lng']
+    latitude = response_hash['geometry']['location']['lat']
+    @scheduled_location.coordinates = "#{longitude},#{latitude}"
+    @scheduled_location.google_place_id = response_hash['place_id']
+
+    @scheduled_location.business_id = @business.id
+    @scheduled_location.client_id = 1
+    @scheduled_location.duration_id = 1
+    @scheduled_location.extra_duration_id = 6
+    @scheduled_location.depot = true
+
+    respond_to do |format|
+      if @scheduled_location.save
+        format.html { redirect_to my_business_path, notice: 'Business Depot was successfully created.' }
+      else
+        format.html { render :new }
+        format.json { render json: @scheduled_location.errors, status: :unprocessable_entity }
+      end
+    end
+
   end
+
+  def edit_depot
+    @user_business = UserBusiness.where('user_id = ?', current_user).first
+    @business = Business.where('id = ?', @user_business.business_id).first
+    @scheduled_location = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first
+  end
+  def update_depot
+    @user_business = UserBusiness.where('user_id = ?', current_user).first
+    @business = Business.where('id = ?', @user_business.business_id).first
+    @scheduled_location = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first
+    respond_to do |format|
+      if @scheduled_location.update(scheduled_location_params)
+        format.html { redirect_to my_business_path, notice: 'Job was successfully rescheduled.' }
+      else
+        format.html { render :edit }
+        format.json { render json: @scheduled_location.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def new
     @scheduled_location = ScheduledLocation.new
     @clients = Client.all

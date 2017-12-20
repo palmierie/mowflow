@@ -1,0 +1,51 @@
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
+
+  <div class="col-xs-8 offset-md-1">
+    <h1>Enter Business Location</h1>
+
+    <%= form_with(model: @scheduled_location, local: true, url: create_depot_path) do |f| %>
+      <% if @scheduled_location.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@scheduled_location.errors.count, "error") %> prohibited this business location from being saved:</h2>
+          <ul>
+            <% @scheduled_location.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      
+      <div class="field">
+        <%= f.label "Business Depot Name" %>
+        <%= f.text_field :location_desc, id: :location_desc %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :street_address %>
+        <%= f.text_field :street_address, id: :street_address %>
+      </div>
+
+      <div class="field">
+        <%= f.label :city %>
+        <%= f.text_field :city, id: :city %>
+      </div>
+
+      <div class="field">
+        <%= f.label :state %>
+        <%= f.text_field :state, id: :state %>
+      </div>
+
+      <div class="field">
+        <%= f.label :zip %>
+        <%= f.text_field :zip, id: :zip %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Save Location" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
