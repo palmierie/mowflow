@@ -41,12 +41,21 @@ class ScheduledLocationsController < ApplicationController
 
   def edit_depot
     @user_business = UserBusiness.where('user_id = ?', current_user).first
-    # puts "LOG, #{@user_business.inspect}"
     @business = Business.where('id = ?', @user_business.business_id).first
     @scheduled_location = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first
   end
   def update_depot
-    @scheduled_location = ScheduledLocation.find(params[:id])
+    @user_business = UserBusiness.where('user_id = ?', current_user).first
+    @business = Business.where('id = ?', @user_business.business_id).first
+    @scheduled_location = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first
+    respond_to do |format|
+      if @scheduled_location.update(scheduled_location_params)
+        format.html { redirect_to my_business_path, notice: 'Job was successfully rescheduled.' }
+      else
+        format.html { render :edit }
+        format.json { render json: @scheduled_location.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def new

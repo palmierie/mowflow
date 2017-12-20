@@ -2,7 +2,7 @@
   <%= render :partial => 'partials/dashboard' %>
 
   <div class="col-xs-8 offset-md-1">
-    <h1>Enter Business Location</h1>
+    <h1>Edit Business Location</h1>
 
     <%= form_with(model: @scheduled_location, local: true, url: update_depot_path) do |f| %>
       <% if @scheduled_location.errors.any? %>
@@ -43,7 +43,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit %>
+        <%= f.submit "Update Business Location"%>
       </div>
     <% end %>
 

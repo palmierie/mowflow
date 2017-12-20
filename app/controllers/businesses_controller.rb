@@ -23,6 +23,7 @@ class BusinessesController < ApplicationController
     # puts "LOG, #{@user_business.inspect}"
     @business = Business.where('id = ?', @user_business.business_id).first
     @depot = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first
+    
   end
 
   def edit
