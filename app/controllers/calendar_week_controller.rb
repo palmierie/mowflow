@@ -1,13 +1,9 @@
 class CalendarWeekController < ApplicationController
-  def show
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    # @next_mow_by_date = ScheduledLocation.all.group_by(&:next_mow_date)
-  end
+  
   
   def index
     @dates = Date.today..(Date.today + 5)
     @jobs = ScheduledLocation.all.group_by(&:next_mow_date)
-    # @jobs = ScheduledLocation.all
   end
 
   def sort

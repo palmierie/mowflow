@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'client_jobs/:id', to: 'scheduled_locations#client_jobs', as: 'client_jobs'
   get 'reschedule_job/:id', to: 'scheduled_locations#reschedule_job', as: 'reschedule_job'
   patch 'reschedule_job/:id', to: 'scheduled_locations#reschedule_job_update', as: 'reschedule_job_update'
+  post 'mow_flow_opto', to: 'mow_flow#optimize_list', as: 'mow_flow_opto'
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

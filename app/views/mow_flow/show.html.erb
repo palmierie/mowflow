@@ -5,5 +5,36 @@
 
     <h2> you made it here</h2>
 
+    <h1>Next Three Days</h1>
+      <div id="jobs" class="row"> 
+          <% @dates.each do |date|%>
+            <div id="date-col" class="list-group col-sm-2" data-date="<%= date %>">
+              <div class="text-center">
+                <%= "#{date.strftime("%b")} #{date.day}"%>
+              </div>
+            <%if @jobs[date]%>
+              <% @jobs[date].each do |job|%>
+                <%= link_to job.location_desc, job, class: "list-group-item", id: dom_id(job), next_mow_date: date %>
+              <%end%>
+            <% end %>
+            </div>
+          <% end %>
+      </div>
+
+    <%= form_for :optimize_days, url: mow_flow_opto_path do |f| %>
+      
+
+      <div class="field">
+        <%= f.label 'Optimization Range (days)' %>
+        <%= select_tag :days, options_for_select(@optimize_days) %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+
+    <%= link_to 'Back', dashboard_path %>
+
   </div>
 </div>

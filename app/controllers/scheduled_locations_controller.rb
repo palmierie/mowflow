@@ -4,6 +4,10 @@ class ScheduledLocationsController < ApplicationController
     @scheduled_locations = ScheduledLocation.all
   end
 
+  def new_depot
+  end
+  def create_depot
+  end
   def new
     @scheduled_location = ScheduledLocation.new
     @clients = Client.all

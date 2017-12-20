@@ -16,7 +16,8 @@ class ApiCalls
     # 100 coordinate max limit from OSRM
     base_uri 'http://router.project-osrm.org'
     @response = get("/table/v1/driving/#{coordinates_string}")
-    puts "response #{@response}"
+    @durations = @response["durations"]
+    return @durations
   end
 
 end
