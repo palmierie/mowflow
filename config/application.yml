@@ -1,4 +1,2 @@
-# Add configuration values here, as shown below.
-
-
-PYTHONPATH: "PUT YOURPATH TO THE PYTHON SCRIPT HERE /lib/ortools_d/examples/python/cvrptw_mowflow.py"
+# ROOT PATH TO PROJECT
+PYTHONPATH: /Users/ericpalmieri/workspace/capstone/back-end-capstone/mowflow

@@ -29,7 +29,7 @@ class ApiCalls
     
     # block form
     # Open3.popen3("python ./ortools_d/examples/python/delete_me.py"){|stdin, stdout, stderr, wait_thr|
-    Open3.popen3("python #{ENV['PYTHONPATH']}"){|stdin, stdout, stderr, wait_thr|
+    Open3.popen3("python #{ENV['PYTHONPATH']}/lib/ortools_d/examples/python/cvrptw_mowflow.py"){|stdin, stdout, stderr, wait_thr|
       pid = wait_thr[:pid]
       stdin.write(json)
       stdin.close()

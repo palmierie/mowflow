@@ -111,27 +111,16 @@ class CreateDurationPerLocationCallback(object):
 def main(json_data):
   #Get the data
   location_ids = json_data["location_ids"]
-  # locations = json_data["locations"]
   locations = json_data["location_matrix"]
-  # sizzee = sys.getsizeof(locations)
-  # print (sizzee)
-  # return locations
   duration_per_location = json_data["duration_per_location"]
-  # Create the data.
-  # data
-  # location_ids = data["location_ids"]
-  # locations = data[1]
-  # duration_per_location = data[2]
-
+  
   # Send data Object
   pythondata = {}
 
-  # num_locations = len(locations)
   num_locations = len(location_ids)
 
   depot = 0
-  num_route_days = 3
-  # search_time_limit = 400000
+  num_route_days = json_data["number_of_routes"]
 
   # Create routing model.
   if num_locations > 0:
