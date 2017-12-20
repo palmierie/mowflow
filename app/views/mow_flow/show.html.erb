@@ -21,22 +21,12 @@
           <% end %>
       </div>
 
-    <%= form_with(model: @mow_flow, local: true, url: reschedule_job_update_path) do |f| %>
-      <% if @mow_flow.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@mow_flow.errors.count, "error") %> prohibited this list from being optimized:</h2>
-
-          <ul>
-            <% @mow_flow.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+    <%= form_for :optimize_days, url: mow_flow_opto_path do |f| %>
+      
 
       <div class="field">
         <%= f.label 'Optimization Range (days)' %>
-        <%= f.select :optimize_days, ['1', '2', '3']%>
+        <%= select_tag :days, options_for_select(@optimize_days) %>
       </div>
       
       <div class="actions">
