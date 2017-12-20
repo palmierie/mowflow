@@ -1,0 +1,1247 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+3_jugs_mip.py	../examples/python/3_jugs_mip.py	1;"	kind:file	line:1
+3_jugs_regular.py	../examples/python/3_jugs_regular.py	1;"	kind:file	line:1
+Accept	../examples/python/pyls_api.py	/^  def Accept(self, delta, _):$/;"	kind:member	line:58
+Announce	../examples/python/integer_programming.py	/^def Announce(solver, api_type):$/;"	kind:function	line:84
+B	../examples/data/rogo/rogo_20110106.py	/^B = -1$/;"	kind:variable	line:9
+B	../examples/data/rogo/rogo_20110107.py	/^B = -1$/;"	kind:variable	line:9
+B	../examples/data/rogo/rogo_mike_trick.py	/^B = -1$/;"	kind:variable	line:14
+B	../examples/python/rogo2.py	/^B = -1$/;"	kind:variable	line:183
+BinPacking	../examples/python/bacp.py	/^def BinPacking(solver, binvars, weights, loadvars):$/;"	kind:function	line:26
+BinPacking	../examples/python/steel.py	/^def BinPacking(solver, binvars, weights, loadvars):$/;"	kind:function	line:28
+BinPacking	../examples/python/steel_lns.py	/^def BinPacking(solver, binvars, weights, loadvars):$/;"	kind:function	line:36
+BooleanSumEven	../examples/python/slitherlink.py	/^class BooleanSumEven(pywrapcp.PyConstraint):$/;"	kind:class	line:75
+BuildPairs	../examples/python/hidato_table.py	/^def BuildPairs(rows, cols):$/;"	kind:function	line:30
+CreateDemandCallback	../examples/python/cvrptw.py	/^class CreateDemandCallback(object):$/;"	kind:class	line:79
+CreateDistanceCallback	../examples/python/cvrptw.py	/^class CreateDistanceCallback(object):$/;"	kind:class	line:52
+CreateServiceTimeCallback	../examples/python/cvrptw.py	/^class CreateServiceTimeCallback(object):$/;"	kind:class	line:91
+CreateTotalTimeCallback	../examples/python/cvrptw.py	/^class CreateTotalTimeCallback(object):$/;"	kind:class	line:103
+Customers	../examples/python/cvrptw_plot.py	/^class Customers():$/;"	kind:class	line:47
+DebugString	../examples/python/slitherlink.py	/^  def DebugString(self):$/;"	kind:member	line:136
+DebugString	../examples/python/steel.py	/^  def DebugString(self):$/;"	kind:member	line:131
+DebugString	../examples/python/steel_lns.py	/^  def DebugString(self):$/;"	kind:member	line:139
+Demand	../examples/python/cvrptw.py	/^  def Demand(self, from_node, to_node):$/;"	kind:member	line:85
+Dist	../examples/python/jobshop_ft06_distance.py	/^class Dist:$/;"	kind:class	line:29
+Distance	../examples/python/cvrptw.py	/^  def Distance(self, from_node, to_node):$/;"	kind:member	line:72
+Distance	../examples/python/tsp.py	/^  def Distance(self, from_node, to_node):$/;"	kind:member	line:73
+Distance	../examples/python/tsp.py	/^def Distance(i, j):$/;"	kind:function	line:49
+Extension	../check_python_deps.py	/^    from setuptools import setup, Extension$/;"	kind:namespace	line:6
+Extension	../examples/python/check_dependencies.py	/^    from setuptools import setup, Extension$/;"	kind:namespace	line:11
+Extension	../setup.py	/^    from setuptools import setup, Extension$/;"	kind:namespace	line:9
+FindCombinations	../examples/python/appointments.py	/^def FindCombinations(durations, load_min, load_max, commute_time):$/;"	kind:function	line:32
+GetOptimalSchedule	../examples/python/appointments.py	/^def GetOptimalSchedule(demand, args):$/;"	kind:function	line:110
+GridSinglePath	../examples/python/slitherlink.py	/^class GridSinglePath(pywrapcp.PyConstraint):$/;"	kind:class	line:143
+InitFragments	../examples/python/pyls_api.py	/^  def InitFragments(self):$/;"	kind:member	line:11
+InitFragments	../examples/python/steel_lns.py	/^  def InitFragments(self):$/;"	kind:member	line:153
+InitialPropagate	../examples/python/slitherlink.py	/^  def InitialPropagate(self):$/;"	kind:member	line:164
+InitialPropagate	../examples/python/slitherlink.py	/^  def InitialPropagate(self):$/;"	kind:member	line:90
+IsIncremental	../examples/python/pyls_api.py	/^  def IsIncremental(self):$/;"	kind:member	line:44
+IsIncremental	../examples/python/pyls_api.py	/^  def IsIncremental(self):$/;"	kind:member	line:76
+MaxBound	../examples/python/steel.py	/^  def MaxBound(self):$/;"	kind:member	line:114
+MaxBound	../examples/python/steel_lns.py	/^  def MaxBound(self):$/;"	kind:member	line:122
+MaxFlow	../examples/python/pyflow_example.py	/^def MaxFlow():$/;"	kind:function	line:21
+MinCostFlow	../examples/python/pyflow_example.py	/^def MinCostFlow():$/;"	kind:function	line:45
+MoveOneVar	../examples/python/pyls_api.py	/^class MoveOneVar(pywrapcp.IntVarLocalSearchOperator):$/;"	kind:class	line:23
+NeighboringArcs	../examples/python/slitherlink.py	/^def NeighboringArcs(i, j, h_arcs, v_arcs):$/;"	kind:function	line:32
+Next	../examples/python/steel.py	/^  def Next(self, solver):$/;"	kind:member	line:85
+Next	../examples/python/steel_lns.py	/^  def Next(self, solver):$/;"	kind:member	line:92
+NextFragment	../examples/python/pyls_api.py	/^  def NextFragment(self):$/;"	kind:member	line:14
+NextFragment	../examples/python/steel_lns.py	/^  def NextFragment(self):$/;"	kind:member	line:156
+NextVar	../examples/python/steel.py	/^  def NextVar(self):$/;"	kind:member	line:120
+NextVar	../examples/python/steel_lns.py	/^  def NextVar(self):$/;"	kind:member	line:128
+OnStart	../examples/python/pyls_api.py	/^  def OnStart(self):$/;"	kind:member	line:41
+OnSynchronize	../examples/python/pyls_api.py	/^  def OnSynchronize(self, delta):$/;"	kind:member	line:55
+OneNeighbor	../examples/python/pyls_api.py	/^  def OneNeighbor(self):$/;"	kind:member	line:31
+OneVarLns	../examples/python/pyls_api.py	/^class OneVarLns(pywrapcp.BaseLns):$/;"	kind:class	line:4
+OptionParser	../check_python_deps.py	/^from optparse import OptionParser$/;"	kind:namespace	line:2
+OptionParser	../examples/python/check_dependencies.py	/^from optparse import OptionParser$/;"	kind:namespace	line:3
+Post	../examples/python/slitherlink.py	/^  def Post(self):$/;"	kind:member	line:150
+Post	../examples/python/slitherlink.py	/^  def Post(self):$/;"	kind:member	line:83
+PrintMatrix	../examples/python/hidato_table.py	/^def PrintMatrix(game):$/;"	kind:function	line:190
+PrintOneSolution	../examples/python/hidato_table.py	/^def PrintOneSolution(positions, rows, cols, num_solution):$/;"	kind:function	line:175
+PrintSolution	../examples/python/slitherlink.py	/^def PrintSolution(data, h_arcs, v_arcs):$/;"	kind:function	line:45
+RandomMatrix	../examples/python/tsp.py	/^class RandomMatrix(object):$/;"	kind:class	line:55
+ReadData	../examples/python/bacp.py	/^def ReadData(filename):$/;"	kind:function	line:39
+ReadData	../examples/python/steel.py	/^def ReadData(filename):$/;"	kind:function	line:41
+ReadData	../examples/python/steel_lns.py	/^def ReadData(filename):$/;"	kind:function	line:49
+RunAllIntegerExampleCppStyleAPI	../examples/python/integer_programming.py	/^def RunAllIntegerExampleCppStyleAPI():$/;"	kind:function	line:104
+RunAllIntegerExampleNaturalLanguageAPI	../examples/python/integer_programming.py	/^def RunAllIntegerExampleNaturalLanguageAPI():$/;"	kind:function	line:89
+RunAssignmentOn4x4Matrix	../examples/python/linear_assignment_api.py	/^def RunAssignmentOn4x4Matrix():$/;"	kind:function	line:26
+RunIntegerExampleCppStyleAPI	../examples/python/integer_programming.py	/^def RunIntegerExampleCppStyleAPI(optimization_problem_type):$/;"	kind:function	line:35
+RunIntegerExampleNaturalLanguageAPI	../examples/python/integer_programming.py	/^def RunIntegerExampleNaturalLanguageAPI(optimization_problem_type):$/;"	kind:function	line:20
+RunLinearExampleCppStyleAPI	../examples/python/linear_programming.py	/^def RunLinearExampleCppStyleAPI(optimization_problem_type):$/;"	kind:function	line:41
+RunLinearExampleNaturalLanguageAPI	../examples/python/linear_programming.py	/^def RunLinearExampleNaturalLanguageAPI(optimization_problem_type):$/;"	kind:function	line:20
+Select	../examples/python/appointments.py	/^def Select(combinations, loads, max_number_of_workers):$/;"	kind:function	line:64
+ServiceTime	../examples/python/cvrptw.py	/^  def ServiceTime(self, from_node, to_node):$/;"	kind:member	line:98
+SlitherLink	../examples/python/slitherlink.py	/^def SlitherLink(data):$/;"	kind:function	line:228
+Solve	../examples/python/hidato_table.py	/^def Solve(model):$/;"	kind:function	line:58
+Solve	../examples/python/pyls_api.py	/^def Solve(type):$/;"	kind:function	line:80
+SolveAndPrint	../examples/python/integer_programming.py	/^def SolveAndPrint(solver, variable_list):$/;"	kind:function	line:57
+SolveAndPrint	../examples/python/linear_programming.py	/^def SolveAndPrint(solver, variable_list, constraint_list):$/;"	kind:function	line:79
+SteelDecisionBuilder	../examples/python/steel.py	/^class SteelDecisionBuilder(pywrapcp.PyDecisionBuilder):$/;"	kind:class	line:63
+SteelDecisionBuilder	../examples/python/steel_lns.py	/^class SteelDecisionBuilder(pywrapcp.PyDecisionBuilder):$/;"	kind:class	line:70
+SteelRandomLns	../examples/python/steel_lns.py	/^class SteelRandomLns(pywrapcp.BaseLns):$/;"	kind:class	line:145
+SumFilter	../examples/python/pyls_api.py	/^class SumFilter(pywrapcp.IntVarLocalSearchFilter):$/;"	kind:class	line:48
+TotalTime	../examples/python/cvrptw.py	/^  def TotalTime(self, from_node, to_node):$/;"	kind:member	line:109
+Update	../examples/python/slitherlink.py	/^  def Update(self, index):$/;"	kind:member	line:112
+Vehicles	../examples/python/cvrptw_plot.py	/^class Vehicles():$/;"	kind:class	line:361
+W	../examples/data/rogo/rogo_20110106.py	/^W = 0$/;"	kind:variable	line:8
+W	../examples/data/rogo/rogo_20110107.py	/^W = 0$/;"	kind:variable	line:8
+W	../examples/data/rogo/rogo_mike_trick.py	/^W = 0$/;"	kind:variable	line:13
+W	../examples/python/rogo2.py	/^W = 0$/;"	kind:variable	line:182
+X	../examples/python/fill_a_pix.py	/^X = -1$/;"	kind:variable	line:62
+X	../examples/python/minesweeper.py	/^X = -1$/;"	kind:variable	line:72
+X	../examples/python/quasigroup_completion.py	/^X = 0$/;"	kind:variable	line:61
+__init__	../examples/python/cvrptw.py	/^  def __init__(self, demands):$/;"	kind:member	line:82
+__init__	../examples/python/cvrptw.py	/^  def __init__(self, demands, time_per_demand_unit):$/;"	kind:member	line:94
+__init__	../examples/python/cvrptw.py	/^  def __init__(self, locations):$/;"	kind:member	line:55
+__init__	../examples/python/cvrptw.py	/^  def __init__(self, service_time_callback, dist_callback, speed):$/;"	kind:member	line:104
+__init__	../examples/python/cvrptw_plot.py	/^    def __init__(self, capacity=100, cost=100, number=None):$/;"	kind:member	line:385
+__init__	../examples/python/cvrptw_plot.py	/^    def __init__(self, extents=None, center=(53.381393, -1.474611),$/;"	kind:member	line:99
+__init__	../examples/python/jobshop_ft06_distance.py	/^  def __init__(self):$/;"	kind:member	line:30
+__init__	../examples/python/pyls_api.py	/^  def __init__(self, vars):$/;"	kind:member	line:26
+__init__	../examples/python/pyls_api.py	/^  def __init__(self, vars):$/;"	kind:member	line:51
+__init__	../examples/python/pyls_api.py	/^  def __init__(self, vars):$/;"	kind:member	line:7
+__init__	../examples/python/slitherlink.py	/^  def __init__(self, solver, h_arcs, v_arcs):$/;"	kind:member	line:145
+__init__	../examples/python/slitherlink.py	/^  def __init__(self, solver, vars):$/;"	kind:member	line:77
+__init__	../examples/python/steel.py	/^  def __init__(self, x, nb_slabs, weights, losstab, loads):$/;"	kind:member	line:76
+__init__	../examples/python/steel_lns.py	/^  def __init__(self, x, nb_slabs, weights, loss_array, loads):$/;"	kind:member	line:83
+__init__	../examples/python/steel_lns.py	/^  def __init__(self, x, rand, lns_size):$/;"	kind:member	line:148
+__init__	../examples/python/tsp.py	/^  def __init__(self, size, seed):$/;"	kind:member	line:58
+_descriptor	../examples/python/check_dependencies.py	/^	from google.protobuf import descriptor as _descriptor$/;"	kind:namespace	line:97
+_haversine	../examples/python/cvrptw_plot.py	/^    def _haversine(self, lon1, lat1, lon2, lat2):$/;"	kind:member	line:241
+_pywrapcp	../check_python_deps.py	/^	from ortools.constraint_solver import _pywrapcp$/;"	kind:namespace	line:103
+_pywrapcp	../examples/python/check_dependencies.py	/^	from ortools.constraint_solver import _pywrapcp$/;"	kind:namespace	line:77
+_pywrapgraph	../check_python_deps.py	/^	from ortools.graph import _pywrapgraph$/;"	kind:namespace	line:106
+_pywrapgraph	../examples/python/check_dependencies.py	/^	from ortools.graph import _pywrapgraph$/;"	kind:namespace	line:80
+_pywrapknapsack_solver	../check_python_deps.py	/^	from ortools.algorithms import _pywrapknapsack_solver$/;"	kind:namespace	line:105
+_pywrapknapsack_solver	../examples/python/check_dependencies.py	/^	from ortools.algorithms import _pywrapknapsack_solver$/;"	kind:namespace	line:79
+_pywraplp	../check_python_deps.py	/^	from ortools.linear_solver import _pywraplp$/;"	kind:namespace	line:104
+_pywraplp	../examples/python/check_dependencies.py	/^	from ortools.linear_solver import _pywraplp$/;"	kind:namespace	line:78
+a_round_of_golf.py	../examples/python/a_round_of_golf.py	1;"	kind:file	line:1
+absent_version	../check_python_deps.py	/^def absent_version(module, modulename):$/;"	kind:function	line:24
+abspath	../examples/python/check_dependencies.py	/^from os.path import dirname, abspath$/;"	kind:namespace	line:2
+all_interval.py	../examples/python/all_interval.py	1;"	kind:file	line:1
+alldifferent_except_0	../examples/python/alldifferent_except_0.py	/^def alldifferent_except_0(solver, a):$/;"	kind:function	line:63
+alldifferent_except_0.py	../examples/python/alldifferent_except_0.py	1;"	kind:file	line:1
+alldifferent_except_0_b	../examples/python/alldifferent_except_0.py	/^def alldifferent_except_0_b(solver, a):$/;"	kind:function	line:72
+alphametic.py	../examples/python/alphametic.py	1;"	kind:file	line:1
+appointments.py	../examples/python/appointments.py	1;"	kind:file	line:1
+argparse	../examples/python/appointments.py	/^import argparse$/;"	kind:namespace	line:17
+argparse	../examples/python/bacp.py	/^import argparse$/;"	kind:namespace	line:15
+argparse	../examples/python/steel.py	/^import argparse$/;"	kind:namespace	line:16
+argparse	../examples/python/steel_lns.py	/^import argparse$/;"	kind:namespace	line:15
+argparse	../examples/python/tsp.py	/^import argparse$/;"	kind:namespace	line:29
+assignment.py	../examples/python/assignment.py	1;"	kind:file	line:1
+assignment6_mip.py	../examples/python/assignment6_mip.py	1;"	kind:file	line:1
+bacp.py	../examples/python/bacp.py	1;"	kind:file	line:1
+base	../examples/python/alphametic.py	/^    base = int(sys.argv[2])$/;"	kind:variable	line:164
+base	../examples/python/alphametic.py	/^base = 10$/;"	kind:variable	line:159
+base	../examples/python/debruijn_binary.py	/^    base = int(sys.argv[1])$/;"	kind:variable	line:191
+base	../examples/python/debruijn_binary.py	/^base = 2$/;"	kind:variable	line:186
+base	../examples/python/divisible_by_9_through_1.py	/^      base = default_base$/;"	kind:variable	line:176
+base	../examples/python/divisible_by_9_through_1.py	/^    base = int(sys.argv[1])$/;"	kind:variable	line:173
+base	../examples/python/divisible_by_9_through_1.py	/^base = 10$/;"	kind:variable	line:168
+base	../examples/python/pandigital_numbers.py	/^base = 10$/;"	kind:variable	line:157
+base	../examples/python/send_more_money_any_base.py	/^    base = int(sys.argv[1])$/;"	kind:variable	line:111
+base	../examples/python/send_more_money_any_base.py	/^base = 10$/;"	kind:variable	line:106
+big	../examples/python/slitherlink.py	/^big = [[ 3, -1, -1, -1, 2, -1, 1, -1, 1, 2 ],$/;"	kind:variable	line:19
+blending.py	../examples/python/blending.py	1;"	kind:file	line:1
+broken_weights.py	../examples/python/broken_weights.py	1;"	kind:file	line:1
+build_vehicle_route	../examples/python/cvrptw_plot.py	/^def build_vehicle_route(routing, plan, customers, veh_number):$/;"	kind:function	line:498
+bus_schedule.py	../examples/python/bus_schedule.py	1;"	kind:file	line:1
+calc	../examples/python/kakuro.py	/^def calc(cc, x, res):$/;"	kind:function	line:69
+calc	../examples/python/kenken2.py	/^def calc(cc, x, res):$/;"	kind:function	line:71
+calc	../examples/python/killer_sudoku.py	/^def calc(cc, x, res):$/;"	kind:function	line:81
+car.py	../examples/python/car.py	1;"	kind:file	line:1
+central_start_node	../examples/python/cvrptw_plot.py	/^    def central_start_node(self, invert=False):$/;"	kind:member	line:172
+check_absent_version	../check_python_deps.py	/^def check_absent_version(module, modulename):$/;"	kind:function	line:38
+check_dependencies.py	../examples/python/check_dependencies.py	1;"	kind:file	line:1
+check_python_deps.py	../check_python_deps.py	1;"	kind:file	line:1
+check_rule	../examples/python/nonogram_default_search.py	/^def check_rule(rules, y):$/;"	kind:function	line:91
+check_rule	../examples/python/nonogram_regular.py	/^def check_rule(rules, y):$/;"	kind:function	line:207
+check_rule	../examples/python/nonogram_table.py	/^def check_rule(rules, y):$/;"	kind:function	line:202
+check_rule	../examples/python/nonogram_table2.py	/^def check_rule(rules, y):$/;"	kind:function	line:117
+circuit	../examples/python/circuit.py	/^def circuit(solver, x):$/;"	kind:function	line:59
+circuit.py	../examples/python/circuit.py	1;"	kind:file	line:1
+coins	../examples/python/subset_sum.py	/^coins = [16, 17, 23, 24, 39, 40]$/;"	kind:variable	line:106
+coins3.py	../examples/python/coins3.py	1;"	kind:file	line:1
+coins_grid.py	../examples/python/coins_grid.py	1;"	kind:file	line:1
+coins_grid_mip.py	../examples/python/coins_grid_mip.py	1;"	kind:file	line:1
+col_rule_len	../examples/data/nonogram_regular/nonogram_bear.py	/^col_rule_len = 2$/;"	kind:variable	line:32
+col_rule_len	../examples/data/nonogram_regular/nonogram_car.py	/^col_rule_len = 2;$/;"	kind:variable	line:36
+col_rule_len	../examples/data/nonogram_regular/nonogram_castle.py	/^col_rule_len = 10$/;"	kind:variable	line:59
+col_rule_len	../examples/data/nonogram_regular/nonogram_crocodile.py	/^col_rule_len = 2$/;"	kind:variable	line:33
+col_rule_len	../examples/data/nonogram_regular/nonogram_difficult.py	/^col_rule_len = 2$/;"	kind:variable	line:39
+col_rule_len	../examples/data/nonogram_regular/nonogram_dragonfly.py	/^col_rule_len = 5$/;"	kind:variable	line:44
+col_rule_len	../examples/data/nonogram_regular/nonogram_gondola.py	/^col_rule_len = 8$/;"	kind:variable	line:59
+col_rule_len	../examples/data/nonogram_regular/nonogram_hard.py	/^col_rule_len = 4$/;"	kind:variable	line:35
+col_rule_len	../examples/data/nonogram_regular/nonogram_hen.py	/^col_rule_len = 2$/;"	kind:variable	line:33
+col_rule_len	../examples/data/nonogram_regular/nonogram_lambda.py	/^col_rule_len = 2$/;"	kind:variable	line:36
+col_rule_len	../examples/data/nonogram_regular/nonogram_n4.py	/^col_rule_len = 2$/;"	kind:variable	line:30
+col_rule_len	../examples/data/nonogram_regular/nonogram_n6.py	/^col_rule_len = 4$/;"	kind:variable	line:39
+col_rule_len	../examples/data/nonogram_regular/nonogram_nonunique.py	/^col_rule_len = 5$/;"	kind:variable	line:40
+col_rule_len	../examples/data/nonogram_regular/nonogram_p199.py	/^col_rule_len = 5$/;"	kind:variable	line:44
+col_rule_len	../examples/data/nonogram_regular/nonogram_p200.py	/^col_rule_len = 6$/;"	kind:variable	line:49
+col_rule_len	../examples/data/nonogram_regular/nonogram_ps.py	/^col_rule_len = 2$/;"	kind:variable	line:34
+col_rule_len	../examples/data/nonogram_regular/nonogram_soccer_player.py	/^col_rule_len = 5$/;"	kind:variable	line:45
+col_rule_len	../examples/data/nonogram_regular/nonogram_t2.py	/^col_rule_len = 3$/;"	kind:variable	line:29
+col_rule_len	../examples/python/nonogram_default_search.py	/^col_rule_len = 2$/;"	kind:variable	line:207
+col_rule_len	../examples/python/nonogram_regular.py	/^col_rule_len = 2$/;"	kind:variable	line:333
+col_rule_len	../examples/python/nonogram_table.py	/^col_rule_len = 2$/;"	kind:variable	line:328
+col_rule_len	../examples/python/nonogram_table2.py	/^col_rule_len = 2$/;"	kind:variable	line:230
+col_rules	../examples/data/nonogram_regular/nonogram_bear.py	/^col_rules = [$/;"	kind:variable	line:33
+col_rules	../examples/data/nonogram_regular/nonogram_car.py	/^col_rules = [$/;"	kind:variable	line:37
+col_rules	../examples/data/nonogram_regular/nonogram_castle.py	/^col_rules = [$/;"	kind:variable	line:60
+col_rules	../examples/data/nonogram_regular/nonogram_crocodile.py	/^col_rules = [$/;"	kind:variable	line:34
+col_rules	../examples/data/nonogram_regular/nonogram_difficult.py	/^col_rules = [$/;"	kind:variable	line:40
+col_rules	../examples/data/nonogram_regular/nonogram_dragonfly.py	/^col_rules = [$/;"	kind:variable	line:45
+col_rules	../examples/data/nonogram_regular/nonogram_gondola.py	/^col_rules = [$/;"	kind:variable	line:60
+col_rules	../examples/data/nonogram_regular/nonogram_hard.py	/^col_rules = [$/;"	kind:variable	line:36
+col_rules	../examples/data/nonogram_regular/nonogram_hen.py	/^col_rules = [$/;"	kind:variable	line:34
+col_rules	../examples/data/nonogram_regular/nonogram_lambda.py	/^col_rules = [$/;"	kind:variable	line:37
+col_rules	../examples/data/nonogram_regular/nonogram_n4.py	/^col_rules = [$/;"	kind:variable	line:31
+col_rules	../examples/data/nonogram_regular/nonogram_n6.py	/^col_rules = [$/;"	kind:variable	line:40
+col_rules	../examples/data/nonogram_regular/nonogram_nonunique.py	/^col_rules = [$/;"	kind:variable	line:41
+col_rules	../examples/data/nonogram_regular/nonogram_p199.py	/^col_rules = [$/;"	kind:variable	line:45
+col_rules	../examples/data/nonogram_regular/nonogram_p200.py	/^col_rules = [$/;"	kind:variable	line:50
+col_rules	../examples/data/nonogram_regular/nonogram_ps.py	/^col_rules = [$/;"	kind:variable	line:35
+col_rules	../examples/data/nonogram_regular/nonogram_soccer_player.py	/^col_rules = [$/;"	kind:variable	line:46
+col_rules	../examples/data/nonogram_regular/nonogram_t2.py	/^col_rules = [$/;"	kind:variable	line:30
+col_rules	../examples/python/nonogram_default_search.py	/^col_rules = [$/;"	kind:variable	line:208
+col_rules	../examples/python/nonogram_regular.py	/^col_rules = [$/;"	kind:variable	line:334
+col_rules	../examples/python/nonogram_table.py	/^col_rules = [$/;"	kind:variable	line:329
+col_rules	../examples/python/nonogram_table2.py	/^col_rules = [$/;"	kind:variable	line:231
+coloring_ip.py	../examples/python/coloring_ip.py	1;"	kind:file	line:1
+cols	../examples/data/nonogram_regular/nonogram_bear.py	/^cols = 13$/;"	kind:variable	line:31
+cols	../examples/data/nonogram_regular/nonogram_car.py	/^cols = 15;$/;"	kind:variable	line:35
+cols	../examples/data/nonogram_regular/nonogram_castle.py	/^cols = 60$/;"	kind:variable	line:58
+cols	../examples/data/nonogram_regular/nonogram_crocodile.py	/^cols = 15$/;"	kind:variable	line:32
+cols	../examples/data/nonogram_regular/nonogram_difficult.py	/^cols = 15$/;"	kind:variable	line:38
+cols	../examples/data/nonogram_regular/nonogram_dragonfly.py	/^cols = 20$/;"	kind:variable	line:43
+cols	../examples/data/nonogram_regular/nonogram_gondola.py	/^cols = 30$/;"	kind:variable	line:58
+cols	../examples/data/nonogram_regular/nonogram_hard.py	/^cols = 10$/;"	kind:variable	line:34
+cols	../examples/data/nonogram_regular/nonogram_hen.py	/^cols = 8$/;"	kind:variable	line:32
+cols	../examples/data/nonogram_regular/nonogram_lambda.py	/^cols = 10$/;"	kind:variable	line:35
+cols	../examples/data/nonogram_regular/nonogram_n4.py	/^cols = 6$/;"	kind:variable	line:29
+cols	../examples/data/nonogram_regular/nonogram_n6.py	/^cols = 15$/;"	kind:variable	line:38
+cols	../examples/data/nonogram_regular/nonogram_nonunique.py	/^cols = 11$/;"	kind:variable	line:39
+cols	../examples/data/nonogram_regular/nonogram_p199.py	/^cols = 20$/;"	kind:variable	line:43
+cols	../examples/data/nonogram_regular/nonogram_p200.py	/^cols = 25$/;"	kind:variable	line:48
+cols	../examples/data/nonogram_regular/nonogram_ps.py	/^cols = 8$/;"	kind:variable	line:33
+cols	../examples/data/nonogram_regular/nonogram_soccer_player.py	/^cols = 20$/;"	kind:variable	line:44
+cols	../examples/data/nonogram_regular/nonogram_t2.py	/^cols = 14$/;"	kind:variable	line:28
+cols	../examples/data/rogo/rogo_20110106.py	/^cols = 7$/;"	kind:variable	line:6
+cols	../examples/data/rogo/rogo_20110107.py	/^cols = 7$/;"	kind:variable	line:6
+cols	../examples/data/rogo/rogo_mike_trick.py	/^cols = 9$/;"	kind:variable	line:11
+cols	../examples/python/assignment.py	/^cols = 5$/;"	kind:variable	line:119
+cols	../examples/python/nonogram_default_search.py	/^cols = 10$/;"	kind:variable	line:206
+cols	../examples/python/nonogram_regular.py	/^cols = 10$/;"	kind:variable	line:332
+cols	../examples/python/nonogram_table.py	/^cols = 10$/;"	kind:variable	line:327
+cols	../examples/python/nonogram_table2.py	/^cols = 10$/;"	kind:variable	line:229
+cols	../examples/python/rogo2.py	/^cols = 9$/;"	kind:variable	line:180
+combinatorial_auction2.py	../examples/python/combinatorial_auction2.py	1;"	kind:file	line:1
+contiguity_regular.py	../examples/python/contiguity_regular.py	1;"	kind:file	line:1
+cost	../examples/python/assignment.py	/^cost = [[14, 5, 8, 7, 15],$/;"	kind:variable	line:120
+costas_array.py	../examples/python/costas_array.py	1;"	kind:file	line:1
+covering_opl.py	../examples/python/covering_opl.py	1;"	kind:file	line:1
+create_data_array	../examples/python/cvrptw.py	/^def create_data_array():$/;"	kind:function	line:241
+crew.py	../examples/python/crew.py	1;"	kind:file	line:1
+crossword2.py	../examples/python/crossword2.py	1;"	kind:file	line:1
+crypta.py	../examples/python/crypta.py	1;"	kind:file	line:1
+crypto.py	../examples/python/crypto.py	1;"	kind:file	line:1
+curious_set_of_integers.py	../examples/python/curious_set_of_integers.py	1;"	kind:file	line:1
+cvrptw.py	../examples/python/cvrptw.py	1;"	kind:file	line:1
+cvrptw_plot.py	../examples/python/cvrptw_plot.py	1;"	kind:file	line:1
+datetime	../examples/python/cvrptw_plot.py	/^from datetime import datetime, timedelta$/;"	kind:namespace	line:44
+debruijn_binary.py	../examples/python/debruijn_binary.py	1;"	kind:file	line:1
+decreasing	../examples/python/curious_set_of_integers.py	/^def decreasing(solver, x):$/;"	kind:function	line:66
+default_base	../examples/python/divisible_by_9_through_1.py	/^default_base = 10$/;"	kind:variable	line:169
+default_c	../examples/python/minesweeper.py	/^default_c = 8$/;"	kind:variable	line:71
+default_game	../examples/python/minesweeper.py	/^default_game = [$/;"	kind:variable	line:73
+default_n	../examples/python/fill_a_pix.py	/^default_n = 10$/;"	kind:variable	line:61
+default_n	../examples/python/quasigroup_completion.py	/^default_n = 5$/;"	kind:variable	line:60
+default_puzzle	../examples/python/fill_a_pix.py	/^default_puzzle = [$/;"	kind:variable	line:63
+default_puzzle	../examples/python/quasigroup_completion.py	/^default_puzzle = [$/;"	kind:variable	line:64
+default_r	../examples/python/minesweeper.py	/^default_r = 8$/;"	kind:variable	line:70
+defaultdict	../examples/python/3_jugs_regular.py	/^from collections import defaultdict$/;"	kind:namespace	line:53
+defaultdict	../examples/python/nurse_rostering.py	/^from collections import defaultdict$/;"	kind:namespace	line:34
+defaultdict	../examples/python/who_killed_agatha.py	/^from collections import defaultdict$/;"	kind:namespace	line:64
+dem_return	../examples/python/cvrptw_plot.py	/^        def dem_return(a, b): return(self.customers[a].demand)$/;"	kind:function	line:302
+deque	../examples/python/slitherlink.py	/^from collections import deque$/;"	kind:namespace	line:2
+descriptor_pb2	../examples/python/check_dependencies.py	/^	from google.protobuf import descriptor_pb2/;"	kind:namespace	line:98
+diet1.py	../examples/python/diet1.py	1;"	kind:file	line:1
+diet1_b.py	../examples/python/diet1_b.py	1;"	kind:file	line:1
+diet1_mip.py	../examples/python/diet1_mip.py	1;"	kind:file	line:1
+dirname	../examples/python/check_dependencies.py	/^from os.path import dirname, abspath$/;"	kind:namespace	line:2
+dirname	../setup.py	/^from os.path import dirname$/;"	kind:namespace	line:14
+discrete_cmap	../examples/python/cvrptw_plot.py	/^def discrete_cmap(N, base_cmap=None):$/;"	kind:function	line:435
+discrete_tomography.py	../examples/python/discrete_tomography.py	1;"	kind:file	line:1
+dist_return	../examples/python/cvrptw_plot.py	/^        def dist_return(a, b): return(self.distmat[a][b])$/;"	kind:function	line:290
+distance	../examples/python/cvrptw.py	/^def distance(x1, y1, x2, y2):$/;"	kind:function	line:44
+distance	../examples/python/jobshop_ft06_distance.py	/^  def distance(self, x, y):$/;"	kind:member	line:33
+divisible_by_9_through_1.py	../examples/python/divisible_by_9_through_1.py	1;"	kind:file	line:1
+dudeney	../examples/python/dudeney.py	/^def dudeney(n):$/;"	kind:function	line:17
+dudeney.py	../examples/python/dudeney.py	1;"	kind:file	line:1
+easy_install	../check_python_deps.py	/^    from setuptools.command import easy_install$/;"	kind:namespace	line:7
+easy_install	../examples/python/check_dependencies.py	/^    from setuptools.command import easy_install$/;"	kind:namespace	line:12
+einav_puzzle.py	../examples/python/einav_puzzle.py	1;"	kind:file	line:1
+einav_puzzle2.py	../examples/python/einav_puzzle2.py	1;"	kind:file	line:1
+eq10.py	../examples/python/eq10.py	1;"	kind:file	line:1
+eq20.py	../examples/python/eq20.py	1;"	kind:file	line:1
+executable	../setup.py	/^from sys import executable$/;"	kind:namespace	line:1
+file	../examples/python/discrete_tomography.py	/^    file = sys.argv[1]$/;"	kind:variable	line:155
+file	../examples/python/fill_a_pix.py	/^    file = sys.argv[1]$/;"	kind:variable	line:183
+file	../examples/python/nonogram_default_search.py	/^    file = sys.argv[1]$/;"	kind:variable	line:224
+file	../examples/python/nonogram_regular.py	/^    file = sys.argv[1]$/;"	kind:variable	line:350
+file	../examples/python/nonogram_table.py	/^    file = sys.argv[1]$/;"	kind:variable	line:345
+file	../examples/python/nonogram_table2.py	/^    file = sys.argv[1]$/;"	kind:variable	line:247
+file	../examples/python/survo_puzzle.py	/^    file = sys.argv[1]$/;"	kind:variable	line:175
+fill_a_pix.py	../examples/python/fill_a_pix.py	1;"	kind:file	line:1
+flatten_matrix	../examples/python/who_killed_agatha.py	/^def flatten_matrix(solver, m, rows, cols):$/;"	kind:function	line:79
+furniture_moving.py	../examples/python/furniture_moving.py	1;"	kind:file	line:1
+futoshiki.py	../examples/python/futoshiki.py	1;"	kind:file	line:1
+game_theory_taha.py	../examples/python/game_theory_taha.py	1;"	kind:file	line:1
+getLoads	../examples/python/steel.py	/^  def getLoads(self):$/;"	kind:member	line:107
+getLoads	../examples/python/steel_lns.py	/^  def getLoads(self):$/;"	kind:member	line:115
+get_dict	../examples/python/word_square.py	/^def get_dict():$/;"	kind:function	line:120
+get_total_capacity	../examples/python/cvrptw_plot.py	/^    def get_total_capacity(self):$/;"	kind:member	line:413
+get_total_demand	../examples/python/cvrptw_plot.py	/^    def get_total_demand(self):$/;"	kind:member	line:270
+golomb8.py	../examples/python/golomb8.py	1;"	kind:file	line:1
+google	../check_python_deps.py	/^		import google.protobuf$/;"	kind:namespace	line:78
+google	../examples/python/check_dependencies.py	/^		import google.protobuf$/;"	kind:namespace	line:84
+grocery.py	../examples/python/grocery.py	1;"	kind:file	line:1
+help	../examples/python/appointments.py	/^                    help = 'Commute time in minutes')$/;"	kind:variable	line:27
+help	../examples/python/appointments.py	/^                    help = 'Maximum load in minutes')$/;"	kind:variable	line:25
+help	../examples/python/appointments.py	/^                    help = 'Maximum number of workers.')$/;"	kind:variable	line:29
+help	../examples/python/appointments.py	/^                    help = 'Minimum load in minutes')$/;"	kind:variable	line:23
+help	../examples/python/bacp.py	/^                    help = 'path to data file')$/;"	kind:variable	line:21
+help	../examples/python/steel.py	/^                    help = 'global time limit')$/;"	kind:variable	line:23
+help	../examples/python/steel.py	/^                    help = 'path to data file')$/;"	kind:variable	line:21
+help	../examples/python/steel_lns.py	/^                    help = 'fail limit when exploring fragments')$/;"	kind:variable	line:30
+help	../examples/python/steel_lns.py	/^                    help = 'global time limit')$/;"	kind:variable	line:24
+help	../examples/python/steel_lns.py	/^                    help = 'path to data file')$/;"	kind:variable	line:22
+help	../examples/python/steel_lns.py	/^                    help = 'seed for the lns random generator')$/;"	kind:variable	line:28
+help	../examples/python/steel_lns.py	/^                    help = 'size of the random lns fragment')$/;"	kind:variable	line:26
+help	../examples/python/tsp.py	/^                     help='Size of Traveling Salesman Problem instance.')$/;"	kind:variable	line:36
+help	../examples/python/tsp.py	/^                     help='Use random cost matrix.')$/;"	kind:variable	line:38
+help	../examples/python/tsp.py	/^                    help = 'Random seed.')$/;"	kind:variable	line:42
+hidato.py	../examples/python/hidato.py	1;"	kind:file	line:1
+hidato_table.py	../examples/python/hidato_table.py	1;"	kind:file	line:1
+inspect	../check_python_deps.py	/^import logging, sys, inspect$/;"	kind:namespace	line:1
+inspect	../examples/python/check_dependencies.py	/^import logging, sys, inspect$/;"	kind:namespace	line:1
+integer_programming.py	../examples/python/integer_programming.py	1;"	kind:file	line:1
+jobshop_ft06.py	../examples/python/jobshop_ft06.py	1;"	kind:file	line:1
+jobshop_ft06_distance.py	../examples/python/jobshop_ft06_distance.py	1;"	kind:file	line:1
+just_forgotten.py	../examples/python/just_forgotten.py	1;"	kind:file	line:1
+k	../examples/python/langford.py	/^    k = int(sys.argv[1])$/;"	kind:variable	line:110
+k	../examples/python/langford.py	/^k = 8$/;"	kind:variable	line:106
+kakuro.py	../examples/python/kakuro.py	1;"	kind:file	line:1
+kenken2.py	../examples/python/kenken2.py	1;"	kind:file	line:1
+killer_sudoku.py	../examples/python/killer_sudoku.py	1;"	kind:file	line:1
+knapsack	../examples/python/knapsack_cp.py	/^def knapsack(solver, values, weights, n):$/;"	kind:function	line:29
+knapsack.py	../examples/python/knapsack.py	1;"	kind:file	line:1
+knapsack_cp.py	../examples/python/knapsack_cp.py	1;"	kind:file	line:1
+knapsack_mip.py	../examples/python/knapsack_mip.py	1;"	kind:file	line:1
+labeled_dice.py	../examples/python/labeled_dice.py	1;"	kind:file	line:1
+langford.py	../examples/python/langford.py	1;"	kind:file	line:1
+least_diff.py	../examples/python/least_diff.py	1;"	kind:file	line:1
+least_square.py	../examples/python/least_square.py	1;"	kind:file	line:1
+lectures.py	../examples/python/lectures.py	1;"	kind:file	line:1
+limit	../examples/python/word_square.py	/^    limit = int(sys.argv[3])$/;"	kind:variable	line:168
+limit	../examples/python/word_square.py	/^limit = 1000000$/;"	kind:variable	line:158
+linear_assignment_api.py	../examples/python/linear_assignment_api.py	1;"	kind:file	line:1
+linear_programming.py	../examples/python/linear_programming.py	1;"	kind:file	line:1
+linear_solver_pb2	../examples/python/linear_programming.py	/^from ortools.linear_solver import linear_solver_pb2$/;"	kind:namespace	line:16
+log_error_and_exit	../check_python_deps.py	/^def log_error_and_exit(error_message):$/;"	kind:function	line:34
+log_error_and_exit	../examples/python/check_dependencies.py	/^def log_error_and_exit(error_message):$/;"	kind:function	line:5
+logging	../check_python_deps.py	/^import logging, sys, inspect$/;"	kind:namespace	line:1
+logging	../examples/python/check_dependencies.py	/^import logging, sys, inspect$/;"	kind:namespace	line:1
+loglevel	../examples/python/check_dependencies.py	/^		loglevel = getattr(logging,options.log.upper())$/;"	kind:variable	line:43
+loglevel	../examples/python/check_dependencies.py	/^		loglevel = {3:logging.CRITICAL,$/;"	kind:variable	line:45
+lt1	../examples/python/futoshiki.py	/^lt1 = [$/;"	kind:variable	line:144
+lt2	../examples/python/futoshiki.py	/^lt2 = [$/;"	kind:variable	line:175
+m	../examples/python/broken_weights.py	/^    m = int(sys.argv[1])$/;"	kind:variable	line:140
+m	../examples/python/broken_weights.py	/^m = 40$/;"	kind:variable	line:136
+m	../examples/python/debruijn_binary.py	/^    m = int(sys.argv[3])$/;"	kind:variable	line:195
+m	../examples/python/debruijn_binary.py	/^m = base ** n$/;"	kind:variable	line:188
+m	../examples/python/nontransitive_dice.py	/^    m = int(sys.argv[1])$/;"	kind:variable	line:200
+m	../examples/python/nontransitive_dice.py	/^m = 3             # number of dice$/;"	kind:variable	line:195
+magic_sequence_distribute.py	../examples/python/magic_sequence_distribute.py	1;"	kind:file	line:1
+magic_square.py	../examples/python/magic_square.py	1;"	kind:file	line:1
+magic_square_and_cards.py	../examples/python/magic_square_and_cards.py	1;"	kind:file	line:1
+magic_square_mip.py	../examples/python/magic_square_mip.py	1;"	kind:file	line:1
+main	../examples/python/3_jugs_mip.py	/^def main(sol='CBC'):$/;"	kind:function	line:36
+main	../examples/python/3_jugs_regular.py	/^def main(n):$/;"	kind:function	line:125
+main	../examples/python/a_round_of_golf.py	/^def main():$/;"	kind:function	line:73
+main	../examples/python/all_interval.py	/^def main(n=12):$/;"	kind:function	line:61
+main	../examples/python/alldifferent_except_0.py	/^def main(unused_argv):$/;"	kind:function	line:78
+main	../examples/python/alphametic.py	/^def main(problem_str="SEND+MORE=MONEY", base=10):$/;"	kind:function	line:54
+main	../examples/python/appointments.py	/^def main(args):$/;"	kind:function	line:128
+main	../examples/python/assignment.py	/^def main(cost, rows, cols):$/;"	kind:function	line:38
+main	../examples/python/assignment6_mip.py	/^def main(sol='CBC'):$/;"	kind:function	line:48
+main	../examples/python/bacp.py	/^def main(args):$/;"	kind:function	line:50
+main	../examples/python/blending.py	/^def main(sol='CBC'):$/;"	kind:function	line:30
+main	../examples/python/broken_weights.py	/^def main(m=40, n=4):$/;"	kind:function	line:56
+main	../examples/python/bus_schedule.py	/^def main(num_buses_check=0):$/;"	kind:function	line:42
+main	../examples/python/car.py	/^def main(num_sol=3):$/;"	kind:function	line:38
+main	../examples/python/circuit.py	/^def main(n=5):$/;"	kind:function	line:87
+main	../examples/python/coins3.py	/^def main():$/;"	kind:function	line:47
+main	../examples/python/coins_grid.py	/^def main(unused_argv):$/;"	kind:function	line:60
+main	../examples/python/coins_grid_mip.py	/^def main(unused_argv):$/;"	kind:function	line:47
+main	../examples/python/coloring_ip.py	/^def main(sol='CBC'):$/;"	kind:function	line:45
+main	../examples/python/combinatorial_auction2.py	/^def main():$/;"	kind:function	line:40
+main	../examples/python/contiguity_regular.py	/^def main():$/;"	kind:function	line:116
+main	../examples/python/costas_array.py	/^def main(n=6):$/;"	kind:function	line:69
+main	../examples/python/covering_opl.py	/^def main():$/;"	kind:function	line:65
+main	../examples/python/crew.py	/^def main(sols=1):$/;"	kind:function	line:46
+main	../examples/python/crossword2.py	/^def main():$/;"	kind:function	line:64
+main	../examples/python/crypta.py	/^def main():$/;"	kind:function	line:51
+main	../examples/python/crypto.py	/^def main():$/;"	kind:function	line:50
+main	../examples/python/curious_set_of_integers.py	/^def main():$/;"	kind:function	line:71
+main	../examples/python/cvrptw.py	/^def main():$/;"	kind:function	line:114
+main	../examples/python/cvrptw_plot.py	/^def main():$/;"	kind:function	line:585
+main	../examples/python/debruijn_binary.py	/^def main(base=2, n=3, m=8):$/;"	kind:function	line:58
+main	../examples/python/diet1.py	/^def main(unused_argv):$/;"	kind:function	line:51
+main	../examples/python/diet1_b.py	/^def main(unused_argv):$/;"	kind:function	line:53
+main	../examples/python/diet1_mip.py	/^def main(sol='CBC'):$/;"	kind:function	line:43
+main	../examples/python/discrete_tomography.py	/^def main(row_sums="", col_sums=""):$/;"	kind:function	line:62
+main	../examples/python/divisible_by_9_through_1.py	/^def main(base=10):$/;"	kind:function	line:108
+main	../examples/python/einav_puzzle.py	/^def main():$/;"	kind:function	line:70
+main	../examples/python/einav_puzzle2.py	/^def main():$/;"	kind:function	line:71
+main	../examples/python/eq10.py	/^def main():$/;"	kind:function	line:34
+main	../examples/python/eq20.py	/^def main():$/;"	kind:function	line:34
+main	../examples/python/fill_a_pix.py	/^def main(puzzle='', n=''):$/;"	kind:function	line:77
+main	../examples/python/furniture_moving.py	/^def main():$/;"	kind:function	line:84
+main	../examples/python/futoshiki.py	/^def main(values, lt):$/;"	kind:function	line:52
+main	../examples/python/game_theory_taha.py	/^def main(sol='CBC'):$/;"	kind:function	line:32
+main	../examples/python/golomb8.py	/^def main():$/;"	kind:function	line:32
+main	../examples/python/grocery.py	/^def main():$/;"	kind:function	line:46
+main	../examples/python/hidato.py	/^def main():$/;"	kind:function	line:48
+main	../examples/python/hidato_table.py	/^def main():$/;"	kind:function	line:50
+main	../examples/python/integer_programming.py	/^def main():$/;"	kind:function	line:117
+main	../examples/python/jobshop_ft06.py	/^def main():$/;"	kind:function	line:30
+main	../examples/python/jobshop_ft06_distance.py	/^def main():$/;"	kind:function	line:37
+main	../examples/python/just_forgotten.py	/^def main():$/;"	kind:function	line:52
+main	../examples/python/kakuro.py	/^def main():$/;"	kind:function	line:81
+main	../examples/python/kenken2.py	/^def main():$/;"	kind:function	line:111
+main	../examples/python/killer_sudoku.py	/^def main():$/;"	kind:function	line:91
+main	../examples/python/knapsack.py	/^def main():$/;"	kind:function	line:21
+main	../examples/python/knapsack_cp.py	/^def main(values, weights, n):$/;"	kind:function	line:39
+main	../examples/python/knapsack_mip.py	/^def main(sol='CBC'):$/;"	kind:function	line:30
+main	../examples/python/labeled_dice.py	/^def main():$/;"	kind:function	line:54
+main	../examples/python/langford.py	/^def main(k=8, num_sol=0):$/;"	kind:function	line:53
+main	../examples/python/least_diff.py	/^def main(unused_argv):$/;"	kind:function	line:44
+main	../examples/python/least_square.py	/^def main(sol='CBC'):$/;"	kind:function	line:33
+main	../examples/python/lectures.py	/^def main():$/;"	kind:function	line:52
+main	../examples/python/linear_assignment_api.py	/^def main():$/;"	kind:function	line:57
+main	../examples/python/linear_programming.py	/^def main():$/;"	kind:function	line:113
+main	../examples/python/magic_sequence_distribute.py	/^def main():$/;"	kind:function	line:27
+main	../examples/python/magic_square.py	/^def main(n=4):$/;"	kind:function	line:30
+main	../examples/python/magic_square_and_cards.py	/^def main(n=3):$/;"	kind:function	line:36
+main	../examples/python/magic_square_mip.py	/^def main(n=3, sol='CBC', use_output_matrix=0):$/;"	kind:function	line:56
+main	../examples/python/map.py	/^def main():$/;"	kind:function	line:40
+main	../examples/python/marathon2.py	/^def main():$/;"	kind:function	line:55
+main	../examples/python/max_flow_taha.py	/^def main():$/;"	kind:function	line:35
+main	../examples/python/max_flow_winston1.py	/^def main():$/;"	kind:function	line:36
+main	../examples/python/minesweeper.py	/^def main(game="", r="", c=""):$/;"	kind:function	line:85
+main	../examples/python/mr_smith.py	/^def main():$/;"	kind:function	line:55
+main	../examples/python/nonogram_default_search.py	/^def main(rows, row_rule_len, row_rules, cols, col_rule_len, col_rules):$/;"	kind:function	line:105
+main	../examples/python/nonogram_regular.py	/^def main(rows, row_rule_len, row_rules,$/;"	kind:function	line:228
+main	../examples/python/nonogram_table.py	/^def main(rows, row_rule_len, row_rules,$/;"	kind:function	line:223
+main	../examples/python/nonogram_table2.py	/^def main(rows, row_rule_len, row_rules, cols, col_rule_len, col_rules):$/;"	kind:function	line:131
+main	../examples/python/nontransitive_dice.py	/^def main(m=3, n=6, minimize_val=0):$/;"	kind:function	line:75
+main	../examples/python/nqueens.py	/^def main(n=8):$/;"	kind:function	line:29
+main	../examples/python/nqueens2.py	/^def main(n=8):$/;"	kind:function	line:33
+main	../examples/python/nqueens3.py	/^def main(n=8, num_sol=0, print_sol=1):$/;"	kind:function	line:35
+main	../examples/python/nurse_rostering.py	/^def main():$/;"	kind:function	line:106
+main	../examples/python/olympic.py	/^def main():$/;"	kind:function	line:68
+main	../examples/python/organize_day.py	/^def main():$/;"	kind:function	line:50
+main	../examples/python/p_median.py	/^def main():$/;"	kind:function	line:42
+main	../examples/python/pandigital_numbers.py	/^def main(base=10, start=1, len1=1, len2=4):$/;"	kind:function	line:80
+main	../examples/python/photo_problem.py	/^def main(show_all_max=0):$/;"	kind:function	line:55
+main	../examples/python/place_number_puzzle.py	/^def main():$/;"	kind:function	line:48
+main	../examples/python/post_office_problem2.py	/^def main():$/;"	kind:function	line:61
+main	../examples/python/production.py	/^def main(sol='CBC'):$/;"	kind:function	line:30
+main	../examples/python/pyflow_example.py	/^def main():$/;"	kind:function	line:80
+main	../examples/python/pyls_api.py	/^def main():$/;"	kind:function	line:114
+main	../examples/python/quasigroup_completion.py	/^def main(puzzle="", n=0):$/;"	kind:function	line:73
+main	../examples/python/rabbit_pheasant.py	/^def main():$/;"	kind:function	line:27
+main	../examples/python/regular.py	/^def main():$/;"	kind:function	line:170
+main	../examples/python/regular_table.py	/^def main():$/;"	kind:function	line:163
+main	../examples/python/regular_table2.py	/^def main():$/;"	kind:function	line:146
+main	../examples/python/rogo2.py	/^def main(problem, rows, cols, max_steps):$/;"	kind:function	line:55
+main	../examples/python/safe_cracking.py	/^def main():$/;"	kind:function	line:52
+main	../examples/python/scheduling_speakers.py	/^def main():$/;"	kind:function	line:36
+main	../examples/python/secret_santa.py	/^def main():$/;"	kind:function	line:68
+main	../examples/python/secret_santa2.py	/^def main(singe=0):$/;"	kind:function	line:69
+main	../examples/python/send_more_money_any_base.py	/^def main(base=10):$/;"	kind:function	line:50
+main	../examples/python/send_most_money.py	/^def main(MONEY=0):$/;"	kind:function	line:46
+main	../examples/python/sendmore.py	/^def main():$/;"	kind:function	line:25
+main	../examples/python/seseman.py	/^def main(unused_argv):$/;"	kind:function	line:61
+main	../examples/python/seseman_b.py	/^def main(unused_argv):$/;"	kind:function	line:63
+main	../examples/python/set_covering.py	/^def main(unused_argv):$/;"	kind:function	line:38
+main	../examples/python/set_covering2.py	/^def main(unused_argv):$/;"	kind:function	line:40
+main	../examples/python/set_covering3.py	/^def main(unused_argv):$/;"	kind:function	line:53
+main	../examples/python/set_covering4.py	/^def main(set_partition=1):$/;"	kind:function	line:73
+main	../examples/python/set_covering_deployment.py	/^def main():$/;"	kind:function	line:46
+main	../examples/python/set_covering_skiena.py	/^def main():$/;"	kind:function	line:46
+main	../examples/python/set_partition.py	/^def main(n=16, num_sets=2):$/;"	kind:function	line:72
+main	../examples/python/sicherman_dice.py	/^def main():$/;"	kind:function	line:67
+main	../examples/python/simple_meeting.py	/^def main():$/;"	kind:function	line:32
+main	../examples/python/ski_assignment.py	/^def main():$/;"	kind:function	line:57
+main	../examples/python/stable_marriage.py	/^def main(ranks, problem_name):$/;"	kind:function	line:47
+main	../examples/python/steel.py	/^def main(args):$/;"	kind:function	line:135
+main	../examples/python/steel_lns.py	/^def main(args):$/;"	kind:function	line:165
+main	../examples/python/stigler.py	/^def main(sol="CBC"):$/;"	kind:function	line:126
+main	../examples/python/strimko2.py	/^def main(streams='', placed=''):$/;"	kind:function	line:52
+main	../examples/python/subset_sum.py	/^def main(coins, total):$/;"	kind:function	line:58
+main	../examples/python/sudoku.py	/^def main():$/;"	kind:function	line:19
+main	../examples/python/survo_puzzle.py	/^def main(r=0, c=0, rowsums=[], colsums=[], game=[]):$/;"	kind:function	line:68
+main	../examples/python/toNum.py	/^def main(unused_argv):$/;"	kind:function	line:40
+main	../examples/python/traffic_lights.py	/^def main(base=10, start=1, len1=1, len2=4):$/;"	kind:function	line:79
+main	../examples/python/tsp.py	/^def main(args):$/;"	kind:function	line:77
+main	../examples/python/vendor_scheduling.py	/^def main():$/;"	kind:function	line:4
+main	../examples/python/volsay.py	/^def main(unused_argv):$/;"	kind:function	line:29
+main	../examples/python/volsay2.py	/^def main(unused_argv):$/;"	kind:function	line:30
+main	../examples/python/volsay3.py	/^def main(unused_argv):$/;"	kind:function	line:30
+main	../examples/python/who_killed_agatha.py	/^def main(the_killers):$/;"	kind:function	line:91
+main	../examples/python/word_square.py	/^def main(words, word_len, num_answers=20):$/;"	kind:function	line:47
+main	../examples/python/xkcd.py	/^def main():$/;"	kind:function	line:43
+main	../examples/python/young_tableaux.py	/^def main(n=5):$/;"	kind:function	line:68
+main	../examples/python/zebra.py	/^def main():$/;"	kind:function	line:41
+make_distance_mat	../examples/python/cvrptw_plot.py	/^    def make_distance_mat(self, method='haversine'):$/;"	kind:member	line:208
+make_service_time_call_callback	../examples/python/cvrptw_plot.py	/^    def make_service_time_call_callback(self):$/;"	kind:member	line:328
+make_transit_time_callback	../examples/python/cvrptw_plot.py	/^    def make_transit_time_callback(self, speed_kmph=10):$/;"	kind:member	line:344
+make_transition_matrix	../examples/python/nonogram_regular.py	/^def make_transition_matrix(pattern):$/;"	kind:function	line:146
+make_transition_matrix	../examples/python/nonogram_table.py	/^def make_transition_matrix(pattern):$/;"	kind:function	line:141
+make_transition_matrix	../examples/python/regular.py	/^def make_transition_matrix(pattern):$/;"	kind:function	line:117
+make_transition_matrix	../examples/python/regular_table.py	/^def make_transition_matrix(pattern):$/;"	kind:function	line:110
+make_transition_matrix	../examples/python/regular_table2.py	/^def make_transition_matrix(pattern):$/;"	kind:function	line:93
+make_transition_tuples	../examples/python/nonogram_default_search.py	/^def make_transition_tuples(pattern):$/;"	kind:function	line:53
+make_transition_tuples	../examples/python/nonogram_table2.py	/^def make_transition_tuples(pattern):$/;"	kind:function	line:79
+map.py	../examples/python/map.py	1;"	kind:file	line:1
+marathon2.py	../examples/python/marathon2.py	1;"	kind:file	line:1
+math	../examples/python/cvrptw.py	/^import math$/;"	kind:namespace	line:38
+mathworld	../examples/python/stable_marriage.py	/^mathworld = {$/;"	kind:variable	line:162
+max_base	../examples/python/divisible_by_9_through_1.py	/^max_base = 16$/;"	kind:variable	line:170
+max_flow_taha.py	../examples/python/max_flow_taha.py	1;"	kind:file	line:1
+max_flow_winston1.py	../examples/python/max_flow_winston1.py	1;"	kind:file	line:1
+max_steps	../examples/data/rogo/rogo_20110106.py	/^max_steps = 16$/;"	kind:variable	line:7
+max_steps	../examples/data/rogo/rogo_20110107.py	/^max_steps = 16$/;"	kind:variable	line:7
+max_steps	../examples/data/rogo/rogo_mike_trick.py	/^max_steps = 12$/;"	kind:variable	line:12
+max_steps	../examples/python/rogo2.py	/^max_steps = 12$/;"	kind:variable	line:181
+medium	../examples/python/slitherlink.py	/^medium = [[ -1, 0, -1, 1, -1, -1, 1, -1 ],$/;"	kind:variable	line:10
+minesweeper.py	../examples/python/minesweeper.py	1;"	kind:file	line:1
+minimize_val	../examples/python/nontransitive_dice.py	/^    minimize_val = int(sys.argv[3])$/;"	kind:variable	line:204
+minimize_val	../examples/python/nontransitive_dice.py	/^minimize_val = 0  # Minimizing max value (0: no, 1: yes)$/;"	kind:variable	line:197
+minus	../examples/python/olympic.py	/^def minus(solver, x, y, z):$/;"	kind:function	line:64
+money	../examples/python/send_most_money.py	/^  money = main(0)$/;"	kind:variable	line:121
+mr_smith.py	../examples/python/mr_smith.py	1;"	kind:file	line:1
+my_cumulative	../examples/python/furniture_moving.py	/^def my_cumulative(solver, s, d, r, b):$/;"	kind:function	line:64
+my_mod	../examples/python/divisible_by_9_through_1.py	/^def my_mod(solver, x, y, r):$/;"	kind:function	line:72
+my_program.py	../my_program.py	1;"	kind:file	line:1
+n	../examples/python/all_interval.py	/^    n = int(sys.argv[1])$/;"	kind:variable	line:117
+n	../examples/python/all_interval.py	/^n = 12$/;"	kind:variable	line:114
+n	../examples/python/broken_weights.py	/^    n = int(sys.argv[2])$/;"	kind:variable	line:142
+n	../examples/python/broken_weights.py	/^n = 4$/;"	kind:variable	line:137
+n	../examples/python/circuit.py	/^    n = int(sys.argv[1])$/;"	kind:variable	line:132
+n	../examples/python/circuit.py	/^n = 5$/;"	kind:variable	line:129
+n	../examples/python/costas_array.py	/^    n = int(sys.argv[1])$/;"	kind:variable	line:171
+n	../examples/python/costas_array.py	/^n = 6$/;"	kind:variable	line:168
+n	../examples/python/debruijn_binary.py	/^    n = int(sys.argv[2])$/;"	kind:variable	line:193
+n	../examples/python/debruijn_binary.py	/^n = 3$/;"	kind:variable	line:187
+n	../examples/python/knapsack_cp.py	/^n = 102$/;"	kind:variable	line:91
+n	../examples/python/magic_square.py	/^    n = int(sys.argv[1])$/;"	kind:variable	line:105
+n	../examples/python/magic_square.py	/^n = 4$/;"	kind:variable	line:102
+n	../examples/python/magic_square_and_cards.py	/^    n = int(sys.argv[1])$/;"	kind:variable	line:112
+n	../examples/python/magic_square_and_cards.py	/^n = 3$/;"	kind:variable	line:109
+n	../examples/python/magic_square_mip.py	/^    n = int(sys.argv[1])$/;"	kind:variable	line:193
+n	../examples/python/magic_square_mip.py	/^  n = 3$/;"	kind:variable	line:189
+n	../examples/python/nontransitive_dice.py	/^    n = int(sys.argv[2])$/;"	kind:variable	line:202
+n	../examples/python/nontransitive_dice.py	/^n = 6             # number of sides of each die$/;"	kind:variable	line:196
+n	../examples/python/nqueens.py	/^n = 8$/;"	kind:variable	line:96
+n	../examples/python/nqueens2.py	/^    n = int(sys.argv[1])$/;"	kind:variable	line:100
+n	../examples/python/nqueens2.py	/^n = 8$/;"	kind:variable	line:97
+n	../examples/python/nqueens3.py	/^    n = int(sys.argv[1])$/;"	kind:variable	line:99
+n	../examples/python/nqueens3.py	/^n = 8$/;"	kind:variable	line:94
+n	../examples/python/set_partition.py	/^    n = int(sys.argv[1])$/;"	kind:variable	line:175
+n	../examples/python/set_partition.py	/^n = 16$/;"	kind:variable	line:171
+n	../examples/python/young_tableaux.py	/^    n = int(sys.argv[1])$/;"	kind:variable	line:162
+n	../examples/python/young_tableaux.py	/^n = 5$/;"	kind:variable	line:159
+n_dirname	../examples/python/check_dependencies.py	/^def n_dirname(n, file):$/;"	kind:function	line:31
+namedtuple	../examples/python/cvrptw_plot.py	/^from collections import namedtuple$/;"	kind:namespace	line:41
+no_overlap	../examples/python/organize_day.py	/^def no_overlap(solver, s1, d1, s2, d2):$/;"	kind:function	line:44
+nonogram_bear.py	../examples/data/nonogram_regular/nonogram_bear.py	1;"	kind:file	line:1
+nonogram_car.py	../examples/data/nonogram_regular/nonogram_car.py	1;"	kind:file	line:1
+nonogram_castle.py	../examples/data/nonogram_regular/nonogram_castle.py	1;"	kind:file	line:1
+nonogram_crocodile.py	../examples/data/nonogram_regular/nonogram_crocodile.py	1;"	kind:file	line:1
+nonogram_default_search.py	../examples/python/nonogram_default_search.py	1;"	kind:file	line:1
+nonogram_difficult.py	../examples/data/nonogram_regular/nonogram_difficult.py	1;"	kind:file	line:1
+nonogram_dragonfly.py	../examples/data/nonogram_regular/nonogram_dragonfly.py	1;"	kind:file	line:1
+nonogram_gondola.py	../examples/data/nonogram_regular/nonogram_gondola.py	1;"	kind:file	line:1
+nonogram_hard.py	../examples/data/nonogram_regular/nonogram_hard.py	1;"	kind:file	line:1
+nonogram_hen.py	../examples/data/nonogram_regular/nonogram_hen.py	1;"	kind:file	line:1
+nonogram_lambda.py	../examples/data/nonogram_regular/nonogram_lambda.py	1;"	kind:file	line:1
+nonogram_n4.py	../examples/data/nonogram_regular/nonogram_n4.py	1;"	kind:file	line:1
+nonogram_n6.py	../examples/data/nonogram_regular/nonogram_n6.py	1;"	kind:file	line:1
+nonogram_nonunique.py	../examples/data/nonogram_regular/nonogram_nonunique.py	1;"	kind:file	line:1
+nonogram_p199.py	../examples/data/nonogram_regular/nonogram_p199.py	1;"	kind:file	line:1
+nonogram_p200.py	../examples/data/nonogram_regular/nonogram_p200.py	1;"	kind:file	line:1
+nonogram_ps.py	../examples/data/nonogram_regular/nonogram_ps.py	1;"	kind:file	line:1
+nonogram_regular.py	../examples/python/nonogram_regular.py	1;"	kind:file	line:1
+nonogram_soccer_player.py	../examples/data/nonogram_regular/nonogram_soccer_player.py	1;"	kind:file	line:1
+nonogram_t2.py	../examples/data/nonogram_regular/nonogram_t2.py	1;"	kind:file	line:1
+nonogram_table.py	../examples/python/nonogram_table.py	1;"	kind:file	line:1
+nonogram_table2.py	../examples/python/nonogram_table2.py	1;"	kind:file	line:1
+nontransitive_dice.py	../examples/python/nontransitive_dice.py	1;"	kind:file	line:1
+notinstalled	../check_python_deps.py	/^def notinstalled(modulename):$/;"	kind:function	line:20
+notinstalled	../examples/python/check_dependencies.py	/^def notinstalled(modulename):$/;"	kind:function	line:21
+np	../examples/python/cvrptw_plot.py	/^import numpy as np$/;"	kind:namespace	line:39
+nqueens.py	../examples/python/nqueens.py	1;"	kind:file	line:1
+nqueens2.py	../examples/python/nqueens2.py	1;"	kind:file	line:1
+nqueens3.py	../examples/python/nqueens3.py	1;"	kind:file	line:1
+num_answers	../examples/python/word_square.py	/^    num_answers = int(sys.argv[4])$/;"	kind:variable	line:170
+num_answers	../examples/python/word_square.py	/^num_answers = 20$/;"	kind:variable	line:159
+num_buses_check	../examples/python/bus_schedule.py	/^  num_buses_check = main()$/;"	kind:variable	line:109
+num_sets	../examples/python/set_partition.py	/^    num_sets = int(sys.argv[2])$/;"	kind:variable	line:177
+num_sets	../examples/python/set_partition.py	/^num_sets = 2$/;"	kind:variable	line:172
+num_sol	../examples/python/car.py	/^    num_sol = int(sys.argv[1])$/;"	kind:variable	line:145
+num_sol	../examples/python/car.py	/^num_sol = 3$/;"	kind:variable	line:142
+num_sol	../examples/python/langford.py	/^    num_sol = int(sys.argv[2])$/;"	kind:variable	line:112
+num_sol	../examples/python/langford.py	/^num_sol = 0$/;"	kind:variable	line:107
+num_sol	../examples/python/nqueens3.py	/^    num_sol = int(sys.argv[2])$/;"	kind:variable	line:101
+num_sol	../examples/python/nqueens3.py	/^num_sol = 0$/;"	kind:variable	line:95
+num_solutions_to_show	../examples/python/crew.py	/^    num_solutions_to_show = int(sys.argv[1])$/;"	kind:variable	line:222
+num_solutions_to_show	../examples/python/crew.py	/^num_solutions_to_show = 1$/;"	kind:variable	line:219
+nurse_rostering.py	../examples/python/nurse_rostering.py	1;"	kind:file	line:1
+olympic.py	../examples/python/olympic.py	1;"	kind:file	line:1
+organize_day.py	../examples/python/organize_day.py	1;"	kind:file	line:1
+ortools	../check_python_deps.py	/^		import ortools$/;"	kind:namespace	line:72
+ortools	../examples/python/check_dependencies.py	/^		import ortools$/;"	kind:namespace	line:61
+ortools_module_file	../examples/python/check_dependencies.py	/^	ortools_module_file = inspect.getfile(ortools)$/;"	kind:variable	line:67
+ortools_module_path	../examples/python/check_dependencies.py	/^	ortools_module_path = n_dirname(3, ortools_module_file)$/;"	kind:variable	line:68
+ortools_project_path	../examples/python/check_dependencies.py	/^	ortools_project_path = n_dirname(3, abspath(inspect.getfile(inspect.currentframe())))$/;"	kind:variable	line:57
+os	../examples/python/cvrptw_plot.py	/^import os$/;"	kind:namespace	line:38
+p	../examples/python/who_killed_agatha.py	/^p = ["agatha", "butler", "charles"]$/;"	kind:variable	line:210
+p_median.py	../examples/python/p_median.py	1;"	kind:file	line:1
+pandigital_numbers.py	../examples/python/pandigital_numbers.py	1;"	kind:file	line:1
+parse_version	../check_python_deps.py	/^from pkg_resources import parse_version$/;"	kind:namespace	line:15
+parse_version	../examples/python/check_dependencies.py	/^from pkg_resources import parse_version$/;"	kind:namespace	line:19
+parser	../examples/python/appointments.py	/^parser = argparse.ArgumentParser()$/;"	kind:variable	line:21
+parser	../examples/python/bacp.py	/^parser = argparse.ArgumentParser()$/;"	kind:variable	line:18
+parser	../examples/python/check_dependencies.py	/^	parser = OptionParser('Log level')$/;"	kind:variable	line:38
+parser	../examples/python/steel.py	/^parser = argparse.ArgumentParser()$/;"	kind:variable	line:19
+parser	../examples/python/steel_lns.py	/^parser = argparse.ArgumentParser()$/;"	kind:variable	line:19
+parser	../examples/python/tsp.py	/^parser = argparse.ArgumentParser()$/;"	kind:variable	line:34
+partition_sets	../examples/python/set_partition.py	/^def partition_sets(x, num_sets, n):$/;"	kind:function	line:57
+photo_problem.py	../examples/python/photo_problem.py	1;"	kind:file	line:1
+pjoin	../setup.py	/^from os.path import join as pjoin$/;"	kind:namespace	line:13
+place_number_puzzle.py	../examples/python/place_number_puzzle.py	1;"	kind:file	line:1
+placed	../examples/data/strimko/strimko2_002.py	/^placed = [$/;"	kind:variable	line:11
+placed	../examples/data/strimko/strimko2_067.py	/^placed = [$/;"	kind:variable	line:10
+placed	../examples/data/strimko/strimko2_068.py	/^placed = [$/;"	kind:variable	line:8
+placed	../examples/data/strimko/strimko2_069.py	/^placed = [$/;"	kind:variable	line:10
+placed	../examples/data/strimko/strimko2_070.py	/^placed = [$/;"	kind:variable	line:9
+plot_vehicle_routes	../examples/python/cvrptw_plot.py	/^def plot_vehicle_routes(veh_route, ax1, customers, vehicles):$/;"	kind:function	line:530
+plt	../examples/python/cvrptw_plot.py	/^from matplotlib import pyplot as plt$/;"	kind:namespace	line:40
+post_office_problem2.py	../examples/python/post_office_problem2.py	1;"	kind:file	line:1
+print_board	../examples/python/hidato.py	/^def print_board(x, rows, cols):$/;"	kind:function	line:225
+print_board	../examples/python/quasigroup_completion.py	/^def print_board(x, rows, cols):$/;"	kind:function	line:194
+print_flat_matrix	../examples/python/who_killed_agatha.py	/^def print_flat_matrix(m_flat, rows, cols):$/;"	kind:function	line:83
+print_function	../examples/python/3_jugs_mip.py	/^from __future__ import print_function$/;"	kind:namespace	line:31
+print_function	../examples/python/3_jugs_regular.py	/^from __future__ import print_function$/;"	kind:namespace	line:51
+print_function	../examples/python/a_round_of_golf.py	/^from __future__ import print_function$/;"	kind:namespace	line:68
+print_function	../examples/python/all_interval.py	/^from __future__ import print_function$/;"	kind:namespace	line:54
+print_function	../examples/python/alldifferent_except_0.py	/^from __future__ import print_function$/;"	kind:namespace	line:52
+print_function	../examples/python/alphametic.py	/^from __future__ import print_function$/;"	kind:namespace	line:47
+print_function	../examples/python/appointments.py	/^from __future__ import print_function$/;"	kind:namespace	line:15
+print_function	../examples/python/assignment.py	/^from __future__ import print_function$/;"	kind:namespace	line:34
+print_function	../examples/python/assignment6_mip.py	/^from __future__ import print_function$/;"	kind:namespace	line:43
+print_function	../examples/python/blending.py	/^from __future__ import print_function$/;"	kind:namespace	line:25
+print_function	../examples/python/broken_weights.py	/^from __future__ import print_function$/;"	kind:namespace	line:50
+print_function	../examples/python/bus_schedule.py	/^from __future__ import print_function$/;"	kind:namespace	line:37
+print_function	../examples/python/car.py	/^from __future__ import print_function$/;"	kind:namespace	line:32
+print_function	../examples/python/circuit.py	/^from __future__ import print_function$/;"	kind:namespace	line:45
+print_function	../examples/python/coins3.py	/^from __future__ import print_function$/;"	kind:namespace	line:41
+print_function	../examples/python/coloring_ip.py	/^from __future__ import print_function$/;"	kind:namespace	line:40
+print_function	../examples/python/combinatorial_auction2.py	/^from __future__ import print_function$/;"	kind:namespace	line:34
+print_function	../examples/python/contiguity_regular.py	/^from __future__ import print_function$/;"	kind:namespace	line:43
+print_function	../examples/python/costas_array.py	/^from __future__ import print_function$/;"	kind:namespace	line:63
+print_function	../examples/python/covering_opl.py	/^from __future__ import print_function$/;"	kind:namespace	line:59
+print_function	../examples/python/crew.py	/^from __future__ import print_function$/;"	kind:namespace	line:41
+print_function	../examples/python/crossword2.py	/^from __future__ import print_function$/;"	kind:namespace	line:60
+print_function	../examples/python/crypta.py	/^from __future__ import print_function$/;"	kind:namespace	line:47
+print_function	../examples/python/crypto.py	/^from __future__ import print_function$/;"	kind:namespace	line:46
+print_function	../examples/python/curious_set_of_integers.py	/^from __future__ import print_function$/;"	kind:namespace	line:62
+print_function	../examples/python/debruijn_binary.py	/^from __future__ import print_function$/;"	kind:namespace	line:45
+print_function	../examples/python/diet1.py	/^from __future__ import print_function$/;"	kind:namespace	line:47
+print_function	../examples/python/diet1_b.py	/^from __future__ import print_function$/;"	kind:namespace	line:49
+print_function	../examples/python/diet1_mip.py	/^from __future__ import print_function$/;"	kind:namespace	line:38
+print_function	../examples/python/discrete_tomography.py	/^from __future__ import print_function$/;"	kind:namespace	line:57
+print_function	../examples/python/divisible_by_9_through_1.py	/^from __future__ import print_function$/;"	kind:namespace	line:55
+print_function	../examples/python/dudeney.py	/^from __future__ import print_function$/;"	kind:namespace	line:13
+print_function	../examples/python/einav_puzzle.py	/^from __future__ import print_function$/;"	kind:namespace	line:66
+print_function	../examples/python/einav_puzzle2.py	/^from __future__ import print_function$/;"	kind:namespace	line:67
+print_function	../examples/python/eq10.py	/^from __future__ import print_function$/;"	kind:namespace	line:30
+print_function	../examples/python/eq20.py	/^from __future__ import print_function$/;"	kind:namespace	line:30
+print_function	../examples/python/fill_a_pix.py	/^from __future__ import print_function$/;"	kind:namespace	line:54
+print_function	../examples/python/furniture_moving.py	/^from __future__ import print_function$/;"	kind:namespace	line:39
+print_function	../examples/python/futoshiki.py	/^from __future__ import print_function$/;"	kind:namespace	line:48
+print_function	../examples/python/game_theory_taha.py	/^from __future__ import print_function$/;"	kind:namespace	line:27
+print_function	../examples/python/grocery.py	/^from __future__ import print_function$/;"	kind:namespace	line:39
+print_function	../examples/python/hidato.py	/^from __future__ import print_function$/;"	kind:namespace	line:44
+print_function	../examples/python/hidato_table.py	/^from __future__ import print_function$/;"	kind:namespace	line:26
+print_function	../examples/python/just_forgotten.py	/^from __future__ import print_function$/;"	kind:namespace	line:48
+print_function	../examples/python/kakuro.py	/^from __future__ import print_function$/;"	kind:namespace	line:58
+print_function	../examples/python/kenken2.py	/^from __future__ import print_function$/;"	kind:namespace	line:59
+print_function	../examples/python/knapsack_cp.py	/^from __future__ import print_function$/;"	kind:namespace	line:25
+print_function	../examples/python/knapsack_mip.py	/^from __future__ import print_function$/;"	kind:namespace	line:25
+print_function	../examples/python/labeled_dice.py	/^from __future__ import print_function$/;"	kind:namespace	line:50
+print_function	../examples/python/langford.py	/^from __future__ import print_function$/;"	kind:namespace	line:47
+print_function	../examples/python/least_diff.py	/^from __future__ import print_function$/;"	kind:namespace	line:40
+print_function	../examples/python/least_square.py	/^from __future__ import print_function$/;"	kind:namespace	line:28
+print_function	../examples/python/lectures.py	/^from __future__ import print_function$/;"	kind:namespace	line:47
+print_function	../examples/python/linear_assignment_api.py	/^from __future__ import print_function$/;"	kind:namespace	line:20
+print_function	../examples/python/linear_programming.py	/^from __future__ import print_function$/;"	kind:namespace	line:15
+print_function	../examples/python/magic_sequence_distribute.py	/^from __future__ import print_function$/;"	kind:namespace	line:21
+print_function	../examples/python/magic_square.py	/^from __future__ import print_function$/;"	kind:namespace	line:25
+print_function	../examples/python/magic_square_and_cards.py	/^from __future__ import print_function$/;"	kind:namespace	line:31
+print_function	../examples/python/magic_square_mip.py	/^from __future__ import print_function$/;"	kind:namespace	line:45
+print_function	../examples/python/map.py	/^from __future__ import print_function$/;"	kind:namespace	line:36
+print_function	../examples/python/marathon2.py	/^from __future__ import print_function$/;"	kind:namespace	line:50
+print_function	../examples/python/max_flow_taha.py	/^from __future__ import print_function$/;"	kind:namespace	line:31
+print_function	../examples/python/max_flow_winston1.py	/^from __future__ import print_function$/;"	kind:namespace	line:31
+print_function	../examples/python/minesweeper.py	/^from __future__ import print_function$/;"	kind:namespace	line:66
+print_function	../examples/python/mr_smith.py	/^from __future__ import print_function$/;"	kind:namespace	line:50
+print_function	../examples/python/nonogram_default_search.py	/^from __future__ import print_function$/;"	kind:namespace	line:43
+print_function	../examples/python/nonogram_regular.py	/^from __future__ import print_function$/;"	kind:namespace	line:69
+print_function	../examples/python/nonogram_table.py	/^from __future__ import print_function$/;"	kind:namespace	line:69
+print_function	../examples/python/nonogram_table2.py	/^from __future__ import print_function$/;"	kind:namespace	line:69
+print_function	../examples/python/nontransitive_dice.py	/^from __future__ import print_function$/;"	kind:namespace	line:70
+print_function	../examples/python/nqueens.py	/^from __future__ import print_function$/;"	kind:namespace	line:25
+print_function	../examples/python/nqueens2.py	/^from __future__ import print_function$/;"	kind:namespace	line:28
+print_function	../examples/python/nqueens3.py	/^from __future__ import print_function$/;"	kind:namespace	line:30
+print_function	../examples/python/nurse_rostering.py	/^from __future__ import print_function$/;"	kind:namespace	line:32
+print_function	../examples/python/olympic.py	/^from __future__ import print_function$/;"	kind:namespace	line:59
+print_function	../examples/python/organize_day.py	/^from __future__ import print_function$/;"	kind:namespace	line:35
+print_function	../examples/python/p_median.py	/^from __future__ import print_function$/;"	kind:namespace	line:37
+print_function	../examples/python/pandigital_numbers.py	/^from __future__ import print_function$/;"	kind:namespace	line:64
+print_function	../examples/python/photo_problem.py	/^from __future__ import print_function$/;"	kind:namespace	line:49
+print_function	../examples/python/place_number_puzzle.py	/^from __future__ import print_function$/;"	kind:namespace	line:43
+print_function	../examples/python/post_office_problem2.py	/^from __future__ import print_function$/;"	kind:namespace	line:57
+print_function	../examples/python/production.py	/^from __future__ import print_function$/;"	kind:namespace	line:25
+print_function	../examples/python/pyflow_example.py	/^from __future__ import print_function$/;"	kind:namespace	line:17
+print_function	../examples/python/pyls_api.py	/^from __future__ import print_function$/;"	kind:namespace	line:1
+print_function	../examples/python/quasigroup_completion.py	/^from __future__ import print_function$/;"	kind:namespace	line:56
+print_function	../examples/python/rabbit_pheasant.py	/^from __future__ import print_function$/;"	kind:namespace	line:22
+print_function	../examples/python/regular.py	/^from __future__ import print_function$/;"	kind:namespace	line:41
+print_function	../examples/python/regular_table.py	/^from __future__ import print_function$/;"	kind:namespace	line:41
+print_function	../examples/python/regular_table2.py	/^from __future__ import print_function$/;"	kind:namespace	line:41
+print_function	../examples/python/rogo2.py	/^from __future__ import print_function$/;"	kind:namespace	line:48
+print_function	../examples/python/safe_cracking.py	/^from __future__ import print_function$/;"	kind:namespace	line:48
+print_function	../examples/python/scheduling_speakers.py	/^from __future__ import print_function$/;"	kind:namespace	line:32
+print_function	../examples/python/secret_santa.py	/^from __future__ import print_function$/;"	kind:namespace	line:63
+print_function	../examples/python/secret_santa2.py	/^from __future__ import print_function$/;"	kind:namespace	line:64
+print_function	../examples/python/send_more_money_any_base.py	/^from __future__ import print_function$/;"	kind:namespace	line:45
+print_function	../examples/python/send_most_money.py	/^from __future__ import print_function$/;"	kind:namespace	line:41
+print_function	../examples/python/sendmore.py	/^from __future__ import print_function$/;"	kind:namespace	line:21
+print_function	../examples/python/seseman.py	/^from __future__ import print_function$/;"	kind:namespace	line:57
+print_function	../examples/python/seseman_b.py	/^from __future__ import print_function$/;"	kind:namespace	line:59
+print_function	../examples/python/set_covering.py	/^from __future__ import print_function$/;"	kind:namespace	line:34
+print_function	../examples/python/set_covering2.py	/^from __future__ import print_function$/;"	kind:namespace	line:36
+print_function	../examples/python/set_covering3.py	/^from __future__ import print_function$/;"	kind:namespace	line:49
+print_function	../examples/python/set_covering4.py	/^from __future__ import print_function$/;"	kind:namespace	line:69
+print_function	../examples/python/set_covering_deployment.py	/^from __future__ import print_function$/;"	kind:namespace	line:42
+print_function	../examples/python/set_covering_skiena.py	/^from __future__ import print_function$/;"	kind:namespace	line:42
+print_function	../examples/python/set_partition.py	/^from __future__ import print_function$/;"	kind:namespace	line:48
+print_function	../examples/python/sicherman_dice.py	/^from __future__ import print_function$/;"	kind:namespace	line:62
+print_function	../examples/python/simple_meeting.py	/^from __future__ import print_function$/;"	kind:namespace	line:27
+print_function	../examples/python/ski_assignment.py	/^from __future__ import print_function$/;"	kind:namespace	line:51
+print_function	../examples/python/stable_marriage.py	/^from __future__ import print_function$/;"	kind:namespace	line:41
+print_function	../examples/python/steel.py	/^from __future__ import print_function$/;"	kind:namespace	line:15
+print_function	../examples/python/steel_lns.py	/^from __future__ import print_function$/;"	kind:namespace	line:14
+print_function	../examples/python/stigler.py	/^from __future__ import print_function$/;"	kind:namespace	line:121
+print_function	../examples/python/strimko2.py	/^from __future__ import print_function$/;"	kind:namespace	line:46
+print_function	../examples/python/subset_sum.py	/^from __future__ import print_function$/;"	kind:namespace	line:42
+print_function	../examples/python/sudoku.py	/^from __future__ import print_function$/;"	kind:namespace	line:16
+print_function	../examples/python/survo_puzzle.py	/^from __future__ import print_function$/;"	kind:namespace	line:63
+print_function	../examples/python/toNum.py	/^from __future__ import print_function$/;"	kind:namespace	line:26
+print_function	../examples/python/traffic_lights.py	/^from __future__ import print_function$/;"	kind:namespace	line:73
+print_function	../examples/python/volsay.py	/^from __future__ import print_function$/;"	kind:namespace	line:25
+print_function	../examples/python/volsay2.py	/^from __future__ import print_function$/;"	kind:namespace	line:26
+print_function	../examples/python/volsay3.py	/^from __future__ import print_function$/;"	kind:namespace	line:26
+print_function	../examples/python/who_killed_agatha.py	/^from __future__ import print_function$/;"	kind:namespace	line:63
+print_function	../examples/python/word_square.py	/^from __future__ import print_function$/;"	kind:namespace	line:41
+print_function	../examples/python/xkcd.py	/^from __future__ import print_function$/;"	kind:namespace	line:39
+print_function	../examples/python/young_tableaux.py	/^from __future__ import print_function$/;"	kind:namespace	line:63
+print_function	../examples/python/zebra.py	/^from __future__ import print_function$/;"	kind:namespace	line:36
+print_game	../examples/python/hidato.py	/^def print_game(game, rows, cols):$/;"	kind:function	line:232
+print_game	../examples/python/minesweeper.py	/^def print_game(game, rows, cols):$/;"	kind:function	line:225
+print_game	../examples/python/quasigroup_completion.py	/^def print_game(game, rows, cols):$/;"	kind:function	line:201
+print_mines	../examples/python/minesweeper.py	/^def print_mines(mines, rows, cols):$/;"	kind:function	line:218
+print_sol	../examples/python/nqueens3.py	/^    print_sol = int(sys.argv[3])$/;"	kind:variable	line:103
+print_sol	../examples/python/nqueens3.py	/^print_sol = 1$/;"	kind:variable	line:96
+print_solution	../examples/python/crossword2.py	/^def print_solution(A, E, alpha, n, word_len):$/;"	kind:function	line:195
+print_solution	../examples/python/discrete_tomography.py	/^def print_solution(x, rows, cols, row_sums, col_sums):$/;"	kind:function	line:126
+print_solution	../examples/python/pandigital_numbers.py	/^def print_solution(x, len1, len2, x_len):$/;"	kind:function	line:151
+print_solution	../examples/python/word_square.py	/^def print_solution(E, words):$/;"	kind:function	line:132
+problem	../examples/data/rogo/rogo_20110106.py	/^problem = [$/;"	kind:variable	line:10
+problem	../examples/data/rogo/rogo_20110107.py	/^problem = [$/;"	kind:variable	line:10
+problem	../examples/data/rogo/rogo_mike_trick.py	/^problem = [$/;"	kind:variable	line:15
+problem	../examples/python/alphametic.py	/^    problem = sys.argv[1]$/;"	kind:variable	line:162
+problem	../examples/python/rogo2.py	/^problem = [$/;"	kind:variable	line:184
+problem3	../examples/python/stable_marriage.py	/^problem3 = {$/;"	kind:variable	line:190
+problem4	../examples/python/stable_marriage.py	/^problem4 = {$/;"	kind:variable	line:210
+problem_file	../examples/python/strimko2.py	/^    problem_file = sys.argv[1]$/;"	kind:variable	line:154
+production.py	../examples/python/production.py	1;"	kind:file	line:1
+protobuf	../check_python_deps.py	/^		import google.protobuf$/;"	kind:namespace	line:78
+protobuf	../examples/python/check_dependencies.py	/^		import google.protobuf$/;"	kind:namespace	line:84
+protobuf_module_file	../examples/python/check_dependencies.py	/^	protobuf_module_file = inspect.getfile(google.protobuf)$/;"	kind:variable	line:89
+protobuf_module_path	../examples/python/check_dependencies.py	/^	protobuf_module_path = n_dirname(7, protobuf_module_file)$/;"	kind:variable	line:90
+pyflow_example.py	../examples/python/pyflow_example.py	1;"	kind:file	line:1
+pyls_api.py	../examples/python/pyls_api.py	1;"	kind:file	line:1
+pywrapcp	../examples/python/3_jugs_regular.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:52
+pywrapcp	../examples/python/a_round_of_golf.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:70
+pywrapcp	../examples/python/all_interval.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:58
+pywrapcp	../examples/python/alldifferent_except_0.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:54
+pywrapcp	../examples/python/alphametic.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:51
+pywrapcp	../examples/python/appointments.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:18
+pywrapcp	../examples/python/assignment.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:35
+pywrapcp	../examples/python/bacp.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:16
+pywrapcp	../examples/python/broken_weights.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:53
+pywrapcp	../examples/python/bus_schedule.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:39
+pywrapcp	../examples/python/car.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:35
+pywrapcp	../examples/python/circuit.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:48
+pywrapcp	../examples/python/coins3.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:44
+pywrapcp	../examples/python/coins_grid.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:57
+pywrapcp	../examples/python/combinatorial_auction2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:37
+pywrapcp	../examples/python/contiguity_regular.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:44
+pywrapcp	../examples/python/costas_array.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:66
+pywrapcp	../examples/python/covering_opl.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:62
+pywrapcp	../examples/python/crew.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:43
+pywrapcp	../examples/python/crossword2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:61
+pywrapcp	../examples/python/crypta.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:48
+pywrapcp	../examples/python/crypto.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:47
+pywrapcp	../examples/python/curious_set_of_integers.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:63
+pywrapcp	../examples/python/cvrptw.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:40
+pywrapcp	../examples/python/cvrptw_plot.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:42
+pywrapcp	../examples/python/debruijn_binary.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:47
+pywrapcp	../examples/python/diet1.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:48
+pywrapcp	../examples/python/diet1_b.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:50
+pywrapcp	../examples/python/discrete_tomography.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:59
+pywrapcp	../examples/python/divisible_by_9_through_1.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:58
+pywrapcp	../examples/python/dudeney.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:14
+pywrapcp	../examples/python/einav_puzzle.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:67
+pywrapcp	../examples/python/einav_puzzle2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:68
+pywrapcp	../examples/python/eq10.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:31
+pywrapcp	../examples/python/eq20.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:31
+pywrapcp	../examples/python/fill_a_pix.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:56
+pywrapcp	../examples/python/furniture_moving.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:41
+pywrapcp	../examples/python/futoshiki.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:49
+pywrapcp	../examples/python/golomb8.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:24
+pywrapcp	../examples/python/grocery.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:42
+pywrapcp	../examples/python/hidato.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:45
+pywrapcp	../examples/python/hidato_table.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:27
+pywrapcp	../examples/python/jobshop_ft06.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:27
+pywrapcp	../examples/python/jobshop_ft06_distance.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:26
+pywrapcp	../examples/python/just_forgotten.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:49
+pywrapcp	../examples/python/kakuro.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:61
+pywrapcp	../examples/python/kenken2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:62
+pywrapcp	../examples/python/killer_sudoku.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:73
+pywrapcp	../examples/python/knapsack_cp.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:26
+pywrapcp	../examples/python/labeled_dice.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:51
+pywrapcp	../examples/python/langford.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:50
+pywrapcp	../examples/python/least_diff.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:41
+pywrapcp	../examples/python/lectures.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:49
+pywrapcp	../examples/python/magic_sequence_distribute.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:24
+pywrapcp	../examples/python/magic_square.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:27
+pywrapcp	../examples/python/magic_square_and_cards.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:33
+pywrapcp	../examples/python/map.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:37
+pywrapcp	../examples/python/marathon2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:52
+pywrapcp	../examples/python/max_flow_taha.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:32
+pywrapcp	../examples/python/max_flow_winston1.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:33
+pywrapcp	../examples/python/minesweeper.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:68
+pywrapcp	../examples/python/mr_smith.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:52
+pywrapcp	../examples/python/nonogram_default_search.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:46
+pywrapcp	../examples/python/nonogram_regular.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:72
+pywrapcp	../examples/python/nonogram_table.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:72
+pywrapcp	../examples/python/nonogram_table2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:72
+pywrapcp	../examples/python/nontransitive_dice.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:72
+pywrapcp	../examples/python/nqueens.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:26
+pywrapcp	../examples/python/nqueens2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:30
+pywrapcp	../examples/python/nqueens3.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:32
+pywrapcp	../examples/python/nurse_rostering.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:33
+pywrapcp	../examples/python/olympic.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:61
+pywrapcp	../examples/python/organize_day.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:37
+pywrapcp	../examples/python/p_median.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:39
+pywrapcp	../examples/python/pandigital_numbers.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:67
+pywrapcp	../examples/python/photo_problem.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:52
+pywrapcp	../examples/python/place_number_puzzle.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:45
+pywrapcp	../examples/python/post_office_problem2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:58
+pywrapcp	../examples/python/pyls_api.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:2
+pywrapcp	../examples/python/quasigroup_completion.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:58
+pywrapcp	../examples/python/rabbit_pheasant.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:23
+pywrapcp	../examples/python/regular.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:42
+pywrapcp	../examples/python/regular_table.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:42
+pywrapcp	../examples/python/regular_table2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:42
+pywrapcp	../examples/python/rogo2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:52
+pywrapcp	../examples/python/safe_cracking.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:49
+pywrapcp	../examples/python/scheduling_speakers.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:33
+pywrapcp	../examples/python/secret_santa.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:65
+pywrapcp	../examples/python/secret_santa2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:66
+pywrapcp	../examples/python/send_more_money_any_base.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:47
+pywrapcp	../examples/python/send_most_money.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:43
+pywrapcp	../examples/python/sendmore.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:22
+pywrapcp	../examples/python/seseman.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:58
+pywrapcp	../examples/python/seseman_b.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:60
+pywrapcp	../examples/python/set_covering.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:35
+pywrapcp	../examples/python/set_covering2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:37
+pywrapcp	../examples/python/set_covering3.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:50
+pywrapcp	../examples/python/set_covering4.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:70
+pywrapcp	../examples/python/set_covering_deployment.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:43
+pywrapcp	../examples/python/set_covering_skiena.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:43
+pywrapcp	../examples/python/set_partition.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:51
+pywrapcp	../examples/python/sicherman_dice.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:64
+pywrapcp	../examples/python/simple_meeting.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:28
+pywrapcp	../examples/python/ski_assignment.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:54
+pywrapcp	../examples/python/slitherlink.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:1
+pywrapcp	../examples/python/stable_marriage.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:44
+pywrapcp	../examples/python/steel.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:17
+pywrapcp	../examples/python/steel_lns.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:16
+pywrapcp	../examples/python/strimko2.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:49
+pywrapcp	../examples/python/subset_sum.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:44
+pywrapcp	../examples/python/sudoku.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:17
+pywrapcp	../examples/python/survo_puzzle.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:65
+pywrapcp	../examples/python/toNum.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:27
+pywrapcp	../examples/python/traffic_lights.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:76
+pywrapcp	../examples/python/tsp.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:30
+pywrapcp	../examples/python/vendor_scheduling.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:1
+pywrapcp	../examples/python/who_killed_agatha.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:66
+pywrapcp	../examples/python/word_square.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:44
+pywrapcp	../examples/python/xkcd.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:40
+pywrapcp	../examples/python/young_tableaux.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:65
+pywrapcp	../examples/python/zebra.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:37
+pywrapgraph	../examples/python/linear_assignment_api.py	/^from ortools.graph import pywrapgraph$/;"	kind:namespace	line:23
+pywrapgraph	../examples/python/pyflow_example.py	/^from ortools.graph import pywrapgraph$/;"	kind:namespace	line:18
+pywrapknapsack_solver	../examples/python/knapsack.py	/^from ortools.algorithms import pywrapknapsack_solver$/;"	kind:namespace	line:18
+pywraplp	../examples/python/3_jugs_mip.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:33
+pywraplp	../examples/python/appointments.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:19
+pywraplp	../examples/python/assignment6_mip.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:45
+pywraplp	../examples/python/blending.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:27
+pywraplp	../examples/python/coins_grid_mip.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:44
+pywraplp	../examples/python/coloring_ip.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:42
+pywraplp	../examples/python/diet1_mip.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:40
+pywraplp	../examples/python/game_theory_taha.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:29
+pywraplp	../examples/python/integer_programming.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:17
+pywraplp	../examples/python/knapsack_mip.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:27
+pywraplp	../examples/python/least_square.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:30
+pywraplp	../examples/python/linear_programming.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:17
+pywraplp	../examples/python/magic_square_mip.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:47
+pywraplp	../examples/python/production.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:27
+pywraplp	../examples/python/stigler.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:123
+pywraplp	../examples/python/volsay.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:26
+pywraplp	../examples/python/volsay2.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:27
+pywraplp	../examples/python/volsay3.py	/^from ortools.linear_solver import pywraplp$/;"	kind:namespace	line:27
+quasigroup_completion.py	../examples/python/quasigroup_completion.py	1;"	kind:file	line:1
+rabbit_pheasant.py	../examples/python/rabbit_pheasant.py	1;"	kind:file	line:1
+random	../examples/python/steel_lns.py	/^import random$/;"	kind:namespace	line:17
+random	../examples/python/tsp.py	/^import random$/;"	kind:namespace	line:28
+re	../examples/python/alphametic.py	/^import re$/;"	kind:namespace	line:49
+re	../examples/python/rogo2.py	/^import re$/;"	kind:namespace	line:50
+re	../examples/python/word_square.py	/^import re$/;"	kind:namespace	line:43
+read	../setup.py	/^def read(fname):$/;"	kind:function	line:22
+read_problem	../examples/python/discrete_tomography.py	/^def read_problem(file):$/;"	kind:function	line:144
+read_problem	../examples/python/fill_a_pix.py	/^def read_problem(file):$/;"	kind:function	line:164
+read_problem	../examples/python/minesweeper.py	/^def read_problem(file):$/;"	kind:function	line:197
+read_problem	../examples/python/quasigroup_completion.py	/^def read_problem(file):$/;"	kind:function	line:176
+read_problem	../examples/python/survo_puzzle.py	/^def read_problem(file):$/;"	kind:function	line:154
+read_words	../examples/python/word_square.py	/^def read_words(word_list, word_len, limit):$/;"	kind:function	line:139
+reduce	../examples/python/grocery.py	/^from functools import reduce$/;"	kind:namespace	line:43
+reduce	../examples/python/kenken2.py	/^from functools import reduce$/;"	kind:namespace	line:63
+regular	../examples/python/3_jugs_regular.py	/^def regular(x, Q, S, d, q0, F):$/;"	kind:function	line:77
+regular	../examples/python/contiguity_regular.py	/^def regular(x, Q, S, d, q0, F):$/;"	kind:function	line:68
+regular	../examples/python/nonogram_regular.py	/^def regular(x, Q, S, d, q0, F):$/;"	kind:function	line:95
+regular	../examples/python/nonogram_table.py	/^def regular(x, Q, S, d, q0, F):$/;"	kind:function	line:95
+regular	../examples/python/nurse_rostering.py	/^def regular(x, Q, S, d, q0, F):$/;"	kind:function	line:58
+regular	../examples/python/regular.py	/^def regular(x, Q, S, d, q0, F):$/;"	kind:function	line:65
+regular	../examples/python/regular_table.py	/^def regular(x, Q, S, d, q0, F):$/;"	kind:function	line:65
+regular	../examples/python/regular_table2.py	/^def regular(x, Q, S, d, q0, F):$/;"	kind:function	line:65
+regular.py	../examples/python/regular.py	1;"	kind:file	line:1
+regular_table.py	../examples/python/regular_table.py	1;"	kind:file	line:1
+regular_table2.py	../examples/python/regular_table2.py	1;"	kind:file	line:1
+required_ortools_version	../check_python_deps.py	/^required_ortools_version = "6.4.4495"$/;"	kind:variable	line:17
+required_protobuf_version	../check_python_deps.py	/^required_protobuf_version = "3.3.0"$/;"	kind:variable	line:18
+result	../examples/python/3_jugs_regular.py	/^    result = main(n)$/;"	kind:variable	line:261
+result_len	../examples/python/3_jugs_regular.py	/^    result_len = len(result)$/;"	kind:variable	line:262
+return_dem_callback	../examples/python/cvrptw_plot.py	/^    def return_dem_callback(self):$/;"	kind:member	line:294
+return_dist_callback	../examples/python/cvrptw_plot.py	/^    def return_dist_callback(self, **kwargs):$/;"	kind:member	line:276
+return_starting_callback	../examples/python/cvrptw_plot.py	/^    def return_starting_callback(self, customers, sameStartFinish=False):$/;"	kind:member	line:416
+rogo2.py	../examples/python/rogo2.py	1;"	kind:file	line:1
+rogo_20110106.py	../examples/data/rogo/rogo_20110106.py	1;"	kind:file	line:1
+rogo_20110107.py	../examples/data/rogo/rogo_20110107.py	1;"	kind:file	line:1
+rogo_mike_trick.py	../examples/data/rogo/rogo_mike_trick.py	1;"	kind:file	line:1
+routing_enums_pb2	../examples/python/cvrptw.py	/^from ortools.constraint_solver import routing_enums_pb2$/;"	kind:namespace	line:41
+routing_enums_pb2	../examples/python/cvrptw_plot.py	/^from ortools.constraint_solver import routing_enums_pb2$/;"	kind:namespace	line:43
+routing_enums_pb2	../examples/python/tsp.py	/^from ortools.constraint_solver import routing_enums_pb2$/;"	kind:namespace	line:32
+row_rule_len	../examples/data/nonogram_regular/nonogram_bear.py	/^row_rule_len = 2$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_car.py	/^row_rule_len = 4;$/;"	kind:variable	line:21
+row_rule_len	../examples/data/nonogram_regular/nonogram_castle.py	/^row_rule_len = 19$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_crocodile.py	/^row_rule_len = 5$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_difficult.py	/^row_rule_len = 2$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_dragonfly.py	/^row_rule_len = 5$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_gondola.py	/^row_rule_len = 8$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_hard.py	/^row_rule_len = 4$/;"	kind:variable	line:20
+row_rule_len	../examples/data/nonogram_regular/nonogram_hen.py	/^row_rule_len = 2$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_lambda.py	/^row_rule_len = 3$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_n4.py	/^row_rule_len = 2$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_n6.py	/^row_rule_len = 4$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_nonunique.py	/^row_rule_len = 4$/;"	kind:variable	line:20
+row_rule_len	../examples/data/nonogram_regular/nonogram_p199.py	/^row_rule_len = 6$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_p200.py	/^row_rule_len = 7$/;"	kind:variable	line:19
+row_rule_len	../examples/data/nonogram_regular/nonogram_ps.py	/^row_rule_len = 2$/;"	kind:variable	line:20
+row_rule_len	../examples/data/nonogram_regular/nonogram_soccer_player.py	/^row_rule_len = 5$/;"	kind:variable	line:20
+row_rule_len	../examples/data/nonogram_regular/nonogram_t2.py	/^row_rule_len = 6$/;"	kind:variable	line:19
+row_rule_len	../examples/python/nonogram_default_search.py	/^row_rule_len = 3$/;"	kind:variable	line:190
+row_rule_len	../examples/python/nonogram_regular.py	/^row_rule_len = 3$/;"	kind:variable	line:316
+row_rule_len	../examples/python/nonogram_table.py	/^row_rule_len = 3$/;"	kind:variable	line:311
+row_rule_len	../examples/python/nonogram_table2.py	/^row_rule_len = 3$/;"	kind:variable	line:213
+row_rules	../examples/data/nonogram_regular/nonogram_bear.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_car.py	/^row_rules = [$/;"	kind:variable	line:22
+row_rules	../examples/data/nonogram_regular/nonogram_castle.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_crocodile.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_difficult.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_dragonfly.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_gondola.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_hard.py	/^row_rules = [$/;"	kind:variable	line:21
+row_rules	../examples/data/nonogram_regular/nonogram_hen.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_lambda.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_n4.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_n6.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_nonunique.py	/^row_rules = [$/;"	kind:variable	line:21
+row_rules	../examples/data/nonogram_regular/nonogram_p199.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_p200.py	/^row_rules = [$/;"	kind:variable	line:20
+row_rules	../examples/data/nonogram_regular/nonogram_ps.py	/^row_rules = [$/;"	kind:variable	line:21
+row_rules	../examples/data/nonogram_regular/nonogram_soccer_player.py	/^row_rules = [$/;"	kind:variable	line:21
+row_rules	../examples/data/nonogram_regular/nonogram_t2.py	/^row_rules  = [$/;"	kind:variable	line:20
+row_rules	../examples/python/nonogram_default_search.py	/^row_rules = [$/;"	kind:variable	line:191
+row_rules	../examples/python/nonogram_regular.py	/^row_rules = [$/;"	kind:variable	line:317
+row_rules	../examples/python/nonogram_table.py	/^row_rules = [$/;"	kind:variable	line:312
+row_rules	../examples/python/nonogram_table2.py	/^row_rules = [$/;"	kind:variable	line:214
+rows	../examples/data/nonogram_regular/nonogram_bear.py	/^rows = 8$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_car.py	/^rows = 10;$/;"	kind:variable	line:20
+rows	../examples/data/nonogram_regular/nonogram_castle.py	/^rows = 35$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_crocodile.py	/^rows = 9$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_difficult.py	/^rows = 15$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_dragonfly.py	/^rows = 20$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_gondola.py	/^rows = 30$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_hard.py	/^rows = 10$/;"	kind:variable	line:19
+rows	../examples/data/nonogram_regular/nonogram_hen.py	/^rows = 9$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_lambda.py	/^rows = 12$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_n4.py	/^rows = 6$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_n6.py	/^rows = 15$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_nonunique.py	/^rows = 15$/;"	kind:variable	line:19
+rows	../examples/data/nonogram_regular/nonogram_p199.py	/^rows = 20$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_p200.py	/^rows = 25$/;"	kind:variable	line:18
+rows	../examples/data/nonogram_regular/nonogram_ps.py	/^rows = 9$/;"	kind:variable	line:19
+rows	../examples/data/nonogram_regular/nonogram_soccer_player.py	/^rows = 20$/;"	kind:variable	line:19
+rows	../examples/data/nonogram_regular/nonogram_t2.py	/^rows = 6$/;"	kind:variable	line:18
+rows	../examples/data/rogo/rogo_20110106.py	/^rows = 9$/;"	kind:variable	line:5
+rows	../examples/data/rogo/rogo_20110107.py	/^rows = 12$/;"	kind:variable	line:5
+rows	../examples/data/rogo/rogo_mike_trick.py	/^rows = 5$/;"	kind:variable	line:10
+rows	../examples/python/assignment.py	/^rows = 4$/;"	kind:variable	line:118
+rows	../examples/python/nonogram_default_search.py	/^rows = 12$/;"	kind:variable	line:189
+rows	../examples/python/nonogram_regular.py	/^rows = 12$/;"	kind:variable	line:315
+rows	../examples/python/nonogram_table.py	/^rows = 12$/;"	kind:variable	line:310
+rows	../examples/python/nonogram_table2.py	/^rows = 12$/;"	kind:variable	line:212
+rows	../examples/python/rogo2.py	/^rows = 5$/;"	kind:variable	line:179
+safe_cracking.py	../examples/python/safe_cracking.py	1;"	kind:file	line:1
+scheduling_speakers.py	../examples/python/scheduling_speakers.py	1;"	kind:file	line:1
+secret_santa.py	../examples/python/secret_santa.py	1;"	kind:file	line:1
+secret_santa2.py	../examples/python/secret_santa2.py	1;"	kind:file	line:1
+send_more_money_any_base.py	../examples/python/send_more_money_any_base.py	1;"	kind:file	line:1
+send_most_money.py	../examples/python/send_most_money.py	1;"	kind:file	line:1
+sendmore.py	../examples/python/sendmore.py	1;"	kind:file	line:1
+service_time_return	../examples/python/cvrptw_plot.py	/^        def service_time_return(a, b):$/;"	kind:function	line:339
+seseman.py	../examples/python/seseman.py	1;"	kind:file	line:1
+seseman_b.py	../examples/python/seseman_b.py	1;"	kind:file	line:1
+set_covering.py	../examples/python/set_covering.py	1;"	kind:file	line:1
+set_covering2.py	../examples/python/set_covering2.py	1;"	kind:file	line:1
+set_covering3.py	../examples/python/set_covering3.py	1;"	kind:file	line:1
+set_covering4.py	../examples/python/set_covering4.py	1;"	kind:file	line:1
+set_covering_deployment.py	../examples/python/set_covering_deployment.py	1;"	kind:file	line:1
+set_covering_skiena.py	../examples/python/set_covering_skiena.py	1;"	kind:file	line:1
+set_partition.py	../examples/python/set_partition.py	1;"	kind:file	line:1
+setup	../check_python_deps.py	/^    from setuptools import setup, Extension$/;"	kind:namespace	line:6
+setup	../examples/python/check_dependencies.py	/^    from setuptools import setup, Extension$/;"	kind:namespace	line:11
+setup	../setup.py	/^    from setuptools import setup, Extension$/;"	kind:namespace	line:9
+setup.py	../setup.py	1;"	kind:file	line:1
+show_all_max	../examples/python/photo_problem.py	/^    show_all_max = 1$/;"	kind:variable	line:152
+show_all_max	../examples/python/photo_problem.py	/^show_all_max = 0  # show all maximal solutions$/;"	kind:variable	line:149
+sicherman_dice.py	../examples/python/sicherman_dice.py	1;"	kind:file	line:1
+simple_meeting.py	../examples/python/simple_meeting.py	1;"	kind:file	line:1
+single	../examples/python/secret_santa2.py	/^  single = 1$/;"	kind:variable	line:220
+single	../examples/python/secret_santa2.py	/^single = 0$/;"	kind:variable	line:215
+ski_assignment.py	../examples/python/ski_assignment.py	1;"	kind:file	line:1
+slitherlink.py	../examples/python/slitherlink.py	1;"	kind:file	line:1
+small	../examples/python/slitherlink.py	/^small = [[3, 2, -1, 3],$/;"	kind:variable	line:5
+sol	../examples/python/3_jugs_mip.py	/^    sol = sys.argv[1]$/;"	kind:variable	line:171
+sol	../examples/python/3_jugs_mip.py	/^  sol = 'CBC'$/;"	kind:variable	line:169
+sol	../examples/python/assignment6_mip.py	/^    sol = sys.argv[1]$/;"	kind:variable	line:162
+sol	../examples/python/assignment6_mip.py	/^  sol = 'GLPK'$/;"	kind:variable	line:160
+sol	../examples/python/blending.py	/^    sol = sys.argv[1]$/;"	kind:variable	line:145
+sol	../examples/python/blending.py	/^  sol = 'CBC'$/;"	kind:variable	line:142
+sol	../examples/python/coloring_ip.py	/^    sol = sys.argv[1]$/;"	kind:variable	line:162
+sol	../examples/python/coloring_ip.py	/^  sol = 'GLPK'$/;"	kind:variable	line:160
+sol	../examples/python/diet1_mip.py	/^    sol = sys.argv[1]$/;"	kind:variable	line:110
+sol	../examples/python/diet1_mip.py	/^  sol = 'GLPK'$/;"	kind:variable	line:108
+sol	../examples/python/game_theory_taha.py	/^    sol = sys.argv[1]$/;"	kind:variable	line:117
+sol	../examples/python/game_theory_taha.py	/^  sol = 'GLPK'$/;"	kind:variable	line:115
+sol	../examples/python/knapsack_mip.py	/^    sol = sys.argv[1]$/;"	kind:variable	line:106
+sol	../examples/python/knapsack_mip.py	/^  sol = 'GLPK'$/;"	kind:variable	line:104
+sol	../examples/python/least_square.py	/^    sol = sys.argv[1]$/;"	kind:variable	line:97
+sol	../examples/python/least_square.py	/^  sol = 'GLPK'$/;"	kind:variable	line:95
+sol	../examples/python/magic_square_mip.py	/^    sol = sys.argv[2]$/;"	kind:variable	line:196
+sol	../examples/python/magic_square_mip.py	/^  sol = 'GLPK'$/;"	kind:variable	line:190
+sol	../examples/python/production.py	/^    sol = sys.argv[1]$/;"	kind:variable	line:103
+sol	../examples/python/production.py	/^  sol = 'CBC'$/;"	kind:variable	line:101
+sol	../examples/python/stigler.py	/^    sol = sys.argv[1]$/;"	kind:variable	line:385
+sol	../examples/python/stigler.py	/^  sol = "GLPK"$/;"	kind:variable	line:382
+solver_parameters_pb2	../examples/python/rabbit_pheasant.py	/^from ortools.constraint_solver import solver_parameters_pb2$/;"	kind:namespace	line:24
+stable_marriage.py	../examples/python/stable_marriage.py	1;"	kind:file	line:1
+start	../examples/python/pandigital_numbers.py	/^start = 1$/;"	kind:variable	line:158
+start_return	../examples/python/cvrptw_plot.py	/^        def start_return(v): return(self.starts[v])$/;"	kind:function	line:431
+steel.py	../examples/python/steel.py	1;"	kind:file	line:1
+steel_lns.py	../examples/python/steel_lns.py	1;"	kind:file	line:1
+stigler.py	../examples/python/stigler.py	1;"	kind:file	line:1
+streams	../examples/data/strimko/strimko2_002.py	/^streams = [$/;"	kind:variable	line:1
+streams	../examples/data/strimko/strimko2_067.py	/^streams = [$/;"	kind:variable	line:1
+streams	../examples/data/strimko/strimko2_068.py	/^streams = [$/;"	kind:variable	line:1
+streams	../examples/data/strimko/strimko2_069.py	/^streams = [$/;"	kind:variable	line:1
+streams	../examples/data/strimko/strimko2_070.py	/^streams = [$/;"	kind:variable	line:1
+strimko2.py	../examples/python/strimko2.py	1;"	kind:file	line:1
+strimko2_002.py	../examples/data/strimko/strimko2_002.py	1;"	kind:file	line:1
+strimko2_067.py	../examples/data/strimko/strimko2_067.py	1;"	kind:file	line:1
+strimko2_068.py	../examples/data/strimko/strimko2_068.py	1;"	kind:file	line:1
+strimko2_069.py	../examples/data/strimko/strimko2_069.py	1;"	kind:file	line:1
+strimko2_070.py	../examples/data/strimko/strimko2_070.py	1;"	kind:file	line:1
+subset_sum	../examples/python/subset_sum.py	/^def subset_sum(solver, values, total):$/;"	kind:function	line:47
+subset_sum.py	../examples/python/subset_sum.py	1;"	kind:file	line:1
+sudoku.py	../examples/python/sudoku.py	1;"	kind:file	line:1
+survo_puzzle.py	../examples/python/survo_puzzle.py	1;"	kind:file	line:1
+sys	../check_python_deps.py	/^import logging, sys, inspect$/;"	kind:namespace	line:1
+sys	../examples/python/3_jugs_mip.py	/^import sys$/;"	kind:namespace	line:32
+sys	../examples/python/all_interval.py	/^import sys$/;"	kind:namespace	line:56
+sys	../examples/python/alphametic.py	/^import sys$/;"	kind:namespace	line:48
+sys	../examples/python/assignment6_mip.py	/^import sys$/;"	kind:namespace	line:44
+sys	../examples/python/blending.py	/^import sys$/;"	kind:namespace	line:26
+sys	../examples/python/broken_weights.py	/^import sys$/;"	kind:namespace	line:51
+sys	../examples/python/bus_schedule.py	/^import sys$/;"	kind:namespace	line:38
+sys	../examples/python/car.py	/^import sys$/;"	kind:namespace	line:33
+sys	../examples/python/check_dependencies.py	/^import logging, sys, inspect$/;"	kind:namespace	line:1
+sys	../examples/python/circuit.py	/^import sys$/;"	kind:namespace	line:47
+sys	../examples/python/coins3.py	/^import sys$/;"	kind:namespace	line:43
+sys	../examples/python/coloring_ip.py	/^import sys$/;"	kind:namespace	line:41
+sys	../examples/python/combinatorial_auction2.py	/^import sys$/;"	kind:namespace	line:35
+sys	../examples/python/costas_array.py	/^import sys$/;"	kind:namespace	line:64
+sys	../examples/python/covering_opl.py	/^import sys$/;"	kind:namespace	line:60
+sys	../examples/python/crew.py	/^import sys$/;"	kind:namespace	line:42
+sys	../examples/python/debruijn_binary.py	/^import sys$/;"	kind:namespace	line:46
+sys	../examples/python/diet1_mip.py	/^import sys$/;"	kind:namespace	line:39
+sys	../examples/python/discrete_tomography.py	/^import sys$/;"	kind:namespace	line:58
+sys	../examples/python/divisible_by_9_through_1.py	/^import sys$/;"	kind:namespace	line:56
+sys	../examples/python/fill_a_pix.py	/^import sys$/;"	kind:namespace	line:55
+sys	../examples/python/furniture_moving.py	/^import sys$/;"	kind:namespace	line:40
+sys	../examples/python/game_theory_taha.py	/^import sys$/;"	kind:namespace	line:28
+sys	../examples/python/grocery.py	/^import sys$/;"	kind:namespace	line:40
+sys	../examples/python/kakuro.py	/^import sys$/;"	kind:namespace	line:59
+sys	../examples/python/kenken2.py	/^import sys$/;"	kind:namespace	line:60
+sys	../examples/python/killer_sudoku.py	/^import sys$/;"	kind:namespace	line:71
+sys	../examples/python/knapsack_mip.py	/^import sys$/;"	kind:namespace	line:26
+sys	../examples/python/langford.py	/^import sys$/;"	kind:namespace	line:48
+sys	../examples/python/least_square.py	/^import sys$/;"	kind:namespace	line:29
+sys	../examples/python/lectures.py	/^import sys$/;"	kind:namespace	line:48
+sys	../examples/python/magic_square.py	/^import sys$/;"	kind:namespace	line:26
+sys	../examples/python/magic_square_and_cards.py	/^import sys$/;"	kind:namespace	line:32
+sys	../examples/python/magic_square_mip.py	/^import sys$/;"	kind:namespace	line:46
+sys	../examples/python/marathon2.py	/^import sys$/;"	kind:namespace	line:51
+sys	../examples/python/max_flow_winston1.py	/^import sys$/;"	kind:namespace	line:32
+sys	../examples/python/minesweeper.py	/^import sys$/;"	kind:namespace	line:67
+sys	../examples/python/mr_smith.py	/^import sys$/;"	kind:namespace	line:51
+sys	../examples/python/nonogram_default_search.py	/^import sys$/;"	kind:namespace	line:44
+sys	../examples/python/nonogram_regular.py	/^import sys$/;"	kind:namespace	line:70
+sys	../examples/python/nonogram_table.py	/^import sys$/;"	kind:namespace	line:70
+sys	../examples/python/nonogram_table2.py	/^import sys$/;"	kind:namespace	line:70
+sys	../examples/python/nontransitive_dice.py	/^import sys$/;"	kind:namespace	line:71
+sys	../examples/python/nqueens2.py	/^import sys$/;"	kind:namespace	line:29
+sys	../examples/python/nqueens3.py	/^import sys$/;"	kind:namespace	line:31
+sys	../examples/python/olympic.py	/^import sys$/;"	kind:namespace	line:60
+sys	../examples/python/organize_day.py	/^import sys$/;"	kind:namespace	line:36
+sys	../examples/python/p_median.py	/^import sys$/;"	kind:namespace	line:38
+sys	../examples/python/pandigital_numbers.py	/^import sys$/;"	kind:namespace	line:65
+sys	../examples/python/photo_problem.py	/^import sys$/;"	kind:namespace	line:50
+sys	../examples/python/place_number_puzzle.py	/^import sys$/;"	kind:namespace	line:44
+sys	../examples/python/production.py	/^import sys$/;"	kind:namespace	line:26
+sys	../examples/python/quasigroup_completion.py	/^import sys$/;"	kind:namespace	line:57
+sys	../examples/python/rogo2.py	/^import sys$/;"	kind:namespace	line:49
+sys	../examples/python/secret_santa.py	/^import sys$/;"	kind:namespace	line:64
+sys	../examples/python/secret_santa2.py	/^import sys$/;"	kind:namespace	line:65
+sys	../examples/python/send_more_money_any_base.py	/^import sys$/;"	kind:namespace	line:46
+sys	../examples/python/set_partition.py	/^import sys$/;"	kind:namespace	line:49
+sys	../examples/python/sicherman_dice.py	/^import sys$/;"	kind:namespace	line:63
+sys	../examples/python/ski_assignment.py	/^import sys$/;"	kind:namespace	line:52
+sys	../examples/python/stable_marriage.py	/^import sys$/;"	kind:namespace	line:42
+sys	../examples/python/stigler.py	/^import sys$/;"	kind:namespace	line:122
+sys	../examples/python/strimko2.py	/^import sys$/;"	kind:namespace	line:47
+sys	../examples/python/subset_sum.py	/^import sys$/;"	kind:namespace	line:43
+sys	../examples/python/survo_puzzle.py	/^import sys$/;"	kind:namespace	line:64
+sys	../examples/python/traffic_lights.py	/^import sys$/;"	kind:namespace	line:74
+sys	../examples/python/word_square.py	/^import sys$/;"	kind:namespace	line:42
+sys	../examples/python/young_tableaux.py	/^import sys$/;"	kind:namespace	line:64
+test_problems	../examples/python/alphametic.py	/^def test_problems(base=10):$/;"	kind:function	line:143
+the_killers	../examples/python/who_killed_agatha.py	/^the_killers = defaultdict(int)$/;"	kind:variable	line:209
+timedelta	../examples/python/cvrptw_plot.py	/^from datetime import datetime, timedelta$/;"	kind:namespace	line:44
+toNum	../examples/python/debruijn_binary.py	/^def toNum(solver, t, s, base):$/;"	kind:function	line:52
+toNum	../examples/python/divisible_by_9_through_1.py	/^def toNum(solver, t, s, base):$/;"	kind:function	line:102
+toNum	../examples/python/pandigital_numbers.py	/^def toNum(solver, t, s, base):$/;"	kind:function	line:74
+toNum	../examples/python/toNum.py	/^def toNum(solver, t, s, base):$/;"	kind:function	line:34
+toNum.py	../examples/python/toNum.py	1;"	kind:file	line:1
+tot_time_fn	../examples/python/cvrptw_plot.py	/^    def tot_time_fn(a, b):$/;"	kind:function	line:597
+total	../examples/python/subset_sum.py	/^    total = int(sys.argv[1])$/;"	kind:variable	line:110
+total	../examples/python/subset_sum.py	/^total = 100$/;"	kind:variable	line:107
+traffic_lights.py	../examples/python/traffic_lights.py	1;"	kind:file	line:1
+tranit_time_return	../examples/python/cvrptw_plot.py	/^        def tranit_time_return(a, b):$/;"	kind:function	line:355
+tsp.py	../examples/python/tsp.py	1;"	kind:file	line:1
+use_output_matrix	../examples/python/magic_square_mip.py	/^    use_output_matrix = int(sys.argv[3])$/;"	kind:variable	line:202
+use_output_matrix	../examples/python/magic_square_mip.py	/^  use_output_matrix = 0$/;"	kind:variable	line:191
+values	../examples/python/knapsack_cp.py	/^values = [15, 100, 90, 60, 40, 15, 10, 1, 12, 12, 100]$/;"	kind:variable	line:89
+values1	../examples/python/futoshiki.py	/^values1 = [$/;"	kind:variable	line:134
+values2	../examples/python/futoshiki.py	/^values2 = [$/;"	kind:variable	line:167
+van_hentenryck	../examples/python/stable_marriage.py	/^van_hentenryck = {$/;"	kind:variable	line:140
+var_matrix_array	../examples/python/who_killed_agatha.py	/^def var_matrix_array(solver, rows, cols, lb, ub, name):$/;"	kind:function	line:69
+vehicle_output_string	../examples/python/cvrptw_plot.py	/^def vehicle_output_string(routing, plan):$/;"	kind:function	line:449
+vendor_scheduling.py	../examples/python/vendor_scheduling.py	1;"	kind:file	line:1
+version_info	../setup.py	/^from sys import version_info$/;"	kind:namespace	line:15
+volsay.py	../examples/python/volsay.py	1;"	kind:file	line:1
+volsay2.py	../examples/python/volsay2.py	1;"	kind:file	line:1
+volsay3.py	../examples/python/volsay3.py	1;"	kind:file	line:1
+weights	../examples/python/knapsack_cp.py	/^weights = [2, 20, 20, 30, 40, 30, 60, 10, 21, 12, 2]$/;"	kind:variable	line:90
+who_killed_agatha.py	../examples/python/who_killed_agatha.py	1;"	kind:file	line:1
+word_dict	../examples/python/word_square.py	/^    word_dict = sys.argv[1]$/;"	kind:variable	line:164
+word_dict	../examples/python/word_square.py	/^word_dict = "\/usr\/share\/dict\/words"$/;"	kind:variable	line:156
+word_len	../examples/python/word_square.py	/^    word_len = int(sys.argv[2])$/;"	kind:variable	line:166
+word_len	../examples/python/word_square.py	/^word_len = 2$/;"	kind:variable	line:157
+word_square.py	../examples/python/word_square.py	1;"	kind:file	line:1
+words	../examples/python/word_square.py	/^  words = read_words(word_dict, word_len, limit)$/;"	kind:variable	line:173
+wrong_module	../examples/python/check_dependencies.py	/^def wrong_module(module_file, modulename):$/;"	kind:function	line:25
+wrong_version	../check_python_deps.py	/^def wrong_version(module, modulename, required_version, installed_version):$/;"	kind:function	line:29
+xkcd.py	../examples/python/xkcd.py	1;"	kind:file	line:1
+xrange	../examples/python/cvrptw.py	/^from six.moves import xrange$/;"	kind:namespace	line:39
+young_tableaux.py	../examples/python/young_tableaux.py	1;"	kind:file	line:1
+zebra.py	../examples/python/zebra.py	1;"	kind:file	line:1
+zero_depot_demands	../examples/python/cvrptw_plot.py	/^    def zero_depot_demands(self, depot):$/;"	kind:member	line:306

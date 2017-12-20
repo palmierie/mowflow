@@ -1,0 +1,60 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CreateDistanceCallback	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^class CreateDistanceCallback(object):$/;"	kind:class	line:61
+CreateDistanceMatrixCallback	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^class CreateDistanceMatrixCallback(object):$/;"	kind:class	line:92
+CreateDurationPerLocationCallback	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^class CreateDurationPerLocationCallback(object):$/;"	kind:class	line:101
+Distance	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^  def Distance(self, from_node, to_node):$/;"	kind:member	line:87
+Distance	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^  def Distance(self, from_node, to_node):$/;"	kind:member	line:96
+Duration_per_location	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^  def Duration_per_location(self, from_node, to_node):$/;"	kind:member	line:107
+Extension	../lib/ortools_d/check_python_deps.py	/^    from setuptools import setup, Extension$/;"	kind:namespace	line:6
+Extension	../lib/ortools_d/setup.py	/^    from setuptools import setup, Extension$/;"	kind:namespace	line:9
+OptionParser	../lib/ortools_d/check_python_deps.py	/^from optparse import OptionParser$/;"	kind:namespace	line:2
+__init__	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^  def __init__(self, duration_per_location):$/;"	kind:member	line:104
+__init__	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^  def __init__(self, locations):$/;"	kind:member	line:64
+__init__	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^  def __init__(self, locations):$/;"	kind:member	line:93
+_pywrapcp	../lib/ortools_d/check_python_deps.py	/^	from ortools.constraint_solver import _pywrapcp$/;"	kind:namespace	line:103
+_pywrapgraph	../lib/ortools_d/check_python_deps.py	/^	from ortools.graph import _pywrapgraph$/;"	kind:namespace	line:106
+_pywrapknapsack_solver	../lib/ortools_d/check_python_deps.py	/^	from ortools.algorithms import _pywrapknapsack_solver$/;"	kind:namespace	line:105
+_pywraplp	../lib/ortools_d/check_python_deps.py	/^	from ortools.linear_solver import _pywraplp$/;"	kind:namespace	line:104
+absent_version	../lib/ortools_d/check_python_deps.py	/^def absent_version(module, modulename):$/;"	kind:function	line:24
+array	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^from array import array$/;"	kind:namespace	line:40
+check_absent_version	../lib/ortools_d/check_python_deps.py	/^def check_absent_version(module, modulename):$/;"	kind:function	line:38
+check_python_deps.py	../lib/ortools_d/check_python_deps.py	1;"	kind:file	line:1
+cvrptw_mowflow.py	../lib/ortools_d/examples/python/cvrptw_mowflow.py	1;"	kind:file	line:1
+dirname	../lib/ortools_d/setup.py	/^from os.path import dirname$/;"	kind:namespace	line:14
+distance	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^def distance(x1, y1, x2, y2):$/;"	kind:function	line:54
+easy_install	../lib/ortools_d/check_python_deps.py	/^    from setuptools.command import easy_install$/;"	kind:namespace	line:7
+executable	../lib/ortools_d/setup.py	/^from sys import executable$/;"	kind:namespace	line:1
+google	../lib/ortools_d/check_python_deps.py	/^		import google.protobuf$/;"	kind:namespace	line:78
+inspect	../lib/ortools_d/check_python_deps.py	/^import logging, sys, inspect$/;"	kind:namespace	line:1
+json	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^import json$/;"	kind:namespace	line:38
+log_error_and_exit	../lib/ortools_d/check_python_deps.py	/^def log_error_and_exit(error_message):$/;"	kind:function	line:34
+logging	../lib/ortools_d/check_python_deps.py	/^import logging, sys, inspect$/;"	kind:namespace	line:1
+main	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^def main(json_data):$/;"	kind:function	line:111
+main_test	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^def main_test(json_data):$/;"	kind:function	line:46
+math	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^import math$/;"	kind:namespace	line:39
+notinstalled	../lib/ortools_d/check_python_deps.py	/^def notinstalled(modulename):$/;"	kind:function	line:20
+ortools	../lib/ortools_d/check_python_deps.py	/^		import ortools$/;"	kind:namespace	line:72
+parse_version	../lib/ortools_d/check_python_deps.py	/^from pkg_resources import parse_version$/;"	kind:namespace	line:15
+pjoin	../lib/ortools_d/setup.py	/^from os.path import join as pjoin$/;"	kind:namespace	line:13
+protobuf	../lib/ortools_d/check_python_deps.py	/^		import google.protobuf$/;"	kind:namespace	line:78
+python_data	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^python_data = main(rubydata)$/;"	kind:variable	line:255
+pywrapcp	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^from ortools.constraint_solver import pywrapcp$/;"	kind:namespace	line:42
+raw	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^raw = sys.stdin.read()$/;"	kind:variable	line:253
+read	../lib/ortools_d/setup.py	/^def read(fname):$/;"	kind:function	line:22
+required_ortools_version	../lib/ortools_d/check_python_deps.py	/^required_ortools_version = "6.4.4495"$/;"	kind:variable	line:17
+required_protobuf_version	../lib/ortools_d/check_python_deps.py	/^required_protobuf_version = "3.3.0"$/;"	kind:variable	line:18
+routing_enums_pb2	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^from ortools.constraint_solver import routing_enums_pb2$/;"	kind:namespace	line:43
+rubydata	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^rubydata = json.loads(raw)$/;"	kind:variable	line:254
+setup	../lib/ortools_d/check_python_deps.py	/^    from setuptools import setup, Extension$/;"	kind:namespace	line:6
+setup	../lib/ortools_d/setup.py	/^    from setuptools import setup, Extension$/;"	kind:namespace	line:9
+setup.py	../lib/ortools_d/setup.py	1;"	kind:file	line:1
+sys	../lib/ortools_d/check_python_deps.py	/^import logging, sys, inspect$/;"	kind:namespace	line:1
+sys	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^import sys$/;"	kind:namespace	line:37
+version_info	../lib/ortools_d/setup.py	/^from sys import version_info$/;"	kind:namespace	line:15
+wrong_version	../lib/ortools_d/check_python_deps.py	/^def wrong_version(module, modulename, required_version, installed_version):$/;"	kind:function	line:29
+xrange	../lib/ortools_d/examples/python/cvrptw_mowflow.py	/^from six.moves import xrange$/;"	kind:namespace	line:41

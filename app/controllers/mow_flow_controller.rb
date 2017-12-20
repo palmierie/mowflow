@@ -35,6 +35,7 @@ class MowFlowController < ApplicationController
     @coordinates_string = @coordinates_string.chop!
 
     @location_matrix = create_matrix(@coordinates_string)
+    puts "matrix: #{@location_matrix}"
 
     @data_hash_for_optimization = {
                                     location_ids: @location_ids,
@@ -43,7 +44,8 @@ class MowFlowController < ApplicationController
                                     number_of_routes: @number_of_routes 
                                   }
     @opto_data = optimize_mine(@data_hash_for_optimization)
-                              
+    puts "optimized data: #{@opto_data}"
+    
   end
 
   private
@@ -54,7 +56,7 @@ class MowFlowController < ApplicationController
     end
 
     def optimize_mine(data_hash)
-      
+      @opto_data = ApiCalls.python_google_or_tools(data_hash)
       return @opto_data
     end
 
