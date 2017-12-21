@@ -17,6 +17,8 @@ class CreateScheduledLocations < ActiveRecord::Migration[5.1]
       t.integer :mow_frequency
       t.date :date_mowed
       t.date :next_mow_date
+      t.date :service_date
+      t.boolean :in_progress
       t.references :duration, foreign_key: true
       t.references :extra_duration, foreign_key: true
       t.text :user_notes

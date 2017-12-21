@@ -35,6 +35,7 @@ class MowFlowController < ApplicationController
     @coordinates_string = @coordinates_string.chop!
 
     # Generate Location Matrix from coordinates
+    puts "coord string: #{@coordinates_string}"
     @location_matrix = create_matrix(@coordinates_string)
     puts "matrix: #{@location_matrix}"
 
@@ -70,20 +71,22 @@ class MowFlowController < ApplicationController
     # Get class variable
     @hash_from_save = opto_hash_list
     ## TO DO:
-    # Add column to ScheduledLocations - optimized date
-    #  LOOP: Set optimized date of each location hash to key of the hash: @hash_from_save[date] = [{location},{location}, etc]
+    #  LOOP: Set service date of each location hash to key of the hash: @hash_from_save[date] = [{location},{location}, etc]
     @hash_from_save.each do |job_list|
       @opto_date = job_list[0]
-      puts "date: #{@opto_date}"
+      # set position
+      position = 1
       job_list[1].each do |job|
-        # set optimized date to @opto_date
+        # set service date to @opto_date
         @opto_job = ScheduledLocation.where("id = ?", job["id"]).first
-        # @opto_job.optimized_date = @opto_date
-        puts "opto_job: #{@opto_job}"
+        @opto_job.service_date = @opto_date
+        # save position - order of jobs
+        @opto_job.position = position
+        @opto_job.update(scheduled_location_params)
+        position += 1
       end
-      # puts "job_list: #{job_list}"
     end
-    # puts "back from the def: #{@hash_from_save}"
+    
   end
 
   private
@@ -103,4 +106,8 @@ class MowFlowController < ApplicationController
       return @@save_hash
     end
 
+   # Never trust parameters from the scary internet, only allow the white list through.
+    def scheduled_location_params
+      params.permit(:service_date, :position)
+    end
 end

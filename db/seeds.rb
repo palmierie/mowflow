@@ -27,3 +27,7 @@ ExtraDuration.create([
 Key.create([
   { name: "Google Places API", key: "AIzaSyDVo1wSditnf5dqWnDXSCbG_DYmLK_uiEY"}
 ])
+
+# Client.create([
+#   {full_name}
+# ])

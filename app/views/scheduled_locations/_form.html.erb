@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "Client ID and Name" %><br>
+    <%= f.label "Client Name" %><br>
     <%= f.collection_select(:client_id, Client.all, :id, :full_name) %>
   </div>
 
