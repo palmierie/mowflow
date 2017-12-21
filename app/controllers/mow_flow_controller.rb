@@ -69,8 +69,21 @@ class MowFlowController < ApplicationController
   def save_list
     # Get class variable
     @hash_from_save = opto_hash_list
-    
-    puts "back from the def: #{@hash_from_save}"
+    ## TO DO:
+    # Add column to ScheduledLocations - optimized date
+    #  LOOP: Set optimized date of each location hash to key of the hash: @hash_from_save[date] = [{location},{location}, etc]
+    @hash_from_save.each do |job_list|
+      @opto_date = job_list[0]
+      puts "date: #{@opto_date}"
+      job_list[1].each do |job|
+        # set optimized date to @opto_date
+        @opto_job = ScheduledLocation.where("id = ?", job["id"]).first
+        # @opto_job.optimized_date = @opto_date
+        puts "opto_job: #{@opto_job}"
+      end
+      # puts "job_list: #{job_list}"
+    end
+    # puts "back from the def: #{@hash_from_save}"
   end
 
   private
