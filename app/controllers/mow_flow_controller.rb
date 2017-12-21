@@ -1,5 +1,5 @@
 class MowFlowController < ApplicationController
-  
+  @hash_to_pass = {}
   def show
     @dates = Date.today..(Date.today + 2)
     @jobs = ScheduledLocation.all.group_by(&:next_mow_date)
@@ -34,6 +34,7 @@ class MowFlowController < ApplicationController
     end
     @coordinates_string = @coordinates_string.chop!
 
+    # Generate Location Matrix from coordinates
     @location_matrix = create_matrix(@coordinates_string)
     puts "matrix: #{@location_matrix}"
 
@@ -43,9 +44,31 @@ class MowFlowController < ApplicationController
                                     duration_per_location: @duration_per_location,
                                     number_of_routes: @number_of_routes 
                                   }
+    # Run Google OR-TOOLS Python Script to Optimize for best driving route
     @opto_data = optimize_mine(@data_hash_for_optimization)
-    puts "optimized data: #{@opto_data}"
     
+    # loop through data and push location id arrays (without the depots) to containing hash
+    # {"date"=>[loc_hash,loc_hash], "date-2"=>[loc_hash,loc_hash,loc_hash] }
+    @opto_location_hashes = {}
+    limit = @number_of_routes;
+    @dates_array = @dates.to_a
+    for i in 1..limit
+      @location_array = []
+      @lookup_ids = @opto_data["route_day_#{i}"]["location_ids"].slice(1,(@opto_data["route_day_#{i}"]["location_ids"].length - 2))
+      @lookup_ids.each do |id|
+        @location_array.push( ScheduledLocation.where("id = ?", id).first.as_json )
+      end
+      @opto_location_hashes["#{@dates_array[i-1]}"] = @location_array
+    end
+
+      opto_hash_list(@opto_location_hashes)
+
+    render 'results'
+  end
+
+  def save_list
+    @hash_from_save = opto_hash_list
+    puts "back from the def: #{@hash_from_save}"
   end
 
   private
@@ -58,6 +81,10 @@ class MowFlowController < ApplicationController
     def optimize_mine(data_hash)
       @opto_data = ApiCalls.python_google_or_tools(data_hash)
       return @opto_data
+    end
+
+    def opto_hash_list(hash_to_save = nil)
+      @save_hash ||= hash_to_save
     end
 
 end

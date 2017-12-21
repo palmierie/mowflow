@@ -21,14 +21,7 @@
    The variant which is tackled by this model includes a capacity dimension,
    time windows and optional orders, with a penalty cost if orders are not
    performed.
-   Too help explore the problem, two classes are provided Customers() and
-   Vehicles(): used to randomly locate orders and depots, and to randomly
-   generate demands, time-window constraints and vehicles.
-   Distances are computed using the Great Circle distances. Distances are in km
-   and times in seconds.
-
-   A function for the displaying of the vehicle plan
-   display_vehicle_output
+   Distances are in km and times in seconds.
 
    The optimization engine uses local search to improve solutions, first
    solutions being generated using a cheapest addition heuristic.
@@ -42,21 +35,6 @@ from six.moves import xrange
 from ortools.constraint_solver import pywrapcp
 from ortools.constraint_solver import routing_enums_pb2
 
-
-def main_test(json_data):
-  testobj = {}
-  testobj["first_thang"] = json_data
-  # return json_data
-  return testobj
-  # return "method works"
-  # return {"method works", json_data}
-
-def distance(x1, y1, x2, y2):
-    # Manhattan distance
-    dist = abs(x1 - x2) + abs(y1 - y2)
-
-    return dist
-
 # Distance callback
 class CreateDistanceCallback(object):
   """Create callback to calculate distances and travel times between points."""
@@ -68,22 +46,15 @@ class CreateDistanceCallback(object):
 
     for from_node in xrange(num_locations):
       self.matrix[from_node] = {}
-      # print ("*************************************************************")
-      # print ("In from_node loop matrix [from_node]:", self.matrix[from_node])
-      # DELETE LATER ^
       for to_node in xrange(num_locations):
         if from_node == to_node:
           self.matrix[from_node][to_node] = 0
-          # print ("In to_node loop matrix [from_node][to_node]:", self.matrix[from_node][to_node])
-          # DELETE LATER ^
         else:
           x1 = locations[from_node][0]
           y1 = locations[from_node][1]
           x2 = locations[to_node][0]
           y2 = locations[to_node][1]
           self.matrix[from_node][to_node] = distance(x1, y1, x2, y2)
-          # print ("In to_node loop matrix [from_node][to_node]:", self.matrix[from_node][to_node])
-          # DELETE LATER ^
   def Distance(self, from_node, to_node):
     return self.matrix[from_node][to_node]
 
