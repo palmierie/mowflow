@@ -1,5 +1,5 @@
 class MowFlowController < ApplicationController
-  @hash_to_pass = {}
+  @@save_hash = {}
   def show
     @dates = Date.today..(Date.today + 2)
     @jobs = ScheduledLocation.all.group_by(&:next_mow_date)
@@ -60,14 +60,16 @@ class MowFlowController < ApplicationController
       end
       @opto_location_hashes["#{@dates_array[i-1]}"] = @location_array
     end
-
-      opto_hash_list(@opto_location_hashes)
+    # Sets class varible @@save_hash - to be accessed from next method: save_list
+    opto_hash_list(@opto_location_hashes)
 
     render 'results'
   end
 
   def save_list
+    # Get class variable
     @hash_from_save = opto_hash_list
+    
     puts "back from the def: #{@hash_from_save}"
   end
 
@@ -84,7 +86,8 @@ class MowFlowController < ApplicationController
     end
 
     def opto_hash_list(hash_to_save = nil)
-      @save_hash ||= hash_to_save
+      @@save_hash = hash_to_save || @@save_hash
+      return @@save_hash
     end
 
 end
