@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'reschedule_job/:id', to: 'scheduled_locations#reschedule_job', as: 'reschedule_job'
   patch 'reschedule_job/:id', to: 'scheduled_locations#reschedule_job_update', as: 'reschedule_job_update'
   post 'mow_flow_opto', to: 'mow_flow#optimize_list', as: 'mow_flow_opto'
+  get 'mow_flow_save', to: 'mow_flow#save_list', as: 'mow_flow_save'
   get 'new_depot', to: 'scheduled_locations#new_depot', as: 'new_depot'
   post 'create_depot', to: 'scheduled_locations#create_depot', as: 'create_depot'
   get 'edit_depot', to: 'scheduled_locations#edit_depot', as: 'edit_depot'
