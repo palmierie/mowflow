@@ -157,8 +157,28 @@ class MowFlowController < ApplicationController
 
     if @reschedule_redirect
       in_progress_jobs_hash(@reschedule_jobs)
+      redirect_to reschedule_in_progress_path and return
     end
     
+    redirect_to in_progress_path
+  end
+
+  def reschedule_in_progress
+    @jobs = in_progress_jobs_hash
+    render 'reschedule_in_progress'
+  end
+
+  def save_reschedule_in_progress
+    scheduled_location_params_done = scheduled_location_params
+    @jobs = in_progress_jobs_hash
+    @jobs.each do |job|
+      @reschedule_date_raw = params["#{job["id"]}"]
+      @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
+      @reschedule_date = Date.parse("#{@reschedule_date_raw["date(1i)"]}-#{@reschedule_date_raw["date(2i)"]}-#{@reschedule_date_raw["date(3i)"]}")
+      scheduled_location_params_done[:service_date] = @reschedule_date
+      @scheduled_location.update(scheduled_location_params_done)
+    end
+    redirect_to in_progress_path
   end
 
   private

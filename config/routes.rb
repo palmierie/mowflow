@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   get 'mow_flow_save', to: 'mow_flow#save_list', as: 'mow_flow_save'
   get 'in_progress', to: 'mow_flow#in_progress', as: 'in_progress'
   post 'save_progress', to: 'mow_flow#save_progress', as: 'save_progress'
+  get 'reschedule_in_progress', to: 'mow_flow#reschedule_in_progress', as: 'reschedule_in_progress'
+  post 'save_reschedule_in_progress', to: 'mow_flow#save_reschedule_in_progress', as: 'save_reschedule_in_progress'
   get 'new_depot', to: 'scheduled_locations#new_depot', as: 'new_depot'
   post 'create_depot', to: 'scheduled_locations#create_depot', as: 'create_depot'
   get 'edit_depot', to: 'scheduled_locations#edit_depot', as: 'edit_depot'
