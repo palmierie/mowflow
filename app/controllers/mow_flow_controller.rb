@@ -103,12 +103,6 @@ class MowFlowController < ApplicationController
     @business = get_business
     # get jobs where business_id, in_progress = true, service_date = today
     @jobs = ScheduledLocation.where("business_id = ? AND service_date = ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
-    #get client info for each job
-    # @clients = []
-    # @jobs.each do |job|
-    #   @client = Client.where("id = ?", job.client_id).first
-    #   @clients.push(@client)
-    # end
     @in_prog_options = ["Not Done","Done","Reschedule for Tomorrow","Reschedule for Later Date"]
     # Sets class varible @@jobs_hash - to be accessed from next method: save_progress
     in_progress_jobs_hash(@jobs)
@@ -142,6 +136,7 @@ class MowFlowController < ApplicationController
         scheduled_location_params_done = scheduled_location_params
         @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
         scheduled_location_params_done[:service_date] = (Date.today + 1)
+        scheduled_location_params_done[:next_mow_date] = (Date.today + 1)
         scheduled_location_params_done[:position] = nil
         @scheduled_location.update(scheduled_location_params_done)
       end
