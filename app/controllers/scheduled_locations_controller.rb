@@ -1,6 +1,7 @@
 class ScheduledLocationsController < ApplicationController
   include HTTParty
   def index
+    ## TO DO add search
     @scheduled_locations = ScheduledLocation.all
   end
 
@@ -21,9 +22,11 @@ class ScheduledLocationsController < ApplicationController
     latitude = response_hash['geometry']['location']['lat']
     @scheduled_location.coordinates = "#{longitude},#{latitude}"
     @scheduled_location.google_place_id = response_hash['place_id']
-
+    
     @scheduled_location.business_id = @business.id
-    @scheduled_location.client_id = 1
+    # get or create client id
+    @client = get_client
+    @scheduled_location.client_id = @client.id
     @scheduled_location.duration_id = 1
     @scheduled_location.extra_duration_id = 6
     @scheduled_location.depot = true
@@ -32,7 +35,7 @@ class ScheduledLocationsController < ApplicationController
       if @scheduled_location.save
         format.html { redirect_to my_business_path, notice: 'Business Depot was successfully created.' }
       else
-        format.html { render :new }
+        format.html { render new_depot }
         format.json { render json: @scheduled_location.errors, status: :unprocessable_entity }
       end
     end
@@ -213,6 +216,7 @@ class ScheduledLocationsController < ApplicationController
     def get_client
       @user_business = UserBusiness.where('user_id = ?', current_user).first
       @business = Business.where('id = ?', @user_business.business_id).first
+      @client = Client.find_or_create_by(business_id: @business.id)
     end
 
     # Change Mow Frequency input to integer

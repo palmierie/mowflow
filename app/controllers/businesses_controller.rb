@@ -7,6 +7,7 @@ class BusinessesController < ApplicationController
 
   def create
     @business = Business.new(business_params)
+    @business_as_client = Client.new(params)
     respond_to do |format|
       if @business.save
         format.html { redirect_to new_depot_path, notice: 'Business was successfully created.' }

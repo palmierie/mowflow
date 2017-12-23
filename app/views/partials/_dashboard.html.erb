@@ -40,7 +40,7 @@
             <div class="card-body">
               <div class="list-group" id="calendarList" role="tablist">
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab"><%= link_to 'View Calendar', calendar_path %></a>
-                <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab"><%= link_to 'View Week', calendar_week_index_path %></a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab"><%= link_to 'View/Edit Week', calendar_week_index_path %></a>
               </div>
             </div>
           </div>
@@ -53,8 +53,9 @@
           <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
             <div class="card-body">
               <div class="list-group" id="mowFlowList" role="tablist">
-                <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab"><%= link_to 'Generate', mow_flow_path %></a>
-                <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Checklist</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab"><%= link_to 'Optimize Schedule', mow_flow_path %></a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab"><%= link_to "Select Today's Schedule", mow_flow_path %></a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab"><%= link_to 'In Progress', in_progress_path %></a>
               </div>
             </div>
           </div>

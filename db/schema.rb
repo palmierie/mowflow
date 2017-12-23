@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 20171219160937) do
     t.integer "mow_frequency"
     t.date "date_mowed"
     t.date "next_mow_date"
+    t.date "service_date"
+    t.boolean "in_progress"
     t.integer "duration_id"
     t.integer "extra_duration_id"
     t.text "user_notes"

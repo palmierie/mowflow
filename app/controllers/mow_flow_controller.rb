@@ -1,5 +1,6 @@
 class MowFlowController < ApplicationController
-  @hash_to_pass = {}
+  @@save_hash = {}
+  @@jobs_hash = {}
   def show
     @dates = Date.today..(Date.today + 2)
     @jobs = ScheduledLocation.all.group_by(&:next_mow_date)
@@ -8,8 +9,7 @@ class MowFlowController < ApplicationController
   
   def optimize_list
     # get depot
-    @user_business = UserBusiness.where('user_id = ?', current_user).first
-    @business = Business.where('id = ?', @user_business.business_id).first
+    @business = get_business
     @depot = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first.as_json
     # get number of routes (days) for optimization
     @number_of_routes = params["days"].to_i
@@ -35,6 +35,7 @@ class MowFlowController < ApplicationController
     @coordinates_string = @coordinates_string.chop!
 
     # Generate Location Matrix from coordinates
+    puts "coord string: #{@coordinates_string}"
     @location_matrix = create_matrix(@coordinates_string)
     puts "matrix: #{@location_matrix}"
 
@@ -60,18 +61,132 @@ class MowFlowController < ApplicationController
       end
       @opto_location_hashes["#{@dates_array[i-1]}"] = @location_array
     end
-
-      opto_hash_list(@opto_location_hashes)
+    # Sets class varible @@save_hash - to be accessed from next method: save_list
+    opto_hash_list(@opto_location_hashes)
 
     render 'results'
   end
 
   def save_list
+    # Get class variable
     @hash_from_save = opto_hash_list
-    puts "back from the def: #{@hash_from_save}"
+    ## TO DO:
+    #  LOOP: Set service date of each location hash to key of the hash: @hash_from_save[date] = [{location},{location}, etc]
+    @hash_from_save.each do |job_list|
+      @opto_date = job_list[0]
+      # set position
+      position = 1
+      job_list[1].each do |job|
+        # set service date to @opto_date
+        @opto_job = ScheduledLocation.where("id = ?", job["id"]).first
+        @opto_job.service_date = @opto_date
+        # if service_date is today then switch in_progress boolean to true
+        if @opto_date == Date.today.strftime("%F")
+          @opto_job.in_progress = true
+        end
+        # save position - order of jobs
+        @opto_job.position = position
+        @opto_job.update(scheduled_location_params)
+        position += 1
+      end
+    end
+    redirect_to in_progress_path
+  end
+
+  def select_work_list
+    @business = get_business
+
+    # redirect_to in_progess_path
+  end
+  
+  def in_progress
+    @business = get_business
+    # get jobs where business_id, in_progress = true, service_date = today
+    @jobs = ScheduledLocation.where("business_id = ? AND service_date = ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
+    #get client info for each job
+    # @clients = []
+    # @jobs.each do |job|
+    #   @client = Client.where("id = ?", job.client_id).first
+    #   @clients.push(@client)
+    # end
+    @in_prog_options = ["Not Done","Done","Reschedule for Tomorrow","Reschedule for Later Date"]
+    # Sets class varible @@jobs_hash - to be accessed from next method: save_progress
+    in_progress_jobs_hash(@jobs)
+
+    render 'in_progress'
+  end
+
+  def save_progress
+    @jobs = in_progress_jobs_hash
+    @reschedule_jobs = []
+    @reschedule_redirect = false
+    # loop through progress update select and handle params accordingly
+    # params options: "Not Done", "Done", "Reschedule for Tomorrow", "Reschedule for Later Date"
+    @jobs.each do |job|
+      @progress = params["#{job["id"]}"]
+      # If "Not Done", then do nothing
+      # If "Done", then switch in_progress to false, set date_mowed to today, set next_mow_date, set service_date to nil, and position to nil
+      if @progress == "Done"
+        scheduled_location_params_done = scheduled_location_params
+        @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
+        scheduled_location_params_done[:in_progress] = nil
+        scheduled_location_params_done[:date_mowed] = Date.today
+        scheduled_location_params_done[:next_mow_date] = get_next_mow_date(Date.today, job["mow_frequency"])
+        scheduled_location_params_done[:service_date] = nil
+        scheduled_location_params_done[:position] = nil
+        @scheduled_location.update(scheduled_location_params_done)
+      end
+      
+      # Reschedule Jobs for tomorrow 
+      if @progress == "Reschedule for Tomorrow"
+        scheduled_location_params_done = scheduled_location_params
+        @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
+        scheduled_location_params_done[:service_date] = (Date.today + 1)
+        scheduled_location_params_done[:position] = nil
+        @scheduled_location.update(scheduled_location_params_done)
+      end
+
+      # Reschedule Jobs for later date
+      if @progress == "Reschedule for Later Date"
+        @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
+        @reschedule_jobs.push(@scheduled_location)
+        # Set the the redirect to rescheduling the remaning jobs marked "Reschedule for Later Date"
+        @reschedule_redirect = true
+      end
+    end
+
+    if @reschedule_redirect
+      in_progress_jobs_hash(@reschedule_jobs)
+      redirect_to reschedule_in_progress_path and return
+    end
+    
+    redirect_to in_progress_path
+  end
+
+  def reschedule_in_progress
+    @jobs = in_progress_jobs_hash
+    render 'reschedule_in_progress'
+  end
+
+  def save_reschedule_in_progress
+    scheduled_location_params_done = scheduled_location_params
+    @jobs = in_progress_jobs_hash
+    @jobs.each do |job|
+      @reschedule_date_raw = params["#{job["id"]}"]
+      @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
+      @reschedule_date = Date.parse("#{@reschedule_date_raw["date(1i)"]}-#{@reschedule_date_raw["date(2i)"]}-#{@reschedule_date_raw["date(3i)"]}")
+      scheduled_location_params_done[:service_date] = @reschedule_date
+      @scheduled_location.update(scheduled_location_params_done)
+    end
+    redirect_to in_progress_path
   end
 
   private
+
+    def get_business
+      @user_business = UserBusiness.where('user_id = ?', current_user).first
+      @business = Business.where('id = ?', @user_business.business_id).first
+    end
 
     def create_matrix(coord_string)
       @matrix = ApiCalls.get_matrix(coord_string)
@@ -84,7 +199,28 @@ class MowFlowController < ApplicationController
     end
 
     def opto_hash_list(hash_to_save = nil)
-      @save_hash ||= hash_to_save
+      @@save_hash = hash_to_save || @@save_hash
+      return @@save_hash
+    end
+
+    def in_progress_jobs_hash(jobs_hash_to_save = nil)
+      @@jobs_hash = jobs_hash_to_save || @@jobs_hash
+      return @@jobs_hash
+    end
+
+    # Create Next Mow Date
+    def get_next_mow_date(date_mowed, mow_freq)  
+      return date_mowed.days_since(mow_freq)
+    end
+
+    def build_location_string(sched_loc)
+      location = "#{sched_loc.street_address}, #{sched_loc.city}, #{sched_loc.state}"
+      return location
+    end
+
+   # Never trust parameters from the scary internet, only allow the white list through.
+    def scheduled_location_params
+      params.permit(:service_date, :in_progress, :position, :next_mow_date, :date_mowed)
     end
 
 end
