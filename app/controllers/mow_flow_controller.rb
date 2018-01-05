@@ -35,34 +35,46 @@ class MowFlowController < ApplicationController
     @coordinates_string = @coordinates_string.chop!
 
     # Generate Location Matrix from coordinates
-    puts "coord string: #{@coordinates_string}"
-    @location_matrix = create_matrix(@coordinates_string)
-    puts "matrix: #{@location_matrix}"
+    @location_matrix_response = create_matrix(@coordinates_string)
 
-    @data_hash_for_optimization = {
-                                    location_ids: @location_ids,
-                                    location_matrix: @location_matrix,
-                                    duration_per_location: @duration_per_location,
-                                    number_of_routes: @number_of_routes 
-                                  }
-    # Run Google OR-TOOLS Python Script to Optimize for best driving route
-    @opto_data = optimize_mine(@data_hash_for_optimization)
-    
-    # loop through data and push location id arrays (without the depots) to containing hash
-    # {"date"=>[loc_hash,loc_hash], "date-2"=>[loc_hash,loc_hash,loc_hash] }
-    @opto_location_hashes = {}
-    limit = @number_of_routes;
-    @dates_array = @dates.to_a
-    for i in 1..limit
-      @location_array = []
-      @lookup_ids = @opto_data["route_day_#{i}"]["location_ids"].slice(1,(@opto_data["route_day_#{i}"]["location_ids"].length - 2))
-      @lookup_ids.each do |id|
-        @location_array.push( ScheduledLocation.where("id = ?", id).first.as_json )
+    # If Matrix OSRM API works then run Google OR-Tools
+    if @location_matrix_response[0] == "ok"
+      @error_true = false
+      @location_matrix = @location_matrix_response[1]
+      @data_hash_for_optimization = {
+                                      location_ids: @location_ids,
+                                      location_matrix: @location_matrix,
+                                      duration_per_location: @duration_per_location,
+                                      number_of_routes: @number_of_routes 
+                                    }
+      # Run Google OR-TOOLS Python Script to Optimize for best driving route
+      @opto_data_response = optimize_mine(@data_hash_for_optimization)
+      # If Google OR-Tools works
+      if @opto_data_response[0] == "ok"
+        @opto_data = @opto_data_response[1]
+        # loop through data and push location id arrays (without the depots) to containing hash
+        # {"date"=>[loc_hash,loc_hash], "date-2"=>[loc_hash,loc_hash,loc_hash] }
+        @opto_location_hashes = {}
+        limit = @number_of_routes;
+        @dates_array = @dates.to_a
+        for i in 1..limit
+          @location_array = []
+          @lookup_ids = @opto_data["route_day_#{i}"]["location_ids"].slice(1,(@opto_data["route_day_#{i}"]["location_ids"].length - 2))
+          @lookup_ids.each do |id|
+            @location_array.push( ScheduledLocation.where("id = ?", id).first.as_json )
+          end
+          @opto_location_hashes["#{@dates_array[i-1]}"] = @location_array
+        end
+        # Sets class varible @@save_hash - to be accessed from next method: save_list
+        opto_hash_list(@opto_location_hashes)
+      else
+        @error_true = true
+        @error_msg = @opto_data_response[1]    
       end
-      @opto_location_hashes["#{@dates_array[i-1]}"] = @location_array
+    else
+      @error_true = true
+      @error_msg = @location_matrix_response[1]
     end
-    # Sets class varible @@save_hash - to be accessed from next method: save_list
-    opto_hash_list(@opto_location_hashes)
 
     render 'results'
   end
@@ -184,12 +196,28 @@ class MowFlowController < ApplicationController
     end
 
     def create_matrix(coord_string)
-      @matrix = ApiCalls.get_matrix(coord_string)
+      @response = ApiCalls.get_matrix(coord_string)
+      @matrix = []
+      if @response[0] == "ok"
+        @matrix[0] = "ok"
+        @matrix[1] = @response[1]
+      else
+        @matrix[0] = "bad"
+        @matrix[1] = @response[1]
+      end
       return @matrix
     end
 
     def optimize_mine(data_hash)
-      @opto_data = ApiCalls.python_google_or_tools(data_hash)
+      @opto_data_response = ApiCalls.python_google_or_tools(data_hash)
+      @opto_data = []
+      if @opto_data_response == "Error with Google OR-Tools Script"
+        @opto_data[0] = "bad"
+        @opto_data[1] = @opto_data_response
+      else
+        @opto_data[0] = "ok"
+        @opto_data[1] = @opto_data_response
+      end
       return @opto_data
     end
 
