@@ -4,25 +4,35 @@
   <div class="col-sm-8 offset-md-1">
 
     <h1>Optimized List</h1>
-      <div id="jobs" class="row"> 
-        <% @dates.each do |date|%>
-          <div id="date-col" class="list-group col-sm-3" data-date="<%= date %>">
-            <div class="text-center">
-              <%= "#{date.strftime("%b")} #{date.day}"%>
-            </div>
-          <%if @opto_location_hashes["#{date}"]%>
-            <% @opto_location_hashes["#{date}"].each do |job|%>
-              <li class="list-group-item"><%= job["location_desc"] %></li>
-            <%end%>
-          <% end %>
+      <% if @error_true %>
+        <p>There was a problem optimizing this list. Error: <%=  @error_msg %>
+        <div id="jobs" class="row"> 
+          <div id="date-col" class="list-group col-sm-3">
           </div>
-        <% end %>
-        <div class="col-sm-3">
-          <%= link_to 'Back', dashboard_path %>
-          <%= link_to 'Print List', mow_flow_save_path %>
+          <div class="col-sm-3">
+            <%= link_to 'Back', dashboard_path %>
+          </div>
         </div>
-      </div>
-
+      <% else %>
+        <div id="jobs" class="row"> 
+          <% @dates.each do |date|%>
+            <div id="date-col" class="list-group col-sm-3" data-date="<%= date %>">
+              <div class="text-center">
+                <%= "#{date.strftime("%b")} #{date.day}"%>
+              </div>
+              <%if @opto_location_hashes["#{date}"]%>
+                <% @opto_location_hashes["#{date}"].each do |job|%>
+                  <li class="list-group-item"><%= job["location_desc"] %></li>
+                <%end%>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="col-sm-3">
+            <%= link_to 'Back', dashboard_path %>
+            <%= link_to 'Print List', mow_flow_save_path %>
+          </div>
+        </div>
+      <% end %>
 
   </div>
 </div>
