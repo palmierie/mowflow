@@ -23,6 +23,7 @@
           <td><%= job.date_mowed %></td>
           <td><%= job.next_mow_date %></td>
           <td><%= link_to 'Details', scheduled_location_path(job) %></td>
+          <td><%= link_to 'Delete', scheduled_location_path(job), method: :delete, data: {confirm: 'Are you sure?'} %></td>
         </tr>
       <% end %>
     </table>
