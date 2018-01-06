@@ -173,6 +173,12 @@ class ScheduledLocationsController < ApplicationController
     end
   end
 
+  def destroy
+    @scheduled_location = ScheduledLocation.find(params[:id])
+    @scheduled_location.destroy
+    redirect_to scheduled_locations_path
+  end
+
   def reschedule_job
     @scheduled_location = ScheduledLocation.find(params[:id])
     render 'reschedule_job'

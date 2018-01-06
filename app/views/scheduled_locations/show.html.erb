@@ -60,6 +60,7 @@
     </p>
 
     <%= link_to 'Edit', edit_scheduled_location_path(@scheduled_location) %> |
+    <%= link_to 'Delete', scheduled_location_path(@scheduled_location), method: :delete, data: {confirm: 'Are you sure?'} %> |
     <%= link_to 'Add Special Job', dashboard_path %> |
     <%= link_to 'View Job List', scheduled_locations_path %>
   </div>
