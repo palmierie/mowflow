@@ -21,7 +21,8 @@
           <td><%= client.email %></td>
           <td><%= client.second_full_name %></td>
           <td><%= link_to 'Details', client_path(client) %></td>
-            <td><%= link_to 'Add Job', new_scheduled_location_path %></td>
+          <td><%= link_to 'Delete', client_path(client), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          <td><%= link_to 'Add Job', new_scheduled_location_path %></td>
         </tr>
       <% end %>
     </table>

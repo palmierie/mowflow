@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
     @client.business_id = @business.id
     respond_to do |format|
       if @client.save
-        format.html { redirect_to dashboard_path, notice: 'Client was successfully created.' }
+        format.html { redirect_to clients_path, notice: 'Client was successfully created.' }
         # format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -43,6 +43,18 @@ class ClientsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @client = Client.find(params[:id])
+    @scheduled_locations = ScheduledLocation.where("client_id = ?", @client.id)
+    @scheduled_locations.each do |scheduled_location|
+      scheduled_location.destroy
+    end
+    @client.destroy
+    respond_to do |format|
+      format.html { redirect_to clients_path, notice: 'Client was successfully deleted.' }
     end
   end
 
