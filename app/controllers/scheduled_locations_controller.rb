@@ -176,7 +176,9 @@ class ScheduledLocationsController < ApplicationController
   def destroy
     @scheduled_location = ScheduledLocation.find(params[:id])
     @scheduled_location.destroy
-    redirect_to scheduled_locations_path
+    respond_to do |format|
+      format.html { redirect_to scheduled_locations_path, notice: 'Job was successfully deleted.' }
+    end
   end
 
   def reschedule_job
