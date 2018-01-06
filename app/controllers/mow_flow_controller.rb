@@ -1,6 +1,20 @@
 class MowFlowController < ApplicationController
   @@save_hash = {}
   @@jobs_hash = {}
+  
+  #non-optimization scheduling
+  def show_one_day
+    @date = Date.today
+    @jobs = ScheduledLocation.all.group_by(&:next_mow_date)
+
+    @save_jobs = ScheduledLocation.where(:next_mow_date => @date).as_json
+    @opto_location_hashes = {}
+    @opto_location_hashes["#{@date}"] = @save_jobs
+    # Sets class varible @@save_hash - to be accessed from next method: save_list
+    opto_hash_list(@opto_location_hashes)
+  end
+
+  #optimization scheduling
   def show
     @dates = Date.today..(Date.today + 2)
     @jobs = ScheduledLocation.all.group_by(&:next_mow_date)
@@ -55,7 +69,7 @@ class MowFlowController < ApplicationController
         # loop through data and push location id arrays (without the depots) to containing hash
         # {"date"=>[loc_hash,loc_hash], "date-2"=>[loc_hash,loc_hash,loc_hash] }
         @opto_location_hashes = {}
-        limit = @number_of_routes;
+        limit = @number_of_routes
         @dates_array = @dates.to_a
         for i in 1..limit
           @location_array = []
@@ -103,12 +117,6 @@ class MowFlowController < ApplicationController
       end
     end
     redirect_to in_progress_path
-  end
-
-  def select_work_list
-    @business = get_business
-
-    # redirect_to in_progess_path
   end
   
   def in_progress

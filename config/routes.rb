@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'client_jobs/:id', to: 'scheduled_locations#client_jobs', as: 'client_jobs'
   get 'reschedule_job/:id', to: 'scheduled_locations#reschedule_job', as: 'reschedule_job'
   patch 'reschedule_job/:id', to: 'scheduled_locations#reschedule_job_update', as: 'reschedule_job_update'
+  get 'non_optimized', to: 'mow_flow#show_one_day', as: 'non_optimized'
   post 'mow_flow_opto', to: 'mow_flow#optimize_list', as: 'mow_flow_opto'
   get 'mow_flow_save', to: 'mow_flow#save_list', as: 'mow_flow_save'
   get 'in_progress', to: 'mow_flow#in_progress', as: 'in_progress'
