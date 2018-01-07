@@ -46,6 +46,10 @@ gem 'httparty'
 # gem 'capistrano-rails', group: :development
 # Figaro for Secure Config ENV routes
 gem "figaro"
+# Prawn for converting to pdf file
+gem 'prawn'
+# Prawn Table, because they thought spliting the gem was a good idea
+gem 'prawn-table'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
