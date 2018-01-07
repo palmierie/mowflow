@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   post 'mow_flow_opto', to: 'mow_flow#optimize_list', as: 'mow_flow_opto'
   get 'mow_flow_save', to: 'mow_flow#save_list', as: 'mow_flow_save'
   get 'in_progress', to: 'mow_flow#in_progress', as: 'in_progress'
+  get 'print_list', to: 'mow_flow#print_list', as: 'print_list'
   post 'save_progress', to: 'mow_flow#save_progress', as: 'save_progress'
   get 'reschedule_in_progress', to: 'mow_flow#reschedule_in_progress', as: 'reschedule_in_progress'
   post 'save_reschedule_in_progress', to: 'mow_flow#save_reschedule_in_progress', as: 'save_reschedule_in_progress'

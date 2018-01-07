@@ -1,0 +1,12 @@
+
+<h1>Today's Schedule - <%= @date %></h1>
+<div class="row">
+  <div class="col-sm-8">
+      <% @jobs.each do |job| %>
+      <p>
+        <%= job.location_desc %> |
+        <%= "#{job.street_address}, #{job.city}, #{job.state}" %>
+      </p>
+      <% end %>
+  </div>
+</div>

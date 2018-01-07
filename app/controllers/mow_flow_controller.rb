@@ -96,7 +96,6 @@ class MowFlowController < ApplicationController
   def save_list
     # Get class variable
     @hash_from_save = opto_hash_list
-    ## TO DO:
     #  LOOP: Set service date of each location hash to key of the hash: @hash_from_save[date] = [{location},{location}, etc]
     @hash_from_save.each do |job_list|
       @opto_date = job_list[0]
@@ -121,6 +120,9 @@ class MowFlowController < ApplicationController
   
   def in_progress
     @business = get_business
+
+    ## TODO: Add functionality for displaying in_progress jobs from previous day. 
+
     # get jobs where business_id, in_progress = true, service_date = today
     @jobs = ScheduledLocation.where("business_id = ? AND service_date = ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
     @in_prog_options = ["Not Done","Done","Reschedule for Tomorrow","Reschedule for Later Date"]
@@ -128,6 +130,20 @@ class MowFlowController < ApplicationController
     in_progress_jobs_hash(@jobs)
 
     render 'in_progress'
+  end
+
+  def print_list
+    @business = get_business
+    @jobs = ScheduledLocation.where("business_id = ? AND service_date = ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
+    @day = Date.today.strftime("%A")
+    @date = Date.today.strftime("%F")
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReportPdf.new(@jobs,@business.name)
+        send_data pdf.render, filename: "#{@day}_#{@date}_schedule.pdf", type: 'application/pdf', disposition: "inline"
+      end
+    end
   end
 
   def save_progress
