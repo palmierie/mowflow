@@ -120,14 +120,17 @@ class MowFlowController < ApplicationController
   
   def in_progress
     @business = get_business
-
-    ## TODO: Add functionality for displaying in_progress jobs from previous day. 
-
+    # get in_progress jobs from previous days
+    @previous_jobs = ScheduledLocation.where("business_id = ? AND service_date != ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
+    # previous job status options
+    @prev_in_prog_options = ["Not Done","Done","Reschedule for Later Date"]
     # get jobs where business_id, in_progress = true, service_date = today
     @jobs = ScheduledLocation.where("business_id = ? AND service_date = ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
+    # current in_progress job status options
     @in_prog_options = ["Not Done","Done","Reschedule for Tomorrow","Reschedule for Later Date"]
     # Sets class varible @@jobs_hash - to be accessed from next method: save_progress
-    in_progress_jobs_hash(@jobs)
+    @all_jobs = @jobs + @previous_jobs
+    in_progress_jobs_hash(@all_jobs)
 
     render 'in_progress'
   end
@@ -171,6 +174,7 @@ class MowFlowController < ApplicationController
       if @progress == "Reschedule for Tomorrow"
         scheduled_location_params_done = scheduled_location_params
         @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
+        scheduled_location_params_done[:in_progress] = nil
         scheduled_location_params_done[:service_date] = (Date.today + 1)
         scheduled_location_params_done[:next_mow_date] = (Date.today + 1)
         scheduled_location_params_done[:position] = nil
@@ -207,6 +211,12 @@ class MowFlowController < ApplicationController
       @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
       @reschedule_date = Date.parse("#{@reschedule_date_raw["date(1i)"]}-#{@reschedule_date_raw["date(2i)"]}-#{@reschedule_date_raw["date(3i)"]}")
       scheduled_location_params_done[:service_date] = @reschedule_date
+      #if a previous date job is rescheduled for today, do not set in_progress to nil
+      if @reschedule_date > Date.today
+        puts "you're inside"
+        puts "resched date: #{@reschedule_date}. today date: #{Date.today}"
+        scheduled_location_params_done[:in_progress] = nil
+      end
       @scheduled_location.update(scheduled_location_params_done)
     end
     redirect_to in_progress_path
