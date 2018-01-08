@@ -24,7 +24,8 @@ class MowFlowController < ApplicationController
   def optimize_list
     # get depot
     @business = get_business
-    @depot = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first.as_json
+    ########### CHANGED 'depot = ?' to 'depot IS ?' MAKE SURE THIS WORKS!!!!!##############
+    @depot = ScheduledLocation.where('business_id = ? AND depot IS ?', @business.id, true).first.as_json
     # get number of routes (days) for optimization
     @number_of_routes = params["days"].to_i
     # get range of dates to for query
@@ -120,16 +121,28 @@ class MowFlowController < ApplicationController
   
   def in_progress
     @business = get_business
+    @date = Date.today.strftime("%F")
     # get in_progress jobs from previous days
-    @previous_jobs = ScheduledLocation.where("business_id = ? AND service_date != ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
+    @previous_jobs = ScheduledLocation.where(
+                                            "business_id = ? AND service_date < ? AND in_progress IS ?", 
+                                            @business.id, @date, true)
     # previous job status options
-    @prev_in_prog_options = ["Not Done","Done","Reschedule for Later Date"]
+    @prev_in_prog_options = ["Not Done","Done","Reschedule for Set Date"]
     # get jobs where business_id, in_progress = true, service_date = today
-    @jobs = ScheduledLocation.where("business_id = ? AND service_date = ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
+    @jobs = ScheduledLocation.where(
+                                    "business_id = ? AND service_date = ? AND in_progress IS ?", 
+                                    @business.id, @date, true)
     # current in_progress job status options
-    @in_prog_options = ["Not Done","Done","Reschedule for Tomorrow","Reschedule for Later Date"]
+    @in_prog_options = ["Not Done","Done","Reschedule for Tomorrow","Reschedule for Set Date"]
+    # get jobs where business_id, in_progress = true, service_date = today
+    @future_jobs = ScheduledLocation.where(
+                                    "business_id = ? AND service_date > ? AND in_progress IS ?", 
+                                    @business.id, @date, true)
+    # current in_progress job status options
+    @future_in_prog_options = ["Not Done","Reschedule for Set Date"]
+    
     # Sets class varible @@jobs_hash - to be accessed from next method: save_progress
-    @all_jobs = @jobs + @previous_jobs
+    @all_jobs = @jobs + @previous_jobs + @future_jobs
     in_progress_jobs_hash(@all_jobs)
 
     render 'in_progress'
@@ -137,14 +150,16 @@ class MowFlowController < ApplicationController
 
   def print_list
     @business = get_business
-    @jobs = ScheduledLocation.where("business_id = ? AND service_date = ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
     @day = Date.today.strftime("%A")
     @date = Date.today.strftime("%F")
+    @jobs = ScheduledLocation.where(
+                                    "business_id = ? AND service_date = ? AND in_progress IS ?", 
+                                    @business.id, @date, true)
     respond_to do |format|
       format.html
       format.pdf do
         pdf = ReportPdf.new(@jobs,@business.name)
-        send_data pdf.render, filename: "#{@day}_#{@date}_schedule.pdf", type: 'application/pdf', disposition: "inline"
+        send_data pdf.render, filename: "#{@date}_#{@day}_schedule.pdf", type: 'application/pdf', disposition: "inline"
       end
     end
   end
@@ -174,7 +189,6 @@ class MowFlowController < ApplicationController
       if @progress == "Reschedule for Tomorrow"
         scheduled_location_params_done = scheduled_location_params
         @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
-        scheduled_location_params_done[:in_progress] = nil
         scheduled_location_params_done[:service_date] = (Date.today + 1)
         scheduled_location_params_done[:next_mow_date] = (Date.today + 1)
         scheduled_location_params_done[:position] = nil
@@ -182,7 +196,7 @@ class MowFlowController < ApplicationController
       end
 
       # Reschedule Jobs for later date
-      if @progress == "Reschedule for Later Date"
+      if @progress == "Reschedule for Set Date"
         @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
         @reschedule_jobs.push(@scheduled_location)
         # Set the the redirect to rescheduling the remaning jobs marked "Reschedule for Later Date"
@@ -211,12 +225,7 @@ class MowFlowController < ApplicationController
       @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
       @reschedule_date = Date.parse("#{@reschedule_date_raw["date(1i)"]}-#{@reschedule_date_raw["date(2i)"]}-#{@reschedule_date_raw["date(3i)"]}")
       scheduled_location_params_done[:service_date] = @reschedule_date
-      #if a previous date job is rescheduled for today, do not set in_progress to nil
-      if @reschedule_date > Date.today
-        puts "you're inside"
-        puts "resched date: #{@reschedule_date}. today date: #{Date.today}"
-        scheduled_location_params_done[:in_progress] = nil
-      end
+      scheduled_location_params_done[:next_mow_date] = @reschedule_date
       @scheduled_location.update(scheduled_location_params_done)
     end
     redirect_to in_progress_path
