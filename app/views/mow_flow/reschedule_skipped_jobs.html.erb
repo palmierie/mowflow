@@ -1,0 +1,33 @@
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
+
+  <div class="col-sm-8 offset-md-1">
+    <h1>Reschedule Skipped Jobs</h1>
+    <div class="row">
+      <div class="col-sm-8">
+        <%= form_for :reschedule_skipped_jobs, url: save_reschedule_skipped_jobs_path do |f| %>
+          
+          <% @jobs.each do |job| %>
+          
+            <%= job.location_desc %> |
+            <%= "#{job.street_address}, #{job.city}, #{job.state}" %>
+            <div class="field">
+              <%= f.label 'Reschedule Job for' %>
+              <%=  date_select("#{job.id}", "date", order: [:day, :month, :year]) %>
+            </div>
+            
+          <% end %>
+
+          <div class="actions">
+            <%= f.submit "Update" %>
+          </div>
+
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <%= link_to 'Back', skipped_jobs_path %>
+      </div>
+    </div>
+    
+  </div>
+</div>

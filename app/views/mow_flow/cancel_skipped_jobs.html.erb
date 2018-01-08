@@ -1,0 +1,38 @@
+<div class="row">
+  <%= render :partial => 'partials/dashboard' %>
+
+  <div class="col-sm-8 offset-md-1">
+    <% if @jobs.length > 0 %>
+      <h1>Cancel Skipped Jobs</h1>
+      <h5>These jobs and locations will be deleted.</h5>
+      <h5>The client information will remain saved in the system</h5>
+      <div class="row">
+        <div class="col-sm-8">
+          <%= form_for :cancel_skipped_jobs, url: save_cancel_skipped_jobs_path do |f| %>
+            <div class="list-group col-sm-10">
+              <% @jobs.each do |job| %>
+                <div class="list-group-item">
+                  <%= job.location_desc %> |
+                  <%= "#{job.street_address}, #{job.city}, #{job.state}" %>
+                  <div class="field">
+                      <%= f.label 'Delete from Database?' %>
+                      <%= select_tag "#{job.id}", options_for_select(@cancel_skipped_job_options) %>
+                    </div>
+                  </div>            
+                </div>
+              <% end %>
+              <div class="actions">
+                <%= f.submit "Confirm", :class => 'btn btn-danger' %>
+              </div>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+      <% else %>
+      <h3>There are no jobs to be cancelled and deleted</h3>
+      <%= link_to 'Back', dashboard_path, :class => 'btn btn-primary' %>
+    <% end %>
+    
+  </div>
+</div>

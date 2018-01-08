@@ -12,7 +12,7 @@
             <div class="list-group-item" ><%= "#{job.location_desc} | #{job.street_address}, #{job.city}, #{job.state} | Scheduled for: #{job.next_mow_date}" %></div>
           <% end %>
         </div>
-        <%= link_to 'Update', in_progress_path, :class => 'btn btn-primary mx-auto ' %>
+        <%= link_to 'Update', skipped_jobs_path, :class => 'btn btn-primary mx-auto ' %>
       </div>
       <div class="col-sm-12">
         <div style='border-bottom:4px solid #2f4f4f; margin-top:10px; margin-bottom:10px;'></div>
@@ -28,7 +28,7 @@
             <div class="list-group-item" ><%= "#{job.location_desc} | #{job.street_address}, #{job.city}, #{job.state} | Service Date: #{job.service_date}" %></div>
           <% end %>
         </div>
-        <%= link_to 'Update', in_progress_path, :class => 'btn btn-primary mx-auto ' %>
+        <%= link_to 'Go to Schedule', in_progress_path, :class => 'btn btn-primary mx-auto ' %>
       </div>
       <div class="col-sm-12">
         <div style='border-bottom:4px solid #2f4f4f; margin-top:10px; margin-bottom:10px;'></div>
@@ -60,7 +60,7 @@
             <div class="list-group-item" ><%= "#{job.location_desc} | #{job.street_address}, #{job.city}, #{job.state} | Service Date: #{job.service_date}" %></div>
           <% end %>
         </div>
-        <%= link_to 'Update', in_progress_path, :class => 'btn btn-primary mx-auto' %>
+        <%= link_to 'Go to Schedule', in_progress_path, :class => 'btn btn-primary mx-auto' %>
       </div>
       <div class="col-sm-12">
         <div style='border-bottom:4px solid #2f4f4f; margin-top:10px; margin-bottom:10px;'></div>
@@ -75,7 +75,7 @@
             <div class="list-group-item" ><%= "#{job.location_desc} | #{job.street_address}, #{job.city}, #{job.state} | Service Date: #{job.service_date}" %></div>
           <% end %>
         </div>
-        <%= link_to 'Update', in_progress_path, :class => 'btn btn-primary mx-auto' %>
+        <%= link_to 'Go to Schedule', in_progress_path, :class => 'btn btn-primary mx-auto' %>
       </div>
       <div class="col-sm-12">
         <div style='border-bottom:4px solid #2f4f4f; margin-top:10px; margin-bottom:10px;'></div>

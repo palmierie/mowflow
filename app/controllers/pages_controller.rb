@@ -15,29 +15,23 @@ class PagesController < ApplicationController
       @previous_skipped_jobs = ScheduledLocation.where(
                                                   "business_id = ? AND next_mow_date < ? AND in_progress IS ?",
                                                   @business.id, @date, nil)
-      puts "@previous_skipped_jobs: #{@previous_skipped_jobs.length}"
       # get in_progress jobs from previous days
       @previous_scheduled_jobs = ScheduledLocation.where(
                                                     "business_id = ? AND service_date < ? AND in_progress IS ?",
                                                     @business.id, @date, true)
-      puts "@previous_scheduled_jobs: #{@previous_scheduled_jobs.length}"
       # get today's jobs that are unscheduled
       @un_scheduled_jobs = ScheduledLocation.where(
                                               "business_id = ? AND (next_mow_date = ? OR service_date = ?) AND 
                                               in_progress IS ?",
                                               @business.id, @date, @date, nil)
-      puts "@un_scheduled_jobs: #{@un_scheduled_jobs.length}"
       # get jobs where business_id, in_progress = true, service_date = today
       @scheduled_jobs = ScheduledLocation.where(
                                             "business_id = ? AND service_date = ? AND in_progress IS ?",
                                             @business.id, @date, true)
-      puts "@scheduled_jobs: #{@scheduled_jobs.length}"
       # get upcoming jobs that are in_progress - true
       @upcoming_scheduled_jobs = ScheduledLocation.where(
                                             "business_id = ? AND service_date > ? AND in_progress IS ?",
                                             @business.id, @date, true)
-      puts "@upcoming_scheduled_jobs: #{@upcoming_scheduled_jobs.length}"
-                                       
     end
 
   end
