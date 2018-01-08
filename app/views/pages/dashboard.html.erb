@@ -1,6 +1,90 @@
 <div class="row">
   <%= render :partial => 'partials/dashboard' %>
-  <div class="col-xs-8 offset-md-1">
-    <h2> Welcome </h2>
+  <div class="col-sm-8 offset-md-1">
+    <h2> Welcome, <%= @user.first_name %>!</h2>
+
+    <% if @previous_skipped_jobs.length > 0 %>
+      <div class="immediate-user-action">
+        <h2 class="offset-md-1">Work Missed</h2>
+        <h5 class="offset-md-1">Please reschedule or cancel these jobs:</h5>
+        <div class="row">
+          <div class="list-group col-sm-10 offset-md-1">
+            <% @previous_skipped_jobs.each do |job| %>
+              <div class="list-group-item" ><%= "#{job.location_desc} | #{job.street_address}, #{job.city}, #{job.state} | Scheduled for: #{job.next_mow_date}" %></div>
+            <% end %>
+          </div>
+          <%= link_to 'Update', skipped_jobs_path, :class => 'btn btn-secondary mx-auto' %>
+        </div>
+        <div class="col-sm-12">
+          <div style='border-bottom:4px solid #2f4f4f; margin-top:10px; margin-bottom:10px;'></div>
+        </div>
+      </div>
+    <% end %>
+
+    <% if @previous_scheduled_jobs.length > 0 %>
+      <div class="immediate-user-action">
+        <h2 class="offset-md-1">Previously Scheduled Work</h2>
+        <h5 class="offset-md-1">Please update status to Complete, or reschedule the job if incomplete:</h5>
+        <div class="row">
+          <div class="list-group col-sm-10 offset-md-1">
+            <% @previous_scheduled_jobs.each do |job| %>
+              <div class="list-group-item" ><%= "#{job.location_desc} | #{job.street_address}, #{job.city}, #{job.state} | Service Date: #{job.service_date}" %></div>
+            <% end %>
+          </div>
+          <%= link_to 'Go to Schedule', in_progress_path, :class => 'btn btn-secondary mx-auto ' %>
+        </div>
+        <div class="col-sm-12">
+          <div style='border-bottom:4px solid #2f4f4f; margin-top:10px; margin-bottom:10px;'></div>
+        </div>
+      </div>
+    <% end %>
+
+    <% if @un_scheduled_jobs.length > 0 %>
+      <h2 class="offset-md-1">Work on the Calendar to be Assigned</h2>
+      <h5 class="offset-md-1">Please Confirm or Reschedule these jobs:</h5>
+      <div class="row">
+        <div class="list-group col-sm-10 offset-md-1">
+          <% @un_scheduled_jobs.each do |job| %>
+            <div class="list-group-item" ><%= "#{job.location_desc} | #{job.street_address}, #{job.city}, #{job.state} | Scheduled for: #{job.next_mow_date}" %></div>
+          <% end %>
+        </div>
+        <%= link_to 'Optimize', mow_flow_path, :class => 'btn btn-primary mx-auto' %>
+        <%= link_to 'Confirm for today', non_optimized_path, :class => 'btn btn-primary mx-auto' %>
+      </div>
+      <div class="col-sm-12">
+        <div style='border-bottom:4px solid #2f4f4f; margin-top:10px; margin-bottom:10px;'></div>
+      </div>
+    <% end %>
+
+    <% if @scheduled_jobs.length > 0 %>
+      <h2 class="offset-md-1">Work Confirmed for Today</h2>
+      <div class="row">
+        <div class="list-group col-sm-10 offset-md-1">
+          <% @scheduled_jobs.each do |job| %>
+            <div class="list-group-item" ><%= "#{job.location_desc} | #{job.street_address}, #{job.city}, #{job.state} | Service Date: #{job.service_date}" %></div>
+          <% end %>
+        </div>
+        <%= link_to 'Go to Schedule', in_progress_path, :class => 'btn btn-primary mx-auto' %>
+      </div>
+      <div class="col-sm-12">
+        <div style='border-bottom:4px solid #2f4f4f; margin-top:10px; margin-bottom:10px;'></div>
+      </div>
+    <% end %>
+
+    <% if @upcoming_scheduled_jobs.length > 0 %>
+      <h2 class="offset-md-1">Future Work Confirmed</h2>
+      <div class="row">
+        <div class="list-group col-sm-10 offset-md-1">
+          <% @upcoming_scheduled_jobs.each do |job| %>
+            <div class="list-group-item" ><%= "#{job.location_desc} | #{job.street_address}, #{job.city}, #{job.state} | Service Date: #{job.service_date}" %></div>
+          <% end %>
+        </div>
+        <%= link_to 'Go to Schedule', in_progress_path, :class => 'btn btn-primary mx-auto' %>
+      </div>
+      <div class="col-sm-12">
+        <div style='border-bottom:4px solid #2f4f4f; margin-top:10px; margin-bottom:10px;'></div>
+      </div>
+    <% end %>
+
   </div>
 </div>

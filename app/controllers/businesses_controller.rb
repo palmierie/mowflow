@@ -7,11 +7,14 @@ class BusinessesController < ApplicationController
 
   def create
     @business = Business.new(business_params)
-    @business_as_client = Client.new(params)
     respond_to do |format|
       if @business.save
+        # @business_as_client = Client.new(params)
+        @business_as_client = Client.new()
+        @business_as_client.business_id = @business.id
+        @business_as_client.full_name = @business.name
+        @business_as_client.save
         format.html { redirect_to new_depot_path, notice: 'Business was successfully created.' }
-        # format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
         format.json { render json: @business.errors, status: :unprocessable_entity }
@@ -21,7 +24,6 @@ class BusinessesController < ApplicationController
   
   def show
     @user_business = UserBusiness.where('user_id = ?', current_user).first
-    # puts "LOG, #{@user_business.inspect}"
     @business = Business.where('id = ?', @user_business.business_id).first
     @depot = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first
     

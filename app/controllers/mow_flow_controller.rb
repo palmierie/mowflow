@@ -1,13 +1,17 @@
 class MowFlowController < ApplicationController
   @@save_hash = {}
   @@jobs_hash = {}
+  @@skipped_jobs_hash = {}
+  @@cancel_skipped_jobs_hash = {}
   
   #non-optimization scheduling
   def show_one_day
     @date = Date.today
     @jobs = ScheduledLocation.all.group_by(&:next_mow_date)
+    @jobs = ScheduledLocation.where('next_mow_date = ? AND in_progress IS ?', @date, nil)
+                                    .group_by(&:next_mow_date)
 
-    @save_jobs = ScheduledLocation.where(:next_mow_date => @date).as_json
+    @save_jobs = ScheduledLocation.where('next_mow_date = ? AND in_progress IS ?', @date, nil).as_json
     @opto_location_hashes = {}
     @opto_location_hashes["#{@date}"] = @save_jobs
     # Sets class varible @@save_hash - to be accessed from next method: save_list
@@ -24,7 +28,8 @@ class MowFlowController < ApplicationController
   def optimize_list
     # get depot
     @business = get_business
-    @depot = ScheduledLocation.where('business_id = ? AND depot = ?', @business.id, true).first.as_json
+    ########### CHANGED 'depot = ?' to 'depot IS ?' MAKE SURE THIS WORKS!!!!!##############
+    @depot = ScheduledLocation.where('business_id = ? AND depot IS ?', @business.id, true).first.as_json
     # get number of routes (days) for optimization
     @number_of_routes = params["days"].to_i
     # get range of dates to for query
@@ -120,16 +125,28 @@ class MowFlowController < ApplicationController
   
   def in_progress
     @business = get_business
+    @date = Date.today.strftime("%F")
     # get in_progress jobs from previous days
-    @previous_jobs = ScheduledLocation.where("business_id = ? AND service_date != ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
+    @previous_jobs = ScheduledLocation.where(
+                                            "business_id = ? AND service_date < ? AND in_progress IS ?", 
+                                            @business.id, @date, true)
     # previous job status options
-    @prev_in_prog_options = ["Not Done","Done","Reschedule for Later Date"]
+    @prev_in_prog_options = ["Not Done","Done","Reschedule for Set Date"]
     # get jobs where business_id, in_progress = true, service_date = today
-    @jobs = ScheduledLocation.where("business_id = ? AND service_date = ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
+    @jobs = ScheduledLocation.where(
+                                    "business_id = ? AND service_date = ? AND in_progress IS ?", 
+                                    @business.id, @date, true)
     # current in_progress job status options
-    @in_prog_options = ["Not Done","Done","Reschedule for Tomorrow","Reschedule for Later Date"]
+    @in_prog_options = ["Not Done","Done","Reschedule for Tomorrow","Reschedule for Set Date"]
+    # get jobs where business_id, in_progress = true, service_date = today
+    @future_jobs = ScheduledLocation.where(
+                                    "business_id = ? AND service_date > ? AND in_progress IS ?", 
+                                    @business.id, @date, true)
+    # current in_progress job status options
+    @future_in_prog_options = ["Not Done","Reschedule for Set Date"]
+    
     # Sets class varible @@jobs_hash - to be accessed from next method: save_progress
-    @all_jobs = @jobs + @previous_jobs
+    @all_jobs = @jobs + @previous_jobs + @future_jobs
     in_progress_jobs_hash(@all_jobs)
 
     render 'in_progress'
@@ -137,14 +154,16 @@ class MowFlowController < ApplicationController
 
   def print_list
     @business = get_business
-    @jobs = ScheduledLocation.where("business_id = ? AND service_date = ? AND in_progress = ?", @business.id, Date.today.strftime("%F"), true)
     @day = Date.today.strftime("%A")
     @date = Date.today.strftime("%F")
+    @jobs = ScheduledLocation.where(
+                                    "business_id = ? AND service_date = ? AND in_progress IS ?", 
+                                    @business.id, @date, true)
     respond_to do |format|
       format.html
       format.pdf do
         pdf = ReportPdf.new(@jobs,@business.name)
-        send_data pdf.render, filename: "#{@day}_#{@date}_schedule.pdf", type: 'application/pdf', disposition: "inline"
+        send_data pdf.render, filename: "#{@date}_#{@day}_schedule.pdf", type: 'application/pdf', disposition: "inline"
       end
     end
   end
@@ -174,7 +193,6 @@ class MowFlowController < ApplicationController
       if @progress == "Reschedule for Tomorrow"
         scheduled_location_params_done = scheduled_location_params
         @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
-        scheduled_location_params_done[:in_progress] = nil
         scheduled_location_params_done[:service_date] = (Date.today + 1)
         scheduled_location_params_done[:next_mow_date] = (Date.today + 1)
         scheduled_location_params_done[:position] = nil
@@ -182,7 +200,7 @@ class MowFlowController < ApplicationController
       end
 
       # Reschedule Jobs for later date
-      if @progress == "Reschedule for Later Date"
+      if @progress == "Reschedule for Set Date"
         @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
         @reschedule_jobs.push(@scheduled_location)
         # Set the the redirect to rescheduling the remaning jobs marked "Reschedule for Later Date"
@@ -194,8 +212,9 @@ class MowFlowController < ApplicationController
       in_progress_jobs_hash(@reschedule_jobs)
       redirect_to reschedule_in_progress_path and return
     end
-    
-    redirect_to in_progress_path
+    respond_to do |format|
+      format.html { redirect_to in_progress_path, notice: 'Job(s) status was successfully updated.' }
+    end
   end
 
   def reschedule_in_progress
@@ -211,15 +230,106 @@ class MowFlowController < ApplicationController
       @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
       @reschedule_date = Date.parse("#{@reschedule_date_raw["date(1i)"]}-#{@reschedule_date_raw["date(2i)"]}-#{@reschedule_date_raw["date(3i)"]}")
       scheduled_location_params_done[:service_date] = @reschedule_date
-      #if a previous date job is rescheduled for today, do not set in_progress to nil
-      if @reschedule_date > Date.today
-        puts "you're inside"
-        puts "resched date: #{@reschedule_date}. today date: #{Date.today}"
-        scheduled_location_params_done[:in_progress] = nil
-      end
+      scheduled_location_params_done[:next_mow_date] = @reschedule_date
       @scheduled_location.update(scheduled_location_params_done)
     end
-    redirect_to in_progress_path
+    respond_to do |format|
+      format.html { redirect_to in_progress_path, notice: 'Job(s) was successfully rescheduled.' }
+    end
+  end
+
+  ####  These methods are for Rescheduling and Canceling Skipped Jobs  ####
+  def skipped_jobs
+    @business = get_business
+    @date = Date.today
+    # get previous unscheduled jobs
+    @previous_skipped_jobs = ScheduledLocation.where(
+                                                "business_id = ? AND next_mow_date < ? AND in_progress IS ?",
+                                                @business.id, @date, nil)
+    # job status options
+    @skipped_job_options = ["Leave Alone","Cancel","Reschedule for Set Date"]
+    get_set_skipped_jobs_hash(@previous_skipped_jobs)
+    render 'skipped_jobs'
+  end
+
+  def save_skipped_jobs
+    @jobs = get_set_skipped_jobs_hash
+    @reschedule_jobs = []
+    @cancel_jobs = []
+    @reschedule_redirect = false
+    @cancel_redirect = false
+    # loop through progress update select and handle params accordingly
+    # params options: "Leave", "Cancel", "Reschedule for Later Date"
+    @jobs.each do |job|
+      @progress = params["#{job["id"]}"]
+      # If "Leave Alone", then do nothing
+      # Cancel 
+      if @progress == "Cancel"
+        scheduled_location_params_done = scheduled_location_params
+        @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
+        @cancel_jobs.push(@scheduled_location)
+        # Set the the redirect to canceling the remaning jobs marked "Cancel"
+        @cancel_redirect = true
+      end
+
+      # Reschedule Jobs for later date
+      if @progress == "Reschedule for Set Date"
+        @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
+        @reschedule_jobs.push(@scheduled_location)
+        # Set the the redirect to rescheduling the remaning jobs marked "Reschedule for Later Date"
+        @reschedule_redirect = true
+      end
+    end
+   
+    if @cancel_redirect
+      get_set_canceled_skipped_jobs_hash(@cancel_jobs)
+      redirect_to cancel_skipped_jobs_path and return
+    end
+    if @reschedule_redirect
+      get_set_skipped_jobs_hash(@reschedule_jobs)
+      redirect_to reschedule_skipped_jobs_path and return
+    end
+    redirect_to skipped_jobs_path
+  end
+
+  def reschedule_skipped_jobs
+    @jobs = get_set_skipped_jobs_hash
+    render 'reschedule_skipped_jobs'
+  end
+
+  def save_reschedule_skipped_jobs
+    scheduled_location_params_done = scheduled_location_params
+    @jobs = get_set_skipped_jobs_hash
+    @jobs.each do |job|
+      @reschedule_date_raw = params["#{job["id"]}"]
+      @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
+      @reschedule_date = Date.parse("#{@reschedule_date_raw["date(1i)"]}-#{@reschedule_date_raw["date(2i)"]}-#{@reschedule_date_raw["date(3i)"]}")
+      scheduled_location_params_done[:next_mow_date] = @reschedule_date
+      @scheduled_location.update(scheduled_location_params_done)
+    end
+    respond_to do |format|
+      format.html { redirect_to skipped_jobs_path, notice: 'Job(s) was successfully rescheduled.' }
+    end
+  end
+
+  def cancel_skipped_jobs
+    @jobs = get_set_canceled_skipped_jobs_hash
+    @cancel_skipped_job_options = ["Leave Alone","Delete"]
+    render 'cancel_skipped_jobs'
+  end
+
+  def save_cancel_skipped_jobs
+    @jobs = get_set_canceled_skipped_jobs_hash
+    @jobs.each do |job|
+      @cancel_confirmation = params["#{job["id"]}"]
+      @scheduled_location = ScheduledLocation.where("id = ?", job["id"]).first
+      if @cancel_confirmation == "Delete"
+        @scheduled_location.destroy
+      end
+    end
+    respond_to do |format|
+      format.html { redirect_to skipped_jobs_path, notice: 'Job(s) was successfully deleted.' }
+    end
   end
 
   private
@@ -263,6 +373,16 @@ class MowFlowController < ApplicationController
     def in_progress_jobs_hash(jobs_hash_to_save = nil)
       @@jobs_hash = jobs_hash_to_save || @@jobs_hash
       return @@jobs_hash
+    end
+
+    def get_set_skipped_jobs_hash(skipped_jobs_to_save = nil)
+      @@skipped_jobs_hash = skipped_jobs_to_save || @@skipped_jobs_hash
+      return @@skipped_jobs_hash
+    end
+
+    def get_set_canceled_skipped_jobs_hash(skipped_jobs_to_cancel = nil)
+      @@cancel_skipped_jobs_hash = skipped_jobs_to_cancel || @@cancel_skipped_jobs_hash
+      return @@cancel_skipped_jobs_hash
     end
 
     # Create Next Mow Date
