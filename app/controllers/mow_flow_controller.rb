@@ -212,8 +212,9 @@ class MowFlowController < ApplicationController
       in_progress_jobs_hash(@reschedule_jobs)
       redirect_to reschedule_in_progress_path and return
     end
-    
-    redirect_to in_progress_path
+    respond_to do |format|
+      format.html { redirect_to in_progress_path, notice: 'Job(s) status was successfully updated.' }
+    end
   end
 
   def reschedule_in_progress
@@ -232,7 +233,9 @@ class MowFlowController < ApplicationController
       scheduled_location_params_done[:next_mow_date] = @reschedule_date
       @scheduled_location.update(scheduled_location_params_done)
     end
-    redirect_to in_progress_path
+    respond_to do |format|
+      format.html { redirect_to in_progress_path, notice: 'Job(s) was successfully rescheduled.' }
+    end
   end
 
   ####  These methods are for Rescheduling and Canceling Skipped Jobs  ####

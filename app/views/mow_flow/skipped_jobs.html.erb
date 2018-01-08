@@ -22,10 +22,10 @@
             <div class="actions">
               <%= f.submit "Update", :class => 'btn btn-primary' %>
             </div>
+            <%= link_to 'Back', dashboard_path, :class => 'btn btn-primary' %>
           </div>
         </div>
       <% end %>
-
     <% else %>
       <h2 class="offset-md-1">No Previous Work Unconfirmed</h2>
       <h5 class="offset-md-1">Good Job</h5>
