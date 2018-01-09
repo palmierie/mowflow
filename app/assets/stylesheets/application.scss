@@ -17,8 +17,35 @@
 /* 
 *= require jquery-ui
 */
+
+@import 'bootstrap';
+
 .immediate-user-action {
   background-color: rgb(211, 109, 109) ;
 }
 
-@import 'bootstrap'
+a, a:visited, a:hover {
+  color: white;
+}
+
+a.dash-menu, a:hover.dash-menu, a:visited.dash-menu, a.dash-action, a.dark-a {
+  color: #666;
+}
+a:hover.dark-a{
+  background-color: #0069d9;
+  color: white;
+}
+
+.dash-action:hover{
+  background-color: #0069d9;
+  color: white;
+}
+
+.nav-menu-custom .nav-menu-custom:visited {
+  color: #666;
+}
+
+.nav-menu-custom:hover {
+  background-color: #0069d9;
+  color: white;
+}

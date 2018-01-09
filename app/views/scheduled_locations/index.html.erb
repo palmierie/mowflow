@@ -2,9 +2,23 @@
   <%= render :partial => 'partials/dashboard' %>
 
   <div class="col-xs-8 offset-md-1">
-    <h1>Job List</h1>
+    <div class="row">
+      <div class="col-6">
+        <h1>Job List</h1>
+      </div>
+      <div class="col-6 my-auto">
+      <%= form_tag(scheduled_locations_path, method: :get) do %>
+        <div class="input-group">
+          <%= text_field_tag :location_desc, params[:location_desc], :class => 'form-control' %>
+          <div class="input-group-append">
+            <%= submit_tag 'Search', name: nil, :class => 'btn btn-outline-primary' %>
+          </div>
+      </div>
+      <% end %>
+      </div>
+    </div>
 
-    <table>
+    <table class="table table-striped table-sm">
       <tr>
         <th>Client ID</th>
         <th>Location Description</th>
@@ -12,6 +26,9 @@
         <th>City</th>
         <th>Date Last Mowed</th>
         <th>Next Mow Date</th>
+        <th></th>
+        <th></th>
+
       </tr>
 
       <% @scheduled_locations.each do |job| %>
@@ -22,10 +39,13 @@
           <td><%= job.city %></td>
           <td><%= job.date_mowed %></td>
           <td><%= job.next_mow_date %></td>
-          <td><%= link_to 'Details', scheduled_location_path(job) %></td>
-          <td><%= link_to 'Delete', scheduled_location_path(job), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          <td><%= link_to 'Details', scheduled_location_path(job), :class => 'btn btn-primary btn-sm' %></td>
+          <td><%= link_to 'Delete', scheduled_location_path(job), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger btn-sm' %></td>
         </tr>
       <% end %>
     </table>
+    <% if @clear_search %>
+      <%= link_to 'Clear Search', scheduled_locations_path, :class => 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>

@@ -59,12 +59,9 @@
       <%= @scheduled_location.user_notes %>
     </p>
 
-    <%= link_to 'Edit', edit_scheduled_location_path(@scheduled_location) %> |
-    <%= link_to 'Delete', scheduled_location_path(@scheduled_location), method: :delete, data: {confirm: 'Are you sure?'} %> |
-    <%= link_to 'Add Special Job', dashboard_path %> |
-    <%= link_to 'View Job List', scheduled_locations_path %>
-  </div>
-  <div class="col-xs-4 offset-md-1">
-    <button type="button" class="btn btn-secondary"><%= link_to 'Reschedule Job', reschedule_job_path(@scheduled_location) %></button>
+    <%= link_to 'Edit', edit_scheduled_location_path(@scheduled_location), :class => 'btn btn-primary' %>
+    <%= link_to 'Delete', scheduled_location_path(@scheduled_location), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-primary' %>
+    <%= link_to 'Reschedule Job', reschedule_job_path(@scheduled_location), :class => 'btn btn-primary' %>
+    <%= link_to 'View Job List', scheduled_locations_path, :class => 'btn btn-primary' %>
   </div>
 </div>

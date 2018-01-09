@@ -1,7 +1,16 @@
 class ClientsController < ApplicationController
 
   def index
-    @clients = Client.all
+    @clients = if params[:full_name]
+      Client.where('full_name LIKE ?', "%#{params[:full_name]}%")
+    else
+      Client.where.not('full_name IS ?', nil)
+    end
+    @clear_search = if params[:full_name]
+      true
+    else
+      false
+    end
   end
 
   def new

@@ -22,11 +22,11 @@
           <td><%= job.city %></td>
           <td><%= job.date_mowed %></td>
           <td><%= job.next_mow_date %></td>
-          <td><%= link_to 'Details', scheduled_location_path(job) %></td>
+          <td><%= link_to 'Details', scheduled_location_path(job), :class => 'btn btn-primary' %></td>
         </tr>
       <% end %>
     </table>
 
-    <%= link_to 'Back To Client', client_path(@client) %>
+    <%= link_to 'Back To Client', client_path(@client), :class => 'btn btn-primary' %>
   </div>
 </div>

@@ -12,7 +12,7 @@
           </div>
           <%if @jobs[@date]%>
             <% @jobs[@date].each do |job|%>
-              <%= link_to job.location_desc, job, class: "list-group-item", id: dom_id(job), next_mow_date: @date %>
+              <%= link_to job.location_desc, job, class: "list-group-item dark-a", id: dom_id(job), next_mow_date: @date %>
             <%end%>
           <% else %>
             <p>There are no jobs scheduled for today.</p>

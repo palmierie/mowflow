@@ -45,7 +45,9 @@
       <div class="row">
         <div class="list-group col-sm-10 offset-md-1">
           <% @un_scheduled_jobs.each do |job| %>
-            <div class="list-group-item" ><%= "#{job.location_desc} | #{job.street_address}, #{job.city}, #{job.state} | Scheduled for: #{job.next_mow_date}" %></div>
+            <div class="list-group-item" >
+              <%= "#{job.location_desc} | #{job.street_address}, #{job.city}, #{job.state} | Scheduled for: #{job.next_mow_date}" %>
+              <%= link_to 'Reschedule', reschedule_job_path(job.id), :class => 'btn btn-primary' %></div>
           <% end %>
         </div>
         <%= link_to 'Optimize', mow_flow_path, :class => 'btn btn-primary mx-auto' %>

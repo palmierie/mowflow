@@ -29,12 +29,12 @@
       </p>
     <% end %>
 
-    <%= link_to 'Edit', edit_business_path(@business) %> |
+    <%= link_to 'Edit', edit_business_path(@business), :class => 'btn btn-primary' %>
     <% if @depot %>
-      <%= link_to 'Edit Location', edit_depot_path %> |
+      <%= link_to 'Edit Location', edit_depot_path, :class => 'btn btn-primary' %>
     <% else %>
-      <%= link_to 'Add Location', new_depot_path %> |
+      <%= link_to 'Add Location', new_depot_path, :class => 'btn btn-primary' %>
     <% end %>
-    <%= link_to 'Back', dashboard_path %>
+    <%= link_to 'Back', dashboard_path, :class => 'btn btn-primary' %>
   </div>
 </div>
