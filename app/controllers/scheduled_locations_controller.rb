@@ -1,8 +1,16 @@
 class ScheduledLocationsController < ApplicationController
   include HTTParty
   def index
-    ## TO DO add search
-    @scheduled_locations = ScheduledLocation.where("depot IS ?", nil)
+    @scheduled_locations = if params[:location_desc]
+      ScheduledLocation.where('location_desc LIKE ? AND depot IS ?', "%#{params[:location_desc]}%", nil)
+    else
+      ScheduledLocation.where("depot IS ?", nil)
+    end
+    @clear_search = if params[:location_desc]
+      true
+    else
+      false
+    end
   end
 
   def new_depot
