@@ -10,9 +10,9 @@
             <div class="text-center">
               <%= "#{date.strftime("%b")} #{date.day}"%>
             </div>
-          <%if @jobs[date]%>
-            <% @jobs[date].each do |job|%>
-              <%= link_to job.location_desc, job, class: "list-group-item dark-a", id: dom_id(job), next_mow_date: date %>
+          <%if @jobs["#{date}"]%>
+            <% @jobs["#{date}"].each do |job|%>
+              <%= link_to "#{job["location_desc"]}", scheduled_location_path(job["id"]), class: "list-group-item dark-a", next_mow_date: date %>
             <%end%>
           <% end %>
           </div>

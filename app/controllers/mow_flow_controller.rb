@@ -4,10 +4,12 @@ class MowFlowController < ApplicationController
   @@skipped_jobs_hash = {}
   @@cancel_skipped_jobs_hash = {}
   
+  require 'uri'
+
   #non-optimization scheduling
   def show_one_day
     @date = Date.today
-    @jobs = ScheduledLocation.all.group_by(&:next_mow_date)
+    # @jobs = ScheduledLocation.all.group_by(&:next_mow_date)
     @jobs = ScheduledLocation.where('next_mow_date = ? AND in_progress IS ?', @date, nil)
                                     .group_by(&:next_mow_date)
 
@@ -20,24 +22,42 @@ class MowFlowController < ApplicationController
 
   #optimization scheduling
   def show
+    # @jobs = ScheduledLocation.all.group_by(&:next_mow_date)
     @dates = Date.today..(Date.today + 2)
-    @jobs = ScheduledLocation.all.group_by(&:next_mow_date)
+    @search_dates = @dates.to_a
+    @jobs = {}
+    @search_dates.each do |date|
+      @jobs_per_date = ScheduledLocation.where("next_mow_date = ? AND in_progress IS ?", date, nil).as_json
+      if @jobs_per_date.length > 0
+        @jobs_arr = []
+        @jobs_per_date.each do |job_date|
+          @jobs_arr.push(job_date)
+        end
+        @jobs[date.strftime("%F")] = @jobs_arr
+      end
+    end
     @optimize_days = [1,2,3]
   end
   
   def optimize_list
     # get depot
     @business = get_business
-    ########### CHANGED 'depot = ?' to 'depot IS ?' MAKE SURE THIS WORKS!!!!!##############
     @depot = ScheduledLocation.where('business_id = ? AND depot IS ?', @business.id, true).first.as_json
-    puts "@depot: #{@depot}"
     # get number of routes (days) for optimization
     @number_of_routes = params["days"].to_i
     # get range of dates to for query
     @number_of_days = params["days"].to_i - 1
     @dates = Date.today..(Date.today + @number_of_days)
-    # get jobs from database that are equal to the date range
-    @jobs = ScheduledLocation.where(:next_mow_date => @dates).as_json
+    @dates = @dates.to_a
+    # get jobs from database that are equal to the date range and are not in_progress
+        # @jobs = ScheduledLocation.where(:next_mow_date => @dates).as_json  # OLD CODE
+    @jobs = []
+    @dates.each do |date|
+      @job_date = ScheduledLocation.where("next_mow_date = ? AND in_progress IS ?", date, nil).as_json
+      @jobs.push(@job_date)
+    end
+    @jobs = @jobs.flatten()
+
     # add the depot to the beginning of the array
     @jobs.unshift(@depot)
     # arrange job IDs in array
@@ -149,7 +169,7 @@ class MowFlowController < ApplicationController
     # Sets class varible @@jobs_hash - to be accessed from next method: save_progress
     @all_jobs = @jobs + @previous_jobs + @future_jobs
     in_progress_jobs_hash(@all_jobs)
-
+    @maps_params = build_map_params(@jobs)
     render 'in_progress'
   end
 
@@ -394,6 +414,29 @@ class MowFlowController < ApplicationController
     def build_location_string(sched_loc)
       location = "#{sched_loc.street_address}, #{sched_loc.city}, #{sched_loc.state}"
       return location
+    end
+
+    def build_map_params(jobs)
+      # get depot
+      @business = get_business
+      @depot = ScheduledLocation.where('business_id = ? AND depot IS ?', @business.id, true).first
+      #build string to encode
+      @root_url = "https://www.google.com/maps/dir/?api=1"
+      @origin_params = "&origin=#{@depot.street_address}, #{@depot.city}, #{@depot.state}"
+      @destination_params = "&destination=#{@depot.street_address}, #{@depot.city}, #{@depot.state}"
+      @travel_mode = "&travelmode=driving"
+      #build waypoints
+      @waypoints_string = "&waypoints="
+      jobs.each do |job|
+        @waypoint_string = "#{job.street_address}, #{job.city}, #{job.state}|"
+        @waypoints_string += @waypoint_string
+      end
+      # @final_string = URI.encode(@waypoints_string)
+      @waypoints_string = @waypoints_string.chop!
+      @final_string = "#{@root_url}#{@origin_params}#{@destination_params}#{@travel_mode}#{@waypoints_string}"
+      @final_string_encoded = URI.encode(@final_string)
+      
+      return @final_string_encoded
     end
 
    # Never trust parameters from the scary internet, only allow the white list through.
