@@ -30,6 +30,7 @@ class MowFlowController < ApplicationController
     @business = get_business
     ########### CHANGED 'depot = ?' to 'depot IS ?' MAKE SURE THIS WORKS!!!!!##############
     @depot = ScheduledLocation.where('business_id = ? AND depot IS ?', @business.id, true).first.as_json
+    puts "@depot: #{@depot}"
     # get number of routes (days) for optimization
     @number_of_routes = params["days"].to_i
     # get range of dates to for query

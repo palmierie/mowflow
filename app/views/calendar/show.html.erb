@@ -4,14 +4,18 @@
   <div class="col-sm-8 offset-md-1">
     <div class="row">
       <div class="col-xl-12 text-center">
-        <div class="well controls">
-          <%= link_to calendar_path(date: @date - 1.month), class: "btn btn-default" do %>
-            <p><</p>
+        <div class="well controls row justify-content-around">
+          <div class="col-sm-4">
+          <%= link_to calendar_path(date: @date - 1.month) do %>
+            <p class="btn btn-primary"><</p>
           <% end %>
-          <%= "#{@date.strftime("%B")} #{@date.year}" %>
-          <%= link_to calendar_path(date: @date + 1.month), class: "btn btn-default" do %>
-            <p>></p>
+          </div>
+          <h3 class="col-sm-4"><%= "#{@date.strftime("%B")} #{@date.year}" %></h3>
+          <div class="col-sm-4">
+          <%= link_to calendar_path(date: @date + 1.month) do %>
+            <p class="btn btn-primary">></p>
           <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -26,7 +30,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="lastMowLink">
                   <% @last_mow_by_date[date].each do |job| %>
-                    <a class="dropdown-item"><%= link_to "(P) #{job.location_desc}", scheduled_location_path(job.id) %></a>
+                    <%= link_to "(P) #{job.location_desc}", scheduled_location_path(job.id), :class =>'dropdown-item dark-a' %>
                   <% end %>
                 </div>
               </div>
@@ -38,7 +42,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="NextMowLink">
                   <% @next_mow_by_date[date].each do |job| %>
-                    <a class="dropdown-item"><%= link_to "(N) #{job.location_desc}", scheduled_location_path(job.id) %></a>
+                    <%= link_to "(N) #{job.location_desc}", scheduled_location_path(job.id), :class => 'dropdown-item dark-a' %>
                   <% end %>
                 </div>
               </div>

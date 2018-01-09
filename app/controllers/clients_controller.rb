@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
 
   def index
-    @clients = Client.all
+    @clients = Client.where.not('full_name IS ?', nil)
   end
 
   def new

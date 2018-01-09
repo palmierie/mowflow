@@ -2,7 +2,7 @@ class ScheduledLocationsController < ApplicationController
   include HTTParty
   def index
     ## TO DO add search
-    @scheduled_locations = ScheduledLocation.all
+    @scheduled_locations = ScheduledLocation.where("depot IS ?", nil)
   end
 
   def new_depot

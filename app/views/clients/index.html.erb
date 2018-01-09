@@ -4,13 +4,15 @@
   <div class="col-xs-8 offset-md-1">
     <h1>Client List</h1>
 
-    <table>
+    <table class="table table-striped table-sm">
       <tr>
         <th>Client ID</th>
         <th>Full Name</th>
         <th>Phone</th>
         <th>Email</th>
         <th>Second Name</th>
+        <th></th>
+        <th></th>
       </tr>
 
       <% @clients.each do |client| %>
@@ -20,9 +22,8 @@
           <td><%= client.phone %></td>
           <td><%= client.email %></td>
           <td><%= client.second_full_name %></td>
-          <td><%= link_to 'Details', client_path(client) %></td>
-          <td><%= link_to 'Delete', client_path(client), method: :delete, data: {confirm: 'Are you sure?'} %></td>
-          <td><%= link_to 'Add Job', new_scheduled_location_path %></td>
+          <td><%= link_to 'Details', client_path(client), :class => 'btn btn-primary btn-sm' %></td>
+          <td><%= link_to 'Delete', client_path(client), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger btn-sm' %></td>
         </tr>
       <% end %>
     </table>

@@ -35,9 +35,9 @@
       <%= @client.additional_note %>
     </p>
 
-    <%= link_to 'Edit', edit_client_path(@client) %> |
-    <%= link_to 'Delete', client_path(@client), method: :delete, data: {confirm: 'Are you sure?'} %> |
-    <%= link_to 'View Jobs', client_jobs_path(@client) %> |
-    <%= link_to 'Back', dashboard_path %>
+    <%= link_to 'Edit', edit_client_path(@client), :class => 'btn btn-primary' %>
+    <%= link_to 'Delete', client_path(@client), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-primary' %>
+    <%= link_to 'View Jobs', client_jobs_path(@client), :class => 'btn btn-primary' %>
+    <%= link_to 'Back', dashboard_path, :class => 'btn btn-primary' %>
   </div>
 </div>
